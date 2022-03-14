@@ -16,8 +16,7 @@ class CategoriesVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoriesCollectionView.delegate=self
-        categoriesCollectionView.dataSource=self
+        initTheCollectionView()
         
         categoriesCollectionView.register(UINib(nibName: "ProductInCategoryCVC", bundle: nil), forCellWithReuseIdentifier: "ProductInCatCell")
         
@@ -33,8 +32,15 @@ class CategoriesVC: UIViewController {
         view.addSubview(floaty)
     }
     
+    
+    func initTheCollectionView(){
+        categoriesCollectionView.delegate=self
+        categoriesCollectionView.dataSource=self
+    }
+    
 
 }
+
 
 
 extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
