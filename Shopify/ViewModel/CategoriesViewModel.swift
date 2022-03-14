@@ -26,11 +26,11 @@ class CategoriesViewModel : NSObject {
         }
     }
 
-    override init() {
-        super.init()
-        self.networkService = Networking()
-
-    }
+//    override init() {
+//        super.init()
+//        self.networkService = Networking()
+//
+//    }
     
     
     
