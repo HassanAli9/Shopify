@@ -1,5 +1,5 @@
 
 .DS_Store
 *.plist
-*.storyboard
+Shopify/View/.DS_Store
 *.xcuserstate
