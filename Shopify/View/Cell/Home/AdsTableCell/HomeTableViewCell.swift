@@ -10,11 +10,11 @@ class HomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var adsCollectionView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
+    
     static let identifier = "HomeTableViewCell"
     static func Nib()-> UINib{
         return UINib(nibName: "HomeTableViewCell", bundle: nil)
     }
-    
     var arrayOfAds: [String] = ["ads1", "ads2", "ads3"]
     var timer: Timer?
     var currentAdsIndex = 0
