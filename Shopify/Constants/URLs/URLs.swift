@@ -16,4 +16,13 @@ struct URLs{
     func getAllBrandsURl()-> URL?{
         return URL(string: baseURL + "smart_collections.json")
     }
+    
+    func getAllProductsInCategories()-> URL?{
+        return URL(string: baseURL + "products.json")
+    }
+    
+    func filterProductsByMainCategory(collectionId : Int)-> URL?{
+        return URL(string: baseURL + "products.json?collection_id=\(collectionId)")
+    }
+    
 }

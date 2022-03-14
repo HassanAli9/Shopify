@@ -8,8 +8,8 @@ struct Product : Codable {
 	let vendor : String?
 	let product_type : String?
 	let variants : [Variants]?
-	let images : [Images]?
-	let image : Image?
+	let images : [ProductImages]?
+	let image : ProductImage?
 
 	enum CodingKeys: String, CodingKey {
 
