@@ -1,7 +1,7 @@
 
 
 import Foundation
-struct Images : Codable {
+struct ProductImages : Codable {
 	let id : Int?
 	let product_id : Int?
 	let position : Int?
