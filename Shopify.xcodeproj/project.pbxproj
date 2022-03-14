@@ -34,6 +34,10 @@
 		CD2E8D0827DFABF80046C06D /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E8CFF27DFABF80046C06D /* HomeTableViewCell.xib */; };
 		CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8D0127DFABF80046C06D /* BrandsCollectionViewCell.swift */; };
 		CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E8D0227DFABF80046C06D /* BrandsCollectionViewCell.xib */; };
+		853D5A4A27DFAF0B00D287A4 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 853D5A4927DFAF0B00D287A4 /* Categories.storyboard */; };
+		853D5A4C27DFAF1600D287A4 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A4B27DFAF1600D287A4 /* CategoriesVC.swift */; };
+		853D5A5027DFAF5700D287A4 /* ProductInCategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A4F27DFAF5700D287A4 /* ProductInCategoryCVC.swift */; };
+		853D5A5227DFAF5D00D287A4 /* ProductInCategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853D5A5127DFAF5D00D287A4 /* ProductInCategoryCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		CD2E8CFF27DFABF80046C06D /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		CD2E8D0127DFABF80046C06D /* BrandsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD2E8D0227DFABF80046C06D /* BrandsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionViewCell.xib; sourceTree = "<group>"; };
+		853D5A4927DFAF0B00D287A4 /* Categories.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Categories.storyboard; sourceTree = "<group>"; };
+		853D5A4B27DFAF1600D287A4 /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		853D5A4F27DFAF5700D287A4 /* ProductInCategoryCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductInCategoryCVC.swift; sourceTree = "<group>"; };
+		853D5A5127DFAF5D00D287A4 /* ProductInCategoryCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductInCategoryCVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2E8CF227DFABBF0046C06D /* HomeViewController.swift */,
+				853D5A4B27DFAF1600D287A4 /* CategoriesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2E8CF627DFABF80046C06D /* Home */,
+				853D5A4E27DFAF4B00D287A4 /* ProductInCategoryCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -260,6 +270,7 @@
 			children = (
 				5C5B8A1C27DF9C940051462D /* Main.storyboard */,
 				CD2E8CF427DFABDD0046C06D /* Home.storyboard */,
+				853D5A4927DFAF0B00D287A4 /* Categories.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -280,6 +291,15 @@
 				5C5B8A1F27DF9C940051462D /* Shopify.xcdatamodeld */,
 			);
 			path = LocalData;
+			sourceTree = "<group>";
+		};
+		853D5A4E27DFAF4B00D287A4 /* ProductInCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				853D5A4F27DFAF5700D287A4 /* ProductInCategoryCVC.swift */,
+				853D5A5127DFAF5D00D287A4 /* ProductInCategoryCVC.xib */,
+			);
+			path = ProductInCategoryCell;
 			sourceTree = "<group>";
 		};
 		96FD982582530F52C61209E7 /* Frameworks */ = {
@@ -457,9 +477,11 @@
 				CD2E8D0627DFABF80046C06D /* BrandsTableViewCell.xib in Resources */,
 				5C5B8A2627DF9C960051462D /* LaunchScreen.storyboard in Resources */,
 				5C5B8A2327DF9C960051462D /* Assets.xcassets in Resources */,
+				853D5A4A27DFAF0B00D287A4 /* Categories.storyboard in Resources */,
 				5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */,
 				CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */,
 				CD2E8CF527DFABDD0046C06D /* Home.storyboard in Resources */,
+				853D5A5227DFAF5D00D287A4 /* ProductInCategoryCVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +554,7 @@
 				CD2E8CEB27DFAABA0046C06D /* BrandsModel.swift in Sources */,
 				CD2E8CF127DFAB8A0046C06D /* HomeViewModel.swift in Sources */,
 				CD2E8CEF27DFAB210046C06D /* Networking.swift in Sources */,
+				853D5A5027DFAF5700D287A4 /* ProductInCategoryCVC.swift in Sources */,
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
@@ -541,6 +564,7 @@
 				CD2E8CEC27DFAABA0046C06D /* Smart_collections.swift in Sources */,
 				CD2E8D0327DFABF80046C06D /* HomeCollectionViewCell.swift in Sources */,
 				CD2E8D0527DFABF80046C06D /* BrandsTableViewCell.swift in Sources */,
+				853D5A4C27DFAF1600D287A4 /* CategoriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9ACXVN2BM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -748,6 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D9ACXVN2BM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
