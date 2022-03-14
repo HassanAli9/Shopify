@@ -1,4 +1,5 @@
 
+.DS_Store
 *.plist
 *.xcuserstate
-
+Shopify/View/Cell/Home/.DS_Store
