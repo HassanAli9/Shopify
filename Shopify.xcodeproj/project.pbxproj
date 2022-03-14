@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		397A782427DFAEFC00F618C5 /* ProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397A782327DFAEFC00F618C5 /* ProductList.storyboard */; };
+		397A782C27DFB03200F618C5 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A782A27DFB03200F618C5 /* ProductListCell.swift */; };
+		397A782D27DFB03200F618C5 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397A782B27DFB03200F618C5 /* ProductListCell.xib */; };
+		397A783027DFB18A00F618C5 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A782F27DFB18A00F618C5 /* ProductListViewController.swift */; };
 		5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1627DF9C940051462D /* AppDelegate.swift */; };
 		5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1827DF9C940051462D /* SceneDelegate.swift */; };
 		5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1C27DF9C940051462D /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		397A782327DFAEFC00F618C5 /* ProductList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductList.storyboard; sourceTree = "<group>"; };
+		397A782A27DFB03200F618C5 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		397A782B27DFB03200F618C5 /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
+		397A782F27DFB18A00F618C5 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductListViewController.swift; path = Shopify/View/Cell/ProductListViewController.swift; sourceTree = SOURCE_ROOT; };
 		5C5B8A1327DF9C940051462D /* Shopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5B8A1627DF9C940051462D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C5B8A1827DF9C940051462D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		397A782E27DFB03C00F618C5 /* ProductListCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				397A782A27DFB03200F618C5 /* ProductListCell.swift */,
+				397A782B27DFB03200F618C5 /* ProductListCell.xib */,
+			);
+			path = ProductListCollectionCell;
+			sourceTree = "<group>";
+		};
 		5C5B8A0A27DF9C940051462D = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +221,7 @@
 		5C5B8A5327DF9D5B0051462D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				397A782F27DFB18A00F618C5 /* ProductListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -211,6 +229,7 @@
 		5C5B8A5427DF9D760051462D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				397A782E27DFB03C00F618C5 /* ProductListCollectionCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -219,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				5C5B8A1C27DF9C940051462D /* Main.storyboard */,
+				397A782327DFAEFC00F618C5 /* ProductList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -255,7 +275,6 @@
 				6BA80F02FEE55B4435A8330C /* Pods-Shopify.debug.xcconfig */,
 				7F7A21BFF49091D35DA5B279 /* Pods-Shopify.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,7 +385,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5B8A2627DF9C960051462D /* LaunchScreen.storyboard in Resources */,
+				397A782D27DFB03200F618C5 /* ProductListCell.xib in Resources */,
 				5C5B8A2327DF9C960051462D /* Assets.xcassets in Resources */,
+				397A782427DFAEFC00F618C5 /* ProductList.storyboard in Resources */,
 				5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +459,8 @@
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
+				397A783027DFB18A00F618C5 /* ProductListViewController.swift in Sources */,
+				397A782C27DFB03200F618C5 /* ProductListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,10 +641,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shopify/Info.plist;
+				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ProductList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -646,10 +669,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shopify/Info.plist;
+				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ProductList;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
