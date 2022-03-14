@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.5.0)
+  - Floaty (4.2.0)
+  - Kingfisher (7.2.0)
+  - ReachabilitySwift (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.5)
+  - Floaty (~> 4.2.0)
+  - Kingfisher (~> 7.0)
+  - ReachabilitySwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Floaty
+    - Kingfisher
+    - ReachabilitySwift
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+
+PODFILE CHECKSUM: bfc16ddaa0be347d61bda80453dc3c73b63ada30
+
+COCOAPODS: 1.11.2
