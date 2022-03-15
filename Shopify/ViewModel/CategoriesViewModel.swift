@@ -10,11 +10,11 @@ import Foundation
 
 class CategoriesViewModel : NSObject {
     
-    let networkService = Networking()
+    var networkService = Networking()
     var bindingCategoriesViewModelToView : (()->()) = {}
     var bindingErrorToView : (()->()) = {}
     
-    var allProducts:[Product]{
+    var allProducts:[Product]!{
         didSet {
             self.bindingCategoriesViewModelToView()
         }
@@ -26,11 +26,23 @@ class CategoriesViewModel : NSObject {
         }
     }
 
-//    override init() {
-//        super.init()
-//        self.networkService = Networking()
-//
-//    }
+    override init() {
+        super.init()
+        self.networkService = Networking()
+        self.fetchProductsfromAPI()
+
+    }
+    
+    func fetchProductsfromAPI(){
+        networkService.getAllProductsInCategory { products, error in
+            if let productsList = products {
+                self.allProducts=productsList.products!
+            }else{
+                let messege = error?.localizedDescription
+                self.errorMessage=messege
+            }
+        }
+    }
     
     
     

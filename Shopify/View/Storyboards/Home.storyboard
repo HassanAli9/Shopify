@@ -42,14 +42,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Dui-3D-ica">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="JRr-jn-wBP">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart" catalog="system" id="ILO-cH-lMm">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </barButtonItem>
                             <barButtonItem image="cart" catalog="system" id="dcd-pC-fYY">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -84,6 +84,9 @@
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
