@@ -38,8 +38,8 @@ class CategoriesViewModel : NSObject {
             if let productsList = products {
                 self.allProducts=productsList.products!
             }else{
-                let messege = error?.localizedDescription
-                self.errorMessage=messege
+                let msg = error?.localizedDescription
+                self.errorMessage  = msg
             }
         }
     }
