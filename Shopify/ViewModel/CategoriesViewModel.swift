@@ -2,11 +2,10 @@
 //  CategoriesViewModel.swift
 //  Shopify
 //
-//  Created by Omar Ahmed on 14/03/2022.
+//  Created by Omar Ahmed on 15/03/2022.
 //
 
 import Foundation
-
 
 class CategoriesViewModel : NSObject {
     
@@ -38,8 +37,8 @@ class CategoriesViewModel : NSObject {
             if let productsList = products {
                 self.allProducts=productsList.products!
             }else{
-                let msg = error?.localizedDescription
-                self.errorMessage  = msg
+                let messege = error?.localizedDescription
+                self.errorMessage=messege
             }
         }
     }
