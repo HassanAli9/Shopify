@@ -73,7 +73,7 @@ class CategoriesVC: UIViewController {
 extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.6)
+        return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.62)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
