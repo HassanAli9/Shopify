@@ -20,11 +20,15 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="duH-qp-oNG">
                                 <rect key="frame" x="16" y="113" width="358" height="32"/>
                                 <segments>
-                                    <segment title="All"/>
-                                    <segment title="Men"/>
-                                    <segment title="Woman"/>
-                                    <segment title="Kids"/>
+                                    <segment title="MEN"/>
+                                    <segment title="WOMAN"/>
+                                    <segment title="KIDS"/>
+                                    <segment title="SALE"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.0" green="0.67843137254901964" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segDidChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Noq-4o-Voy"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tzr-Tr-hSb">
                                 <rect key="frame" x="16" y="152" width="358" height="692"/>
@@ -76,6 +80,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="tzr-Tr-hSb" id="Nwl-H0-jMZ"/>
+                        <outlet property="segmentedControl" destination="duH-qp-oNG" id="Zi0-Ly-CEx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

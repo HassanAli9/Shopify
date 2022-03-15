@@ -38,9 +38,9 @@ extension Networking{
     }
     
     
-    func getAllProductsInCategory(complition: @escaping (Products?,Error?)->Void){
+    func getAllProductsInCategory(complition: @escaping (Products?,Error?)->Void,collectionID:Int){
         
-        guard let url = URLs.shared.getAllProductsInCategories() else {return}
+        guard let url = URLs.shared.filterProductsByMainCategory(collectionId:collectionID) else {return}
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response {
             result in
             switch result.result {
@@ -59,7 +59,6 @@ extension Networking{
             
             }
         }
-        
     }
     
     
