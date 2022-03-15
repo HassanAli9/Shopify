@@ -23,8 +23,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jt4-Je-x0y">
                                 <rect key="frame" x="8" y="8" width="284" height="284"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-fz-kGl">
-                                        <rect key="frame" x="0.0" y="1.5" width="284" height="222.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="33" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-fz-kGl">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="225.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name zzzzzzzzzzzzzzzzzzzzz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cS-N1-92H">
                                         <rect key="frame" x="0.0" y="235.5" width="284" height="20.5"/>
@@ -60,7 +60,7 @@
             </constraints>
             <size key="customSize" width="313" height="219"/>
             <connections>
-                <outlet property="productImageView" destination="39U-dU-1gW" id="0yl-jW-WS3"/>
+                <outlet property="productImageView" destination="iJe-fz-kGl" id="8Vv-72-XkP"/>
                 <outlet property="productNameLabel" destination="0cS-N1-92H" id="KCF-8a-fym"/>
                 <outlet property="productPriceLabel" destination="e3M-LO-Ltm" id="0Pu-mt-7TY"/>
                 <outlet property="productView" destination="39U-dU-1gW" id="duU-hb-uNp"/>
@@ -69,7 +69,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="33" width="1800" height="2300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
