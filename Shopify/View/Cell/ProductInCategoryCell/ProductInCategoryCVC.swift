@@ -12,6 +12,10 @@ class ProductInCategoryCVC: UICollectionViewCell {
     @IBOutlet weak var productPriceCat: UILabel!
     @IBOutlet weak var productNameCat: UILabel!
     @IBOutlet weak var productImgViewCat: UIImageView!
+    
+    @IBOutlet weak var favView: UIView!
+    @IBOutlet weak var favButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
