@@ -11,13 +11,13 @@
         <!--Cart-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="OrdersVC" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OrdersVC" id="Y6W-OH-hqX" customClass="OrdersVC" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-CI-E7i">
-                                <rect key="frame" x="16" y="749" width="358" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-CI-E7i">
+                                <rect key="frame" x="16" y="737" width="358" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -31,13 +31,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
-                                <rect key="frame" x="16" y="676" width="117" height="22"/>
+                                <rect key="frame" x="16" y="685.66666666666663" width="117" height="22"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-lI-iwz">
-                                <rect key="frame" x="0.0" y="88" width="390" height="564"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-lI-iwz">
+                                <rect key="frame" x="0.0" y="88" width="390" height="573.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="rbb-O4-Z2P"/>
@@ -50,8 +50,8 @@
                         <constraints>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0hF-CW-DYL"/>
                             <constraint firstItem="kl1-gO-h5z" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="24" id="JDO-yj-oBv"/>
-                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="kl1-gO-h5z" secondAttribute="bottom" constant="51" id="K7q-gY-6zb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kt2-CI-E7i" secondAttribute="bottom" constant="25" id="KDm-Ad-HSF"/>
+                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="kl1-gO-h5z" secondAttribute="bottom" constant="38.666666666666629" id="K7q-gY-6zb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kt2-CI-E7i" secondAttribute="bottom" constant="28" id="KDm-Ad-HSF"/>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Mb6-7G-vus"/>
                             <constraint firstItem="kl1-gO-h5z" firstAttribute="leading" secondItem="kt2-CI-E7i" secondAttribute="leading" id="ODv-JG-iXD"/>
                             <constraint firstItem="kt2-CI-E7i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="QJp-jH-3iV"/>
@@ -75,9 +75,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UyT-9Q-j62" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fhI-Po-qgC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.backward" catalog="system" id="fhI-Po-qgC">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -90,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

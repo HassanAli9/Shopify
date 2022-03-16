@@ -126,6 +126,8 @@ class CategoriesVC: UIViewController {
     }
     
     @IBAction func toCart(_ sender: Any) {
+        let cartCV = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        self.navigationController?.pushViewController(cartCV, animated: true)
     }
     
     @IBAction func toWishlist(_ sender: Any) {
@@ -155,7 +157,6 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.productImgViewCat.layer.cornerRadius=20
         cell.favView.layer.shadowRadius=2
         cell.favView.layer.shadowOpacity=0.5
-        
         if(isFiltered){
             cell.productImgViewCat.kf.indicatorType = .activity
             if let prodImage = FilterdArr[indexPath.row].image?.src {
