@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OrdersVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="OrdersVC" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-CI-E7i">
+                                <rect key="frame" x="16" y="749" width="358" height="36"/>
+                                <color key="backgroundColor" red="0.35771218220000001" green="0.66532809989999997" blue="1" alpha="0.26634923669999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Procced To Checkout">
+                                    <fontDescription key="titleFontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
+                                <rect key="frame" x="16" y="660" width="117" height="22"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-lI-iwz">
+                                <rect key="frame" x="0.0" y="44" width="390" height="608"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="rbb-O4-Z2P"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="dp5-FL-Viv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0hF-CW-DYL"/>
+                            <constraint firstItem="kl1-gO-h5z" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="8" symbolic="YES" id="JDO-yj-oBv"/>
+                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="kl1-gO-h5z" secondAttribute="bottom" constant="67" id="K7q-gY-6zb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kt2-CI-E7i" secondAttribute="bottom" constant="25" id="KDm-Ad-HSF"/>
+                            <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Mb6-7G-vus"/>
+                            <constraint firstItem="kl1-gO-h5z" firstAttribute="leading" secondItem="kt2-CI-E7i" secondAttribute="leading" id="ODv-JG-iXD"/>
+                            <constraint firstItem="kt2-CI-E7i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="QJp-jH-3iV"/>
+                            <constraint firstItem="4S9-lI-iwz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZpJ-or-VGo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kt2-CI-E7i" secondAttribute="trailing" constant="16" id="nbl-gw-7BV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4S9-lI-iwz" secondAttribute="trailing" id="xGm-1R-1AO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4S9-lI-iwz" id="EuE-Vj-CSc"/>
+                        <outlet property="totalPriceLabel" destination="kl1-gO-h5z" id="D3I-oi-t2C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29.23076923076923" y="83.886255924170612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

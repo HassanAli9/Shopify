@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C09DF2E27DFAEA600034B74 /* OrdersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09DF2C27DFAEA600034B74 /* OrdersTVC.swift */; };
+		5C09DF2F27DFAEA600034B74 /* OrdersTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C09DF2D27DFAEA600034B74 /* OrdersTVC.xib */; };
+		5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09DF3127DFAEBC00034B74 /* OrdersVC.swift */; };
+		5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09DF3227DFAEBC00034B74 /* OrdersVC+TVC.swift */; };
+		5C09DF3627DFAECE00034B74 /* orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C09DF3527DFAECE00034B74 /* orders.storyboard */; };
 		5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1627DF9C940051462D /* AppDelegate.swift */; };
 		5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1827DF9C940051462D /* SceneDelegate.swift */; };
 		5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C5B8A1C27DF9C940051462D /* Main.storyboard */; };
@@ -27,12 +32,12 @@
 		853D5A5D27DFC46E00D287A4 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5727DFC46E00D287A4 /* Product.swift */; };
 		853D5A5E27DFC46E00D287A4 /* Variants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5827DFC46E00D287A4 /* Variants.swift */; };
 		853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5927DFC46E00D287A4 /* Images.swift */; };
+		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
+		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
 		85DE38AB27E0D59000601A7E /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */; };
 		85DE38B027E0E74700601A7E /* Custom_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AF27E0E74700601A7E /* Custom_collections.swift */; };
-		CD2E8CEA27DFAABA0046C06D /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CE627DFAABA0046C06D /* Rules.swift */; };
-		CD2E8CEB27DFAABA0046C06D /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CE727DFAABA0046C06D /* BrandsModel.swift */; };
-		CD2E8CEC27DFAABA0046C06D /* Smart_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CE827DFAABA0046C06D /* Smart_collections.swift */; };
-		CD2E8CED27DFAABA0046C06D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CE927DFAABA0046C06D /* Image.swift */; };
+		85DE38B227E17BE500601A7E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85DE38B127E17BE500601A7E /* Profile.storyboard */; };
+		85DE38B427E17E6C00601A7E /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38B327E17E6C00601A7E /* MyProfileViewController.swift */; };
 		CD2E8CEF27DFAB210046C06D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CEE27DFAB210046C06D /* Networking.swift */; };
 		CD2E8CF127DFAB8A0046C06D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CF027DFAB8A0046C06D /* HomeViewModel.swift */; };
 		CD2E8CF327DFABBF0046C06D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8CF227DFABBF0046C06D /* HomeViewController.swift */; };
@@ -69,6 +74,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C09DF2C27DFAEA600034B74 /* OrdersTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersTVC.swift; sourceTree = "<group>"; };
+		5C09DF2D27DFAEA600034B74 /* OrdersTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersTVC.xib; sourceTree = "<group>"; };
+		5C09DF3127DFAEBC00034B74 /* OrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		5C09DF3227DFAEBC00034B74 /* OrdersVC+TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrdersVC+TVC.swift"; sourceTree = "<group>"; };
+		5C09DF3527DFAECE00034B74 /* orders.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = orders.storyboard; sourceTree = "<group>"; };
 		5C5B8A1327DF9C940051462D /* Shopify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5B8A1627DF9C940051462D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C5B8A1827DF9C940051462D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,12 +105,12 @@
 		853D5A5727DFC46E00D287A4 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		853D5A5827DFC46E00D287A4 /* Variants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variants.swift; sourceTree = "<group>"; };
 		853D5A5927DFC46E00D287A4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
+		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		85DE38AF27E0E74700601A7E /* Custom_collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Custom_collections.swift; path = POJOs/CustomCollections/Custom_collections.swift; sourceTree = SOURCE_ROOT; };
-		CD2E8CE627DFAABA0046C06D /* Rules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rules.swift; path = POJOs/Rules.swift; sourceTree = SOURCE_ROOT; };
-		CD2E8CE727DFAABA0046C06D /* BrandsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandsModel.swift; path = POJOs/BrandsModel.swift; sourceTree = SOURCE_ROOT; };
-		CD2E8CE827DFAABA0046C06D /* Smart_collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Smart_collections.swift; path = POJOs/Smart_collections.swift; sourceTree = SOURCE_ROOT; };
-		CD2E8CE927DFAABA0046C06D /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = POJOs/Image.swift; sourceTree = SOURCE_ROOT; };
+		85DE38B127E17BE500601A7E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		85DE38B327E17E6C00601A7E /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		CD2E8CEE27DFAB210046C06D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = Shopify/Networking.swift; sourceTree = SOURCE_ROOT; };
 		CD2E8CF027DFAB8A0046C06D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Shopify/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		CD2E8CF227DFABBF0046C06D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +155,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C09DF2B27DFAEA600034B74 /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				5C09DF2C27DFAEA600034B74 /* OrdersTVC.swift */,
+				5C09DF2D27DFAEA600034B74 /* OrdersTVC.xib */,
+			);
+			path = orders;
+			sourceTree = "<group>";
+		};
+		5C09DF3027DFAEBC00034B74 /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				5C09DF3127DFAEBC00034B74 /* OrdersVC.swift */,
+				5C09DF3227DFAEBC00034B74 /* OrdersVC+TVC.swift */,
+			);
+			path = orders;
+			sourceTree = "<group>";
+		};
 		5C5B8A0A27DF9C940051462D = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +302,10 @@
 			children = (
 				CD2E8CF227DFABBF0046C06D /* HomeViewController.swift */,
 				853D5A4B27DFAF1600D287A4 /* CategoriesVC.swift */,
+				85DE38B327E17E6C00601A7E /* MyProfileViewController.swift */,
+				8544C17927E242E0000072D5 /* GuestProfileViewController.swift */,
+				8544C17B27E247D4000072D5 /* AboutUsViewController.swift */,
+				5C09DF3027DFAEBC00034B74 /* orders */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +315,7 @@
 			children = (
 				CD2E8CF627DFABF80046C06D /* Home */,
 				853D5A4E27DFAF4B00D287A4 /* ProductInCategoryCell */,
+				5C09DF2B27DFAEA600034B74 /* orders */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -293,6 +326,8 @@
 				5C5B8A1C27DF9C940051462D /* Main.storyboard */,
 				CD2E8CF427DFABDD0046C06D /* Home.storyboard */,
 				853D5A4927DFAF0B00D287A4 /* Categories.storyboard */,
+				85DE38B127E17BE500601A7E /* Profile.storyboard */,
+				5C09DF3527DFAECE00034B74 /* orders.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -527,11 +562,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2E8D0427DFABF80046C06D /* HomeCollectionViewCell.xib in Resources */,
+				85DE38B227E17BE500601A7E /* Profile.storyboard in Resources */,
 				CD2E8D0827DFABF80046C06D /* HomeTableViewCell.xib in Resources */,
 				CD2E8D0627DFABF80046C06D /* BrandsTableViewCell.xib in Resources */,
 				5C5B8A2627DF9C960051462D /* LaunchScreen.storyboard in Resources */,
+				5C09DF3627DFAECE00034B74 /* orders.storyboard in Resources */,
 				5C5B8A2327DF9C960051462D /* Assets.xcassets in Resources */,
 				853D5A4A27DFAF0B00D287A4 /* Categories.storyboard in Resources */,
+				5C09DF2F27DFAEA600034B74 /* OrdersTVC.xib in Resources */,
 				5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */,
 				CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */,
 				CD2E8CF527DFABDD0046C06D /* Home.storyboard in Resources */,
@@ -602,6 +640,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */,
+				8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */,
+				5C09DF2E27DFAEA600034B74 /* OrdersTVC.swift in Sources */,
+				5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */,
 				5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */,
 				853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */,
 				853D5A5C27DFC46E00D287A4 /* ProductImage.swift in Sources */,
@@ -614,9 +656,11 @@
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
 				CD3E36B327E174E2007DFC5E /* Image.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
+				5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
 				CD2E8CF327DFABBF0046C06D /* HomeViewController.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
+				85DE38B427E17E6C00601A7E /* MyProfileViewController.swift in Sources */,
 				853D5A5B27DFC46E00D287A4 /* Products.swift in Sources */,
 				853D5A5D27DFC46E00D287A4 /* Product.swift in Sources */,
 				CD2E8D0327DFABF80046C06D /* HomeCollectionViewCell.swift in Sources */,
@@ -811,6 +855,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = orders;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -840,6 +885,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = orders;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
