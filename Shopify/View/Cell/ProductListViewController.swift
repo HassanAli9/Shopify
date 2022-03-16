@@ -8,31 +8,46 @@
 import UIKit
 import Kingfisher
 
-class ProductListViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
+class ProductListViewController: UIViewController{
+   
+    
 
     var products = [Product]()
-    
+    var productsViewModel = ProductViewModel()
+    var filteredProducts : [Product]!
+    var isFiltered = false
+    @IBOutlet weak var productSearchbar: UISearchBar!
     @IBOutlet weak var productListCollectionView: UICollectionView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupProductCollection()
-        Networking.shared.getAllProducts { data, error in
-            guard let data = data else {
-                return
-            }
-            self.products = data
-            print(self.products.first?.title)
-            self.updateUi()
-        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
     }
-    
-    private func setupProductCollection(){
-        self.productListCollectionView.delegate = self
-        self.productListCollectionView.dataSource = self
-        self.productListCollectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: ProductListCell.identifier)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupProductCollection()
+        setProducts()
+        filteredProducts = products
     }
+    
+   private func setupProductCollection(){
+        productListCollectionView.delegate = self
+        productListCollectionView.dataSource = self
+        productSearchbar.delegate = self
+        productListCollectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: ProductListCell.identifier)
+    }
+    private func setProducts(){
+        productsViewModel.bindSuccessToView = {
+        self.products = self.productsViewModel.products
+        self.updateUi()
+        }
+        
+        productsViewModel.bindFailedToView = {
+            print("error in setting data to View")
+        }
+    }
+    
     private func updateUi(){
         DispatchQueue.main.async {
         self.productListCollectionView.reloadData()
@@ -41,21 +56,34 @@ class ProductListViewController: UIViewController,UICollectionViewDelegate, UICo
 
 }
 
-extension ProductListViewController{
+extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        if !isFiltered {
+            return products.count
+        }else{
+            return filteredProducts.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.identifier, for: indexPath) as! ProductListCell
+        if filteredProducts.count != 0{
+            
+            productCell.productNameLabel.text = filteredProducts[indexPath.row].title
+            productCell.productImageView.kf.setImage(with: URL(string: filteredProducts[indexPath.row].image?.src ?? ""))
+            productCell.productImageView.kf.indicatorType = .activity
+            if  let variant = filteredProducts[indexPath.row].variants, let price = variant[0].price {
+                productCell.productPriceLabel.text = price + "$"
+            }
+        }else{
         productCell.productNameLabel.text = products[indexPath.row].title
         productCell.productImageView.kf.setImage(with: URL(string: products[indexPath.row].image?.src ?? ""))
-    
+            productCell.productImageView.kf.indicatorType = .activity
         if  let variant = products[indexPath.row].variants, let price = variant[0].price {
-            productCell.productPriceLabel.text = price
+            productCell.productPriceLabel.text = price + "$"
         }
-        
+        }
         return productCell
     }
     
@@ -63,5 +91,29 @@ extension ProductListViewController{
         return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.6)
     }
 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            isFiltered = true
+        }
+
+        func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+            isFiltered = false
+        }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredProducts = []
+        if searchText == ""{
+            filteredProducts = products
+        }else{
+           
+            for product in products{
+                guard let title = product.title else{return}
+                if title.hasPrefix(searchText) || title.hasPrefix(searchText.uppercased()){
+                    filteredProducts.append(product)
+                }
+            }
+        }
+        self.updateUi()
+    }
     
 }
