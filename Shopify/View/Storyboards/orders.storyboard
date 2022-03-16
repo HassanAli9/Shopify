@@ -56,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="4S9-lI-iwz" id="EuE-Vj-CSc"/>
-                        <outlet property="totalPriceLabel" destination="kl1-gO-h5z" id="sTi-wb-Nt0"/>
+                        <outlet property="totalPriceLabel" destination="kl1-gO-h5z" id="D3I-oi-t2C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
