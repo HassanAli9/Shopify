@@ -10,6 +10,7 @@ import Foundation
 class CategoriesViewModel : NSObject {
     
     var networkService = Networking()
+    
 //    var bindingCategoriesViewModelToView : (()->()) = {}
 //    var bindingErrorToView : (()->()) = {}
     
@@ -50,11 +51,4 @@ class CategoriesViewModel : NSObject {
         networkService.getAllProductsInCategory(complition: complition, collectionID: collectioID)
         
     }
-    
-//    func filterDataByProductType(categoryName:String)->[Product]{
-//
-//    }
-    
-  
-        
 }

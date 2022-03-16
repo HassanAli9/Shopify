@@ -10,10 +10,13 @@ import Floaty
 
 class CategoriesVC: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
+    
+    
     let floaty = Floaty()
     var ArrayOfProduct : [Product] = []
     var categoryViewModel = CategoriesViewModel()
@@ -29,9 +32,10 @@ class CategoriesVC: UIViewController {
         
         // Float Action button animation style
         makeFloatyStyleButton()
-        
+        spinner.hidesWhenStopped=true
+        spinner.startAnimating()
         categorizedTheProducts(cID: collectionID)
-        
+        spinner.stopAnimating()
         
     }
     
@@ -118,7 +122,15 @@ class CategoriesVC: UIViewController {
         view.addSubview(floaty)
     }
     
-
+    @IBAction func toSearch(_ sender: Any) {
+    }
+    
+    @IBAction func toCart(_ sender: Any) {
+    }
+    
+    @IBAction func toWishlist(_ sender: Any) {
+    }
+    
 }
 
 
@@ -140,6 +152,7 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductInCatCell", for: indexPath) as! ProductInCategoryCVC
         
+        cell.productImgViewCat.layer.cornerRadius=20
         if(isFiltered){
             cell.productImgViewCat.kf.indicatorType = .activity
             if let prodImage = FilterdArr[indexPath.row].image?.src {
@@ -158,6 +171,10 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Selected")
     }
     
 }
