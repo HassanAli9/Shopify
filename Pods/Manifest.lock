@@ -1,11 +1,13 @@
 PODS:
   - Alamofire (5.5.0)
+  - Cosmos (23.0.0)
   - Floaty (4.2.0)
   - Kingfisher (7.2.0)
   - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
+  - Cosmos (~> 23.0)
   - Floaty (~> 4.2.0)
   - Kingfisher (~> 7.0)
   - ReachabilitySwift
@@ -13,16 +15,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - Floaty
     - Kingfisher
     - ReachabilitySwift
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: bfc16ddaa0be347d61bda80453dc3c73b63ada30
+PODFILE CHECKSUM: 08a70bbaf2168ea68a3fdf28f8fb269a8d0194a3
 
 COCOAPODS: 1.11.2
