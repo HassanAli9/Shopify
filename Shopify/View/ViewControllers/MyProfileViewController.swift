@@ -9,6 +9,8 @@ import UIKit
 
 class MyProfileViewController: UIViewController {
 
+    @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +19,13 @@ class MyProfileViewController: UIViewController {
 
     }
     
+    @IBAction func editProfileAction(_ sender: Any) {
+    }
+    
 
-  
+    @IBAction func logOutAction(_ sender: Any) {
+    }
+    
 
 }
 
@@ -44,7 +51,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             return 2
         case 1:
-            return 2
+            return 1
         default:
             return 2
         }
@@ -57,30 +64,23 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
             switch indexPath.row {
             case 0:
                 cell.imageView?.image=UIImage(systemName: "bag")
-                cell.imageView?.tintColor = .black
+                cell.imageView?.tintColor = .label
                 cell.textLabel?.text="My Orders"
                 cell.accessoryType = .disclosureIndicator
             default:
                 cell.imageView?.image=UIImage(systemName: "heart")
                 cell.textLabel?.text="My Wishlist"
-                cell.imageView?.tintColor = .black
+                cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
 
             }
         case 1:
             switch indexPath.row {
-            case 0:
+            default:
                 cell.imageView?.image=UIImage(systemName: "homekit")
                 cell.textLabel?.text="My Addresses"
-                cell.imageView?.tintColor = .black
+                cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
-
-            default:
-                cell.imageView?.image=UIImage(systemName: "heart")
-                cell.textLabel?.text="My Wishlist"
-                cell.imageView?.tintColor = .black
-                cell.accessoryType = .disclosureIndicator
-
             }
             
         default:
@@ -88,12 +88,12 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
             case 0:
                 cell.imageView?.image=UIImage(systemName: "info.circle")
                 cell.textLabel?.text="About us"
-                cell.imageView?.tintColor = .black
+                cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
             default:
-                cell.imageView?.image=UIImage(systemName: "teletype")
+                cell.imageView?.image=UIImage(systemName: "mail")
                 cell.textLabel?.text="Contact us"
-                cell.imageView?.tintColor = .black
+                cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
             }
             
