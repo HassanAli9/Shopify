@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ordersTVC" rowHeight="150" id="KGk-i7-Jjw" customClass="OrdersTVC" customModule="Shopify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-lJ-gqx">
+                        <rect key="frame" x="318" y="10" width="41" height="31.5"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="T-Shirt Polo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-JL-Em5">
+                        <rect key="frame" x="138.5" y="15" width="90.5" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-aQ-fN3">
+                        <rect key="frame" x="141" y="63" width="68.5" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="33" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
+                        <rect key="frame" x="20" y="11" width="106.5" height="125"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSv-xL-toY">
+                        <rect key="frame" x="252.5" y="109" width="31" height="31"/>
+                        <color key="backgroundColor" red="0.35771218218983558" green="0.6653280998902642" blue="1" alpha="0.10049529422987376" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="TAn-WE-oDb"/>
+                            <constraint firstAttribute="width" constant="31" id="td2-1e-jOD"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="minus" catalog="system" symbolScale="medium"/>
+                        </buttonConfiguration>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-ze-VoX">
+                        <rect key="frame" x="320" y="109" width="31" height="31"/>
+                        <color key="backgroundColor" red="0.35771218218983558" green="0.6653280998902642" blue="1" alpha="0.11464362744463991" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="31" id="UaU-Jq-fqJ"/>
+                            <constraint firstAttribute="height" constant="31" id="uTO-wg-5Be"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="plus" catalog="system" symbolScale="medium"/>
+                        </buttonConfiguration>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5g-Ne-N4r">
+                        <rect key="frame" x="144.5" y="108" width="44" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-95-TMk">
+                        <rect key="frame" x="291.5" y="114" width="20.5" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-8.25" id="9Wa-y8-gpu"/>
+                    <constraint firstItem="Cuv-JL-Em5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="AFG-81-e7c"/>
+                    <constraint firstItem="H5g-Ne-N4r" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="BxS-su-1uj"/>
+                    <constraint firstItem="H5g-Ne-N4r" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="18" id="Cfr-01-iul"/>
+                    <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="12" id="G0W-1D-BPB"/>
+                    <constraint firstAttribute="bottom" secondItem="bSv-xL-toY" secondAttribute="bottom" constant="10" id="GS3-G2-wwM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="tdW-95-TMk" secondAttribute="bottom" constant="3.5" id="Hc0-ZB-NGw"/>
+                    <constraint firstItem="PhY-lJ-gqx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JYd-pY-u1j"/>
+                    <constraint firstItem="Kcc-43-poD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="OQe-Fr-GEu"/>
+                    <constraint firstAttribute="trailing" secondItem="d6V-ze-VoX" secondAttribute="trailing" constant="16" id="Q2F-k7-JW2"/>
+                    <constraint firstItem="PhY-lJ-gqx" firstAttribute="leading" secondItem="Cuv-JL-Em5" secondAttribute="trailing" constant="89" id="Uvc-78-LyN"/>
+                    <constraint firstAttribute="bottom" secondItem="d6V-ze-VoX" secondAttribute="bottom" constant="10" id="bGl-Fb-eoO"/>
+                    <constraint firstItem="tdW-95-TMk" firstAttribute="leading" secondItem="bSv-xL-toY" secondAttribute="trailing" constant="8" id="bqa-sL-jr2"/>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="top" secondItem="Cuv-JL-Em5" secondAttribute="bottom" constant="26.5" id="g3O-J4-hyf"/>
+                    <constraint firstAttribute="bottom" secondItem="Kcc-43-poD" secondAttribute="bottom" constant="14" id="gEB-eI-0Zv"/>
+                    <constraint firstItem="Kcc-43-poD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kcA-nS-K5B"/>
+                    <constraint firstAttribute="trailing" secondItem="PhY-lJ-gqx" secondAttribute="trailing" constant="8" id="mQi-aM-bn3"/>
+                    <constraint firstItem="Cuv-JL-Em5" firstAttribute="centerY" secondItem="PhY-lJ-gqx" secondAttribute="centerY" id="rhn-8c-Ff1"/>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="14.5" id="t9p-BC-XIH"/>
+                    <constraint firstItem="d6V-ze-VoX" firstAttribute="leading" secondItem="tdW-95-TMk" secondAttribute="trailing" constant="8" id="vck-MM-984"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgView" destination="Kcc-43-poD" id="hEd-fB-prq"/>
+                <outlet property="priceLabel" destination="Xcq-aQ-fN3" id="h66-A9-89O"/>
+                <outlet property="quantityLabel" destination="tdW-95-TMk" id="3SQ-qM-Eus"/>
+                <outlet property="titleLabel" destination="Cuv-JL-Em5" id="ykM-7u-dgd"/>
+            </connections>
+            <point key="canvasLocation" x="184.78260869565219" y="95.758928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="33" width="1800" height="2300"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+    </resources>
+</document>
