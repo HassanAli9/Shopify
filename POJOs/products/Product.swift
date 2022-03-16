@@ -8,8 +8,8 @@ struct Product : Codable {
 	let vendor : String?
 	let product_type : String?
 	let variants : [Variants]?
-	let images : [Images]?
-	let image : Image?
+	let images : [ProductImages]?
+	let image : ProductImage?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -31,8 +31,8 @@ struct Product : Codable {
 		vendor = try values.decodeIfPresent(String.self, forKey: .vendor)
 		product_type = try values.decodeIfPresent(String.self, forKey: .product_type)
 		variants = try values.decodeIfPresent([Variants].self, forKey: .variants)
-		images = try values.decodeIfPresent([Images].self, forKey: .images)
-		image = try values.decodeIfPresent(Image.self, forKey: .image)
+		images = try values.decodeIfPresent([ProductImages].self, forKey: .images)
+		image = try values.decodeIfPresent(ProductImage.self, forKey: .image)
 	}
 
 }

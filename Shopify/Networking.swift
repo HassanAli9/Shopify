@@ -14,6 +14,7 @@ class Networking{
 }
 
 extension Networking{
+    
     func getAllBrands(complition: @escaping (BrandsModel?, Error?)->Void){
         
         guard let url = URLs.shared.getAllBrandsURl() else {return}
@@ -35,5 +36,32 @@ extension Networking{
             }
         }
     }
+    
+    
+    func getAllProductsInCategory(complition: @escaping (Products?,Error?)->Void){
+        
+        guard let url = URLs.shared.getAllProductsInCategories() else {return}
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response {
+            result in
+            switch result.result {
+            case .failure(let error):
+                complition(nil,error)
+            case .success(_):
+                guard let data = result.data else {return}
+                do{
+                    let json = try JSONDecoder().decode(Products.self, from: data)
+                    complition(json, nil)
+                    print("Success")
+                    
+                }catch let error{
+                    complition(nil, error)
+                }
+            
+            }
+        }
+        
+    }
+    
+    
 }
 

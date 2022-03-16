@@ -58,7 +58,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         case 0:
             height = 210
         default:
-            height = view.frame.height
+            height = view.frame.height * 1.5
         }
         return height
     }
@@ -67,10 +67,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         var title = ""
         switch section{
         case 0:
-            title = "Ads"
+            title = ""
         default:
             title = "Brands"
         }
         return title
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Optima", size: 24)
+        header.textLabel?.textAlignment = NSTextAlignment.center
+        header.textLabel?.textColor = UIColor.black
     }
 }
