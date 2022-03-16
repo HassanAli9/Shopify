@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		390578B627E107080016FC9B /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390578B527E107080016FC9B /* ProductViewModel.swift */; };
 		390578B827E114A30016FC9B /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390578B727E114A30016FC9B /* ProductDetailsViewController.swift */; };
+		397208BB27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397208B927E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.swift */; };
+		397208BC27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397208BA27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.xib */; };
 		397A782427DFAEFC00F618C5 /* ProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 397A782327DFAEFC00F618C5 /* ProductList.storyboard */; };
 		397A782C27DFB03200F618C5 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397A782A27DFB03200F618C5 /* ProductListCell.swift */; };
 		397A782D27DFB03200F618C5 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397A782B27DFB03200F618C5 /* ProductListCell.xib */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		390578B527E107080016FC9B /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductViewModel.swift; path = Shopify/View/Cell/ProductViewModel.swift; sourceTree = SOURCE_ROOT; };
 		390578B727E114A30016FC9B /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		397208B927E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsImageCollectionCell.swift; sourceTree = "<group>"; };
+		397208BA27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsImageCollectionCell.xib; sourceTree = "<group>"; };
 		397A782327DFAEFC00F618C5 /* ProductList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductList.storyboard; sourceTree = "<group>"; };
 		397A782A27DFB03200F618C5 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		397A782B27DFB03200F618C5 /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
@@ -145,6 +149,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		397208B827E23CEC0099C8C3 /* ProductDetailsImageCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				397208B927E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.swift */,
+				397208BA27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.xib */,
+			);
+			path = ProductDetailsImageCollectionCell;
+			sourceTree = "<group>";
+		};
 		397A782E27DFB03C00F618C5 /* ProductListCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +307,7 @@
 		5C5B8A5427DF9D760051462D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				397208B827E23CEC0099C8C3 /* ProductDetailsImageCollectionCell */,
 				397A782E27DFB03C00F618C5 /* ProductListCollectionCell */,
 				CD2E8CF627DFABF80046C06D /* Home */,
 				853D5A4E27DFAF4B00D287A4 /* ProductInCategoryCell */,
@@ -534,6 +548,7 @@
 				CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */,
 				CD2E8CF527DFABDD0046C06D /* Home.storyboard in Resources */,
 				853D5A5227DFAF5D00D287A4 /* ProductInCategoryCVC.xib in Resources */,
+				397208BC27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +628,7 @@
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
+				397208BB27E23F5E0099C8C3 /* ProductDetailsImageCollectionCell.swift in Sources */,
 				CD2E8CF327DFABBF0046C06D /* HomeViewController.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
 				397A783027DFB18A00F618C5 /* ProductListViewController.swift in Sources */,

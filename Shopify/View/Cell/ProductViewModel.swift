@@ -21,7 +21,7 @@ class ProductViewModel{
             self.bindFailedToView()
         }
     }
-    
+    var selectedProduct : Product?
     init(){
         self.fetchProductDataFromNetwork()
     }
@@ -34,5 +34,11 @@ class ProductViewModel{
                 self.error = error
             }
         }
+    }
+}
+extension ProductViewModel{
+    func userPressed(at indexPath : IndexPath){
+        let product = self.products[indexPath.row]
+        self.selectedProduct = product
     }
 }

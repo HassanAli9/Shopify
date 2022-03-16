@@ -81,7 +81,7 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
         productCell.productImageView.kf.setImage(with: URL(string: products[indexPath.row].image?.src ?? ""))
             productCell.productImageView.kf.indicatorType = .activity
         if  let variant = products[indexPath.row].variants, let price = variant[0].price {
-            productCell.productPriceLabel.text = price + "$"
+            productCell.productPriceLabel.text = price + " $"
         }
         }
         return productCell
@@ -91,6 +91,14 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
         return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.6)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("did select cell")
+        
+         let product = products[indexPath.row]
+        let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        productDetailsVC.product = product
+        self.navigationController?.pushViewController(productDetailsVC, animated: true)
+    }
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             isFiltered = true
         }
