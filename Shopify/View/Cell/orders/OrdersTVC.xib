@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
-                        <rect key="frame" x="20" y="11" width="103" height="125"/>
+                        <rect key="frame" x="20" y="11" width="98" height="125"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSv-xL-toY">
                         <rect key="frame" x="252.5" y="109" width="31" height="31"/>
@@ -72,7 +72,7 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5g-Ne-N4r">
-                        <rect key="frame" x="141" y="108" width="43" height="31"/>
+                        <rect key="frame" x="136" y="105" width="48" height="34"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                     </button>
@@ -107,6 +107,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgView" destination="Kcc-43-poD" id="hEd-fB-prq"/>
+                <outlet property="priceLabel" destination="Xcq-aQ-fN3" id="h66-A9-89O"/>
+                <outlet property="quantityLabel" destination="tdW-95-TMk" id="3SQ-qM-Eus"/>
+                <outlet property="titleLabel" destination="Cuv-JL-Em5" id="ykM-7u-dgd"/>
+            </connections>
             <point key="canvasLocation" x="184.78260869565219" y="95.758928571428569"/>
         </tableViewCell>
     </objects>
