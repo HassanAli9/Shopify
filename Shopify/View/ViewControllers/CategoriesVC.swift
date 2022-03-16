@@ -153,6 +153,9 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductInCatCell", for: indexPath) as! ProductInCategoryCVC
         
         cell.productImgViewCat.layer.cornerRadius=20
+        cell.favView.layer.shadowRadius=2
+        cell.favView.layer.shadowOpacity=0.5
+        
         if(isFiltered){
             cell.productImgViewCat.kf.indicatorType = .activity
             if let prodImage = FilterdArr[indexPath.row].image?.src {
