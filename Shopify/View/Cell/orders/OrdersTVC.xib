@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,25 +17,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-lJ-gqx">
-                        <rect key="frame" x="312" y="10" width="47.5" height="31.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-lJ-gqx">
+                        <rect key="frame" x="318" y="10" width="41" height="31.5"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="T-Shirt Polo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-JL-Em5">
-                        <rect key="frame" x="141" y="15" width="90.5" height="21.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="T-Shirt Polo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-JL-Em5">
+                        <rect key="frame" x="138.5" y="15" width="90.5" height="21.5"/>
                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-aQ-fN3">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-aQ-fN3">
                         <rect key="frame" x="141" y="63" width="68.5" height="21.5"/>
                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
-                        <rect key="frame" x="20" y="11" width="98" height="125"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="33" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
+                        <rect key="frame" x="20" y="11" width="106.5" height="125"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSv-xL-toY">
                         <rect key="frame" x="252.5" y="109" width="31" height="31"/>
@@ -72,7 +72,7 @@
                         </userDefinedRuntimeAttributes>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5g-Ne-N4r">
-                        <rect key="frame" x="136" y="105" width="48" height="34"/>
+                        <rect key="frame" x="144.5" y="108" width="44" height="31"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                     </button>
@@ -84,25 +84,25 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9Wa-y8-gpu"/>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-8.25" id="9Wa-y8-gpu"/>
                     <constraint firstItem="Cuv-JL-Em5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="AFG-81-e7c"/>
                     <constraint firstItem="H5g-Ne-N4r" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="BxS-su-1uj"/>
                     <constraint firstItem="H5g-Ne-N4r" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="18" id="Cfr-01-iul"/>
-                    <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="23" id="G0W-1D-BPB"/>
+                    <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="12" id="G0W-1D-BPB"/>
                     <constraint firstAttribute="bottom" secondItem="bSv-xL-toY" secondAttribute="bottom" constant="10" id="GS3-G2-wwM"/>
                     <constraint firstAttribute="bottomMargin" secondItem="tdW-95-TMk" secondAttribute="bottom" constant="3.5" id="Hc0-ZB-NGw"/>
                     <constraint firstItem="PhY-lJ-gqx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="JYd-pY-u1j"/>
                     <constraint firstItem="Kcc-43-poD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="OQe-Fr-GEu"/>
                     <constraint firstAttribute="trailing" secondItem="d6V-ze-VoX" secondAttribute="trailing" constant="16" id="Q2F-k7-JW2"/>
-                    <constraint firstItem="PhY-lJ-gqx" firstAttribute="leading" secondItem="Cuv-JL-Em5" secondAttribute="trailing" constant="78" id="Uvc-78-LyN"/>
+                    <constraint firstItem="PhY-lJ-gqx" firstAttribute="leading" secondItem="Cuv-JL-Em5" secondAttribute="trailing" constant="89" id="Uvc-78-LyN"/>
                     <constraint firstAttribute="bottom" secondItem="d6V-ze-VoX" secondAttribute="bottom" constant="10" id="bGl-Fb-eoO"/>
                     <constraint firstItem="tdW-95-TMk" firstAttribute="leading" secondItem="bSv-xL-toY" secondAttribute="trailing" constant="8" id="bqa-sL-jr2"/>
-                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="top" secondItem="Cuv-JL-Em5" secondAttribute="bottom" constant="25" id="g3O-J4-hyf"/>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="top" secondItem="Cuv-JL-Em5" secondAttribute="bottom" constant="26.5" id="g3O-J4-hyf"/>
                     <constraint firstAttribute="bottom" secondItem="Kcc-43-poD" secondAttribute="bottom" constant="14" id="gEB-eI-0Zv"/>
                     <constraint firstItem="Kcc-43-poD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kcA-nS-K5B"/>
                     <constraint firstAttribute="trailing" secondItem="PhY-lJ-gqx" secondAttribute="trailing" constant="8" id="mQi-aM-bn3"/>
                     <constraint firstItem="Cuv-JL-Em5" firstAttribute="centerY" secondItem="PhY-lJ-gqx" secondAttribute="centerY" id="rhn-8c-Ff1"/>
-                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="23" id="t9p-BC-XIH"/>
+                    <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="14.5" id="t9p-BC-XIH"/>
                     <constraint firstItem="d6V-ze-VoX" firstAttribute="leading" secondItem="tdW-95-TMk" secondAttribute="trailing" constant="8" id="vck-MM-984"/>
                 </constraints>
             </tableViewCellContentView>
@@ -117,6 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="33" width="1800" height="2300"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
