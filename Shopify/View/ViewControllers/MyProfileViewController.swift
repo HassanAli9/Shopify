@@ -36,22 +36,18 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         switch section {
         case 0:
             title="My Account"
-        case 1:
-            title="Settings"
         default:
             title="About"
         }
         return title
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 2
-        case 1:
-            return 1
+            return 3
         default:
             return 2
         }
@@ -67,20 +63,17 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.imageView?.tintColor = .label
                 cell.textLabel?.text="My Orders"
                 cell.accessoryType = .disclosureIndicator
-            default:
+            case 1:
                 cell.imageView?.image=UIImage(systemName: "heart")
                 cell.textLabel?.text="My Wishlist"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
-
-            }
-        case 1:
-            switch indexPath.row {
             default:
                 cell.imageView?.image=UIImage(systemName: "homekit")
                 cell.textLabel?.text="My Addresses"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
+
             }
             
         default:
@@ -100,6 +93,29 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+                self.present(aboutUs, animated: true, completion: nil)
+            default:
+                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+                self.present(aboutUs, animated: true, completion: nil)
+            }
+        default:
+            switch indexPath.row {
+            case 0:
+                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+                self.present(aboutUs, animated: true, completion: nil)
+            default:
+                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+                self.present(aboutUs, animated: true, completion: nil)
+            }
+        }
     }
     
     
