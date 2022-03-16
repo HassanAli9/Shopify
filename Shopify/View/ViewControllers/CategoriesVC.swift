@@ -18,6 +18,8 @@ class CategoriesVC: UIViewController {
     var ArrayOfProduct : [Product] = []
     var categoryViewModel = CategoriesViewModel()
     var collectionID : Int = 272069034031
+    var isFiltered = false
+    var FilterdArr:[Product]=[]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,8 @@ class CategoriesVC: UIViewController {
     
     @IBAction func segDidChange(_ sender: Any) {
         print("index = \(segmentedControl.selectedSegmentIndex)")
+        self.FilterdArr=[]
+        isFiltered=false
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             collectionID = 272069034031
@@ -85,9 +89,32 @@ class CategoriesVC: UIViewController {
         floaty.paddingY = 100
         floaty.openAnimationType = .slideLeft
         floaty.buttonImage = UIImage(named: "sort")
-        floaty.addItem("T-Shirts", icon: UIImage(named: "shirt"))
-        floaty.addItem("Shoes", icon: UIImage(named: "shoes"))
-        floaty.addItem("Accessories", icon: UIImage(named: "acc"))
+        floaty.itemButtonColor = .label
+        floaty.itemTitleColor = .label
+        floaty.addItem("T-Shirts", icon: UIImage(named: "shirt")) { item in
+            let filered = self.ArrayOfProduct.filter { item in
+                return item.product_type=="T-SHIRTS"
+            }
+            self.FilterdArr=filered
+            self.isFiltered=true
+            self.categoriesCollectionView.reloadData()
+        }
+        floaty.addItem("Shoes", icon: UIImage(named: "shoes")){ item in
+            let filered = self.ArrayOfProduct.filter { item in
+                return item.product_type=="SHOES"
+            }
+            self.FilterdArr=filered
+            self.isFiltered=true
+            self.categoriesCollectionView.reloadData()
+        }
+        floaty.addItem("Accessories", icon: UIImage(named: "acc")){ item in
+            let filered = self.ArrayOfProduct.filter { item in
+                return item.product_type=="ACCESSORIES"
+            }
+            self.FilterdArr=filered
+            self.isFiltered=true
+            self.categoriesCollectionView.reloadData()
+        }
         view.addSubview(floaty)
     }
     
@@ -103,18 +130,32 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ArrayOfProduct.count
+        if(isFiltered){
+            return FilterdArr.count
+        }else{
+            return ArrayOfProduct.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductInCatCell", for: indexPath) as! ProductInCategoryCVC
         
-        cell.productImgViewCat.kf.indicatorType = .activity
-        if let prodImage = ArrayOfProduct[indexPath.row].image?.src {
-            cell.productImgViewCat.kf.setImage(with: URL(string: prodImage))
+        if(isFiltered){
+            cell.productImgViewCat.kf.indicatorType = .activity
+            if let prodImage = FilterdArr[indexPath.row].image?.src {
+                cell.productImgViewCat.kf.setImage(with: URL(string: prodImage))
+            }
+            cell.productNameCat.text = FilterdArr[indexPath.row].title
+            cell.productPriceCat.text =  "$\(FilterdArr[indexPath.row].variants?[0].price ?? "0")"
+            
+        }else{
+            cell.productImgViewCat.kf.indicatorType = .activity
+            if let prodImage = ArrayOfProduct[indexPath.row].image?.src {
+                cell.productImgViewCat.kf.setImage(with: URL(string: prodImage))
+            }
+            cell.productNameCat.text = ArrayOfProduct[indexPath.row].title
+            cell.productPriceCat.text =  "$\(ArrayOfProduct[indexPath.row].variants?[0].price ?? "0")"
         }
-        cell.productNameCat.text = ArrayOfProduct[indexPath.row].title
-        cell.productPriceCat.text =  "$\(ArrayOfProduct[indexPath.row].variants?[0].price ?? "0")"
         
         return cell
     }

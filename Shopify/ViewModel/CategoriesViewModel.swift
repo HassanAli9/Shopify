@@ -51,11 +51,10 @@ class CategoriesViewModel : NSObject {
         
     }
     
+//    func filterDataByProductType(categoryName:String)->[Product]{
+//
+//    }
+    
   
-    
-    
-    
-   
-    
-    
+        
 }
