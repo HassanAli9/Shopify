@@ -2,6 +2,9 @@ PODS:
   - Alamofire (5.5.0)
   - Floaty (4.2.0)
   - Kingfisher (7.2.0)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - ReachabilitySwift (5.0.0)
   - TextFieldEffects (1.6.0)
 
@@ -9,6 +12,7 @@ DEPENDENCIES:
   - Alamofire (~> 5.5)
   - Floaty (~> 4.2.0)
   - Kingfisher (~> 7.0)
+  - NVActivityIndicatorView
   - ReachabilitySwift
   - TextFieldEffects
 
@@ -17,6 +21,7 @@ SPEC REPOS:
     - Alamofire
     - Floaty
     - Kingfisher
+    - NVActivityIndicatorView
     - ReachabilitySwift
     - TextFieldEffects
 
@@ -24,9 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 5a9b17f27ff5903786affa2ca217425c83256685
+PODFILE CHECKSUM: 6e4bbe5394b4c3a04bd100a9905de7640b52dcab
 
 COCOAPODS: 1.8.4

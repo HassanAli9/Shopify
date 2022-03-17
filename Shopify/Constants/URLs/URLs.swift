@@ -25,7 +25,7 @@ struct URLs{
         return URL(string: baseURL + "products.json?collection_id=\(collectionId)")
     }
     
-    func createNewCustomerURl()-> URL?{
+    func customersURl()-> URL?{
         return URL(string: baseURL + "customers.json")
     }
     
