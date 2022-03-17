@@ -167,6 +167,17 @@
 			path = ProductListCollectionCell;
 			sourceTree = "<group>";
 		};
+		39ECF17D27E3F4750058A415 /* BrandsModel */ = {
+			isa = PBXGroup;
+			children = (
+				39ECF17427E2BF7B0058A415 /* BrandsModel.swift */,
+				39ECF17627E2BF7B0058A415 /* Image.swift */,
+				39ECF17527E2BF7B0058A415 /* Rules.swift */,
+				39ECF17727E2BF7B0058A415 /* Smart_collections.swift */,
+			);
+			path = BrandsModel;
+			sourceTree = "<group>";
+		};
 		5C5B8A0A27DF9C940051462D = {
 			isa = PBXGroup;
 			children = (
@@ -252,10 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				5C5B8A4E27DF9CF90051462D /* POJOs */,
-				39ECF17427E2BF7B0058A415 /* BrandsModel.swift */,
-				39ECF17627E2BF7B0058A415 /* Image.swift */,
-				39ECF17527E2BF7B0058A415 /* Rules.swift */,
-				39ECF17727E2BF7B0058A415 /* Smart_collections.swift */,
 				5C5B8A4D27DF9CE60051462D /* NetworkLayer */,
 			);
 			path = Model;
@@ -273,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				853D5A5327DFC46E00D287A4 /* products */,
+				39ECF17D27E3F4750058A415 /* BrandsModel */,
 			);
 			path = POJOs;
 			sourceTree = "<group>";
