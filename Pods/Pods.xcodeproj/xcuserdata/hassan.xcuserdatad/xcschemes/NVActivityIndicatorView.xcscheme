@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E8022D22FAA6690B5E1C379C1BCE1491"
-               BuildableName = "Kingfisher.framework"
-               BlueprintName = "Kingfisher"
+               BlueprintIdentifier = "AF8A82876C43F4DFD625D1823E680EAC"
+               BuildableName = "NVActivityIndicatorView.framework"
+               BlueprintName = "NVActivityIndicatorView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
