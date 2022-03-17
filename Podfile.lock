@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - Cosmos (23.0.0)
   - Floaty (4.2.0)
   - Kingfisher (7.2.0)
   - NVActivityIndicatorView (5.1.1):
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.5)
+  - Cosmos (~> 23.0)
   - Floaty (~> 4.2.0)
   - Kingfisher (~> 7.0)
   - NVActivityIndicatorView
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
     - Floaty
     - Kingfisher
     - NVActivityIndicatorView
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 6e4bbe5394b4c3a04bd100a9905de7640b52dcab
+PODFILE CHECKSUM: f09db344f49c11fb51c11656a8100e257a44bbdc
 
 COCOAPODS: 1.11.2
