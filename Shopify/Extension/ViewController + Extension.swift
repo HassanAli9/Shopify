@@ -21,14 +21,18 @@ extension UIViewController{
 extension UIViewController{
     func showActivityIndicator(indicator: NVActivityIndicatorView? ,startIndicator: Bool){
         guard let indicator = indicator else {return}
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(indicator)
-        NSLayoutConstraint.activate([
-            indicator.widthAnchor.constraint(equalToConstant: 40),
-            indicator.heightAnchor.constraint(equalToConstant: 40),
-            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        DispatchQueue.main.async {
+            indicator.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(indicator)
+            
+            NSLayoutConstraint.activate([
+                indicator.widthAnchor.constraint(equalToConstant: 40),
+                indicator.heightAnchor.constraint(equalToConstant: 40),
+                indicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+                indicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            ])
+        }
+       
         
         if startIndicator{
             indicator.startAnimating()
