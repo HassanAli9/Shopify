@@ -32,5 +32,8 @@ struct URLs{
     func customersURl()-> URL?{
         return URL(string: baseURL + "customers.json")
     }
+    func ordersURL()->URL?{
+        return URL(string: baseURL + "orders.json")
+    }
     
 }

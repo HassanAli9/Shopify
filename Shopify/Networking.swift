@@ -62,7 +62,7 @@ extension Networking{
     }
     
     }
-}
+
 
 extension Networking{
     func register(newCustomer:NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->()){
@@ -109,5 +109,30 @@ extension Networking{
                 }
             }
         }
+    }
+}
+
+extension Networking{
+    
+    func postOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
+        guard let url = URLs.shared.ordersURL() else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let session = URLSession.shared
+        request.httpShouldHandleCookies = false
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
+            print(try! order.asDictionary())
+        }catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        session.dataTask(with: request) { (data,response,error) in
+            completion(data, response, error)
+        }.resume()
     }
 }

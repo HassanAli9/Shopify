@@ -34,6 +34,7 @@
 		853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5927DFC46E00D287A4 /* Images.swift */; };
 		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
 		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
+		85CD8EC327E3A86100009FFC /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD8EC227E3A86100009FFC /* order.swift */; };
 		85DE38AB27E0D59000601A7E /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */; };
 		85DE38B027E0E74700601A7E /* Custom_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AF27E0E74700601A7E /* Custom_collections.swift */; };
 		85DE38B227E17BE500601A7E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85DE38B127E17BE500601A7E /* Profile.storyboard */; };
@@ -116,6 +117,7 @@
 		853D5A5927DFC46E00D287A4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
 		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		85CD8EC227E3A86100009FFC /* order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = order.swift; path = POJOs/orders/order.swift; sourceTree = SOURCE_ROOT; };
 		85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		85DE38AF27E0E74700601A7E /* Custom_collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Custom_collections.swift; path = POJOs/CustomCollections/Custom_collections.swift; sourceTree = SOURCE_ROOT; };
 		85DE38B127E17BE500601A7E /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		5C5B8A4E27DF9CF90051462D /* POJOs */ = {
 			isa = PBXGroup;
 			children = (
+				85CD8EC127E3A71E00009FFC /* orders */,
 				85DE38AC27E0E6AB00601A7E /* CustomCollections */,
 				CD3E369827E123F7007DFC5E /* NewCustomerModel */,
 				CD2E8D1227E011650046C06D /* BrandsModel */,
@@ -397,6 +400,14 @@
 			name = products;
 			path = POJOs/products;
 			sourceTree = SOURCE_ROOT;
+		};
+		85CD8EC127E3A71E00009FFC /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				85CD8EC227E3A86100009FFC /* order.swift */,
+			);
+			path = orders;
+			sourceTree = "<group>";
 		};
 		85DE38AC27E0E6AB00601A7E /* CustomCollections */ = {
 			isa = PBXGroup;
@@ -703,6 +714,7 @@
 				CD2E8CEF27DFAB210046C06D /* Networking.swift in Sources */,
 				853D5A5027DFAF5700D287A4 /* ProductInCategoryCVC.swift in Sources */,
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
+				85CD8EC327E3A86100009FFC /* order.swift in Sources */,
 				CD5A061B27E0E09B000CA494 /* Image.swift in Sources */,
 				CD5A062227E0E112000CA494 /* LoginViewController.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
@@ -719,8 +731,6 @@
 				CD2E8D0327DFABF80046C06D /* HomeCollectionViewCell.swift in Sources */,
 				CD2E8D0527DFABF80046C06D /* BrandsTableViewCell.swift in Sources */,
 				85DE38B027E0E74700601A7E /* Custom_collections.swift in Sources */,
-				CD3E36B527E174E2007DFC5E /* Rules.swift in Sources */,
-				CD3E36B627E174E2007DFC5E /* Smart_collections.swift in Sources */,
 				853D5A4C27DFAF1600D287A4 /* CategoriesVC.swift in Sources */,
 				853D5A5E27DFC46E00D287A4 /* Variants.swift in Sources */,
 				CD84C05C27E24C190033D898 /* ViewController + Extension.swift in Sources */,
