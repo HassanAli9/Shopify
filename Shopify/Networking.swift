@@ -114,7 +114,7 @@ extension Networking{
 
 extension Networking{
     
-    func postOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
+    func SubmitOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
         guard let url = URLs.shared.ordersURL() else {return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
