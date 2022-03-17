@@ -37,20 +37,16 @@ extension RegisterViewController{
         
         var checkIsSuccess = true
         guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text,
-                let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text else {return false}
-      
+              let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text else {return false}
         
-        registerViewModel.checkCustomerInfo(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { message in
+        
+        self.registerViewModel.checkCustomerInfo(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { message in
             
             switch message {
             case "ErrorAllInfoIsNotFound":
                 checkIsSuccess = false
                 self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
-                self.showAlertErrro(title: "your information not found", message: "please fill yout infromation to reister")
-            case "ErrorUserInfo":
-                checkIsSuccess = false
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
-                self.showAlertErrro(title: "user name is incorrect", message: "please enter correct name")
+                self.showAlertErrro(title: "please fill your infromation to reister", message: "for register must fill all information")
             case "ErrorPassword":
                 checkIsSuccess = false
                 self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
@@ -59,10 +55,6 @@ extension RegisterViewController{
                 checkIsSuccess = false
                 self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 self.showAlertErrro(title: "your email is incorrect", message: "please enter correct email")
-            case "ErrorEmailIsExist":
-                checkIsSuccess = false
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
-                self.showAlertErrro(title: "your email is already exist", message: "can you login!!")
             default:
                 checkIsSuccess = true
             }
@@ -73,10 +65,7 @@ extension RegisterViewController{
 
 extension RegisterViewController{
     func register(){
-        
-        DispatchQueue.main.async {
-            self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
-        }
+        self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
         
         guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text,
               let password = passwordTextField.text else {return}
@@ -84,20 +73,23 @@ extension RegisterViewController{
         let customer = Customer(first_name: firstName, last_name: lastName, email: email, phone: nil, tags: password, id: nil, verified_email: true, addresses: nil)
         let newCustomer = NewCustomer(customer: customer)
         
-        registerViewModel.createNewCustomer(newCustomer: newCustomer) { data, response, error in
-            
-            guard error == nil else {
-                //register is not success
-                DispatchQueue.main.async {
+        registerViewModel.checkUserIsExist(email: email) { emailIsExist in
+            if !emailIsExist{
+                self.registerViewModel.createNewCustomer(newCustomer: newCustomer) { data, response, error in
+                    
+                    guard error == nil else {
+                        //register is not success
+                        self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                        return
+                    }
+                    //register is success
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                    print("register is success")
                 }
-                return
-            }
-            //register is success
-            DispatchQueue.main.async {
+            }else{
                 self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                self.showAlertErrro(title: "your email is already exist", message: "can you login!!")
             }
-            print("register is success")
         }
     }
 }

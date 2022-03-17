@@ -9,11 +9,9 @@ import Foundation
 class RegisterViewModel{
     
     let networkServices = Networking()
-    static var emailIsExist = true
+    
     
     func checkCustomerInfo(firstName: String, lastName: String, email: String, password: String, confirmPassword: String, compeltion: @escaping (String?) ->Void){
-        
-       
         
         guard !firstName.isEmpty, !lastName.isEmpty, !email.isEmpty, !password.isEmpty, !confirmPassword.isEmpty else {
             compeltion("ErrorAllInfoIsNotFound")
@@ -27,17 +25,6 @@ class RegisterViewModel{
         
         guard passwordIsValied(password: password, confirmPassword: confirmPassword) else {
             compeltion("ErrorPassword")
-            return
-        }
-        
-        guard userInfoIsValied(firstName: firstName, lastName: lastName) else {
-            compeltion("ErrorUserInfo")
-            return
-        }
-        
-        
-        guard !checkUserIsExist(email: email) else {
-            compeltion("ErrorEmailIsExist")
             return
         }
     }
@@ -70,31 +57,30 @@ class RegisterViewModel{
         }
     }
     
-    func userInfoIsValied(firstName: String, lastName: String) -> Bool{
-        if !firstName.isEmpty && !lastName.isEmpty {
-            return true
-        }else{
-            return false
-        }
-    }
-    
-    func checkUserIsExist(email: String) -> Bool{
-       
+    func checkUserIsLogged(email: String, completion: @escaping (Customer?)-> Void){
         networkServices.getAllCustomers { customers, error in
             guard let customers = customers, error == nil else {return}
             
             let filetr = customers.customers.filter { selectedCustomer in
                 return selectedCustomer.email == email
             }
-            print(filetr.count)
+            
             if filetr.count != 0{
-                RegisterViewModel.emailIsExist = true
+                print(filetr.count)
+                completion(filetr[0])
             }else{
-                RegisterViewModel.emailIsExist = false
+                completion(nil)
             }
         }
-        
-        print(RegisterViewModel.emailIsExist)
-        return RegisterViewModel.emailIsExist
+    }
+    
+    func checkUserIsExist(email: String, completion: @escaping (Bool)-> Void){
+        checkUserIsLogged(email: email) { customer in
+            guard customer != nil else {
+                completion(false)
+                return
+            }
+            completion(true)
+        }
     }
 }
