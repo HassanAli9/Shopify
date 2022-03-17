@@ -23,10 +23,10 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="2lV-NA-r9m" secondAttribute="trailing" constant="8" id="Epf-ox-PX6"/>
-                <constraint firstItem="2lV-NA-r9m" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="FfN-4C-hFz"/>
-                <constraint firstAttribute="bottom" secondItem="2lV-NA-r9m" secondAttribute="bottom" constant="8" id="XDD-U6-NyT"/>
-                <constraint firstItem="2lV-NA-r9m" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="wpJ-Oc-qxV"/>
+                <constraint firstItem="2lV-NA-r9m" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="5Y0-wh-oph"/>
+                <constraint firstItem="2lV-NA-r9m" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.958974" id="5kv-As-1Vu"/>
+                <constraint firstItem="2lV-NA-r9m" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="M8I-ol-N8p"/>
+                <constraint firstItem="2lV-NA-r9m" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.942857" id="j03-TS-6oe"/>
             </constraints>
             <size key="customSize" width="174" height="124"/>
             <connections>
