@@ -735,8 +735,6 @@
 				CD84C05A27E239060033D898 /* RegisterViewModel.swift in Sources */,
 				CD2E8D0327DFABF80046C06D /* HomeCollectionViewCell.swift in Sources */,
 				CD2E8D0527DFABF80046C06D /* BrandsTableViewCell.swift in Sources */,
-				CD3E36B527E174E2007DFC5E /* Rules.swift in Sources */,
-				CD3E36B627E174E2007DFC5E /* Smart_collections.swift in Sources */,
 				853D5A4C27DFAF1600D287A4 /* CategoriesVC.swift in Sources */,
 				853D5A5E27DFC46E00D287A4 /* Variants.swift in Sources */,
 				CD84C05C27E24C190033D898 /* ViewController + Extension.swift in Sources */,
@@ -924,8 +922,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Register;
-				INFOPLIST_KEY_UIMainStoryboardFile = orders;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -954,8 +951,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Register;
-				INFOPLIST_KEY_UIMainStoryboardFile = orders;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
