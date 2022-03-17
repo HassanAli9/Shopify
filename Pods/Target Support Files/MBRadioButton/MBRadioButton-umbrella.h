@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double TextFieldEffectsVersionNumber;
-FOUNDATION_EXPORT const unsigned char TextFieldEffectsVersionString[];
+FOUNDATION_EXPORT double MBRadioButtonVersionNumber;
+FOUNDATION_EXPORT const unsigned char MBRadioButtonVersionString[];
 
