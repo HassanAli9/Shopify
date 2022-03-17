@@ -53,7 +53,6 @@ class CategoriesVC: UIViewController {
         case 2:
             collectionID=272069099567
             categorizedTheProducts(cID: collectionID)
-
         default:
             collectionID  = 272069132335
             categorizedTheProducts(cID: collectionID)
@@ -122,15 +121,23 @@ class CategoriesVC: UIViewController {
         view.addSubview(floaty)
     }
     
+    
     @IBAction func toSearch(_ sender: Any) {
     }
+    
     
     @IBAction func toCart(_ sender: Any) {
         let cartCV = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
         self.navigationController?.pushViewController(cartCV, animated: true)
     }
     
+    
     @IBAction func toWishlist(_ sender: Any) {
+    }
+    
+    @objc func addToFavourite(sender:UIButton){
+        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        sender.tintColor = .red
     }
     
 }
@@ -156,7 +163,8 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
         
         cell.productImgViewCat.layer.cornerRadius=20
         cell.favView.layer.shadowRadius=2
-        cell.favView.layer.shadowOpacity=0.5
+        cell.favView.layer.shadowOpacity=0.3
+       
         if(isFiltered){
             cell.productImgViewCat.kf.indicatorType = .activity
             if let prodImage = FilterdArr[indexPath.row].image?.src {
@@ -172,6 +180,8 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
             }
             cell.productNameCat.text = ArrayOfProduct[indexPath.row].title
             cell.productPriceCat.text =  "$\(ArrayOfProduct[indexPath.row].variants?[0].price ?? "0")"
+            cell.favButton.tag = indexPath.row
+            cell.favButton.addTarget(self, action: #selector(addToFavourite(sender:)), for: .touchUpInside)
         }
         
         return cell
