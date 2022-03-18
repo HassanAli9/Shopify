@@ -258,8 +258,8 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0B00B2C167CD783351BD1D00BD5AD1F8;
-			remoteInfo = ReachabilitySwift;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
 		};
 		A7CD9E6124D0CF8D1F5775D64230A561 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -878,6 +878,29 @@
 				CCAA299C10EED7C24DBF450F7ED03986 /* Support Files */,
 			);
 			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		73FD2B2DCFBD9DBAA0319730656DB24C /* Cosmos */ = {
+			isa = PBXGroup;
+			children = (
+				3A3CC0B2591D59244ACF10D65CB4EC9C /* CosmosAccessibility.swift */,
+				2A4AC34683395C60047FC361BAD79A0E /* CosmosDefaultSettings.swift */,
+				329CBB1DBB56C89F5C398A20035F61BB /* CosmosLayerHelper.swift */,
+				17B07F611EB03FDC7BB191717D8B24BB /* CosmosLayers.swift */,
+				A6724169BA3263EA953D01A9994C159A /* CosmosLocalizedRating.swift */,
+				925D8311411D4B74FA718776A9108A73 /* CosmosRating.swift */,
+				4834E2CA0D1E5AED9AB177118C2D824F /* CosmosSettings.swift */,
+				3CF4859E7364F82A1EDC06F2A85B9B3C /* CosmosSize.swift */,
+				657B202AE95E50688367793E90739DD3 /* CosmosText.swift */,
+				3845FCE3C21064B768E9EAAC3997A81E /* CosmosTouch.swift */,
+				97B6B39CAEEB30BBC63D784BA93D4BFA /* CosmosTouchTarget.swift */,
+				E4265EE226EED87ED83A01D019E51F71 /* CosmosView.swift */,
+				1FE47E8591C051777CE523B9927CEBF8 /* RightToLeft.swift */,
+				6A30BF0C71DB01F3844EC7F2251BC0AB /* StarFillMode.swift */,
+				5C747A4065F948C033B9C5E76D4CA735 /* StarLayer.swift */,
+				85B5E2669953536E9D59A80959B48B3C /* Support Files */,
+			);
+			path = Cosmos;
 			sourceTree = "<group>";
 		};
 		8275CCB4E8732497B1021FCBC240F3C2 /* Frameworks */ = {
@@ -1922,13 +1945,12 @@
 				PRODUCT_NAME = MBRadioButton;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		47772F8B731449B2F86D439A816C7F7F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2269,7 +2291,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		BFD9E4B58F44191AF73A3434AAF6831F /* Release */ = {
 			isa = XCBuildConfiguration;

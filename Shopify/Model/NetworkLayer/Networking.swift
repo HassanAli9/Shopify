@@ -39,9 +39,9 @@ extension Networking{
     }
     
     
-    func getAllProductsInCategory(complition: @escaping (Products?,Error?)->Void){
+    func getAllProductsInCategory(complition: @escaping (Products?,Error?)->Void,collectionID:Int){
         
-        guard let url = URLs.shared.getAllProductsInCategories() else {return}
+        guard let url = URLs.shared.filterProductsByMainCategory(collectionId:collectionID) else {return}
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response {
             result in
             switch result.result {
@@ -60,7 +60,9 @@ extension Networking{
             }
         }
     }
-}
+    
+    }
+
 
 extension Networking{
     func register(newCustomer:NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->()){
@@ -128,5 +130,30 @@ extension Networking{
                 }
             }
         }
+    }
+}
+
+extension Networking{
+    
+    func SubmitOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
+        guard let url = URLs.shared.ordersURL() else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let session = URLSession.shared
+        request.httpShouldHandleCookies = false
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
+            print(try! order.asDictionary())
+        }catch let error {
+            print(error.localizedDescription)
+        }
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        session.dataTask(with: request) { (data,response,error) in
+            completion(data, response, error)
+        }.resume()
     }
 }
