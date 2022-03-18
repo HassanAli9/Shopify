@@ -29,4 +29,8 @@ struct URLs{
         return URL(string: baseURL + "customers.json")
     }
     
+    func allProducts()-> URL?{
+        return URL(string: baseURL + "products.json")
+    }
+    
 }
