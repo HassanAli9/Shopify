@@ -29,7 +29,7 @@ struct URLs{
         return URL(string: baseURL + "customers.json")
     }
     
-    func getAllProductsInCategories()-> URL?{
+    func allProducts()-> URL?{
         return URL(string: baseURL + "products.json")
     }
     
