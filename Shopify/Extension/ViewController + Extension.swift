@@ -24,6 +24,7 @@ extension UIViewController{
         DispatchQueue.main.async {
             indicator.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(indicator)
+            
             NSLayoutConstraint.activate([
                 indicator.widthAnchor.constraint(equalToConstant: 40),
                 indicator.heightAnchor.constraint(equalToConstant: 40),
@@ -35,10 +36,22 @@ extension UIViewController{
         
        
         
+
         if startIndicator{
             indicator.startAnimating()
         }else{
             indicator.stopAnimating()
         }
+    }
+}
+
+extension UIViewController{
+    func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 }

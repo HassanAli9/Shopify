@@ -19,24 +19,45 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     @IBAction func loginDidPressed(_ sender: UIButton) {
         login()
     }
     
     @IBAction func moveToSignUpPageDidPressed(_ sender: UIButton) {
+        goToRegisterPage()
+    }
+    
+    func goToRegisterPage(){
+        let loginVc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        
+        self.navigationController?.pushViewController(loginVc, animated: true)
     }
 }
 
 extension LoginViewController{
     func login(){
-        self.showActivityIndicator(indicator: indicator, startIndicator: true)
-        guard let email = emailTextField.text, let password = passwordTextField.text else {return}
+        DispatchQueue.main.async {
+            self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
+        }
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            DispatchQueue.main.async {
+                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+            }
+            self.showAlertErrro(title: "please fill your infromation to login", message: "for login must fill all information")
+            return
+        }
         loginViewModel.checkUserIsLogged(email: email, password: password) { customerLogged in
-            self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+            DispatchQueue.main.async {
+                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+            }
             if customerLogged != nil {
                 print("success to login")
+                Helper.shared.setUserStatus(userIsLogged: true)
             }else{
+                Helper.shared.setUserStatus(userIsLogged: false)
+                self.showAlertErrro(title: "failed to login", message: "please check your email or password")
                 print("failed to login")
             }
         }

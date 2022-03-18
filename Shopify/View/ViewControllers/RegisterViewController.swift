@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     @IBAction func signUpDidPressed(_ sender: Any) {
@@ -28,12 +29,21 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func moveToLoginPageDidPressed(_ sender: Any) {
+        goToLoginPage()
+    }
+    
+    func goToLoginPage(){
+        let loginVc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        self.navigationController?.pushViewController(loginVc, animated: true)
     }
 }
 
 extension RegisterViewController{
     func checkInfoBeforeRegister()->Bool{
-        self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
+        DispatchQueue.main.async {
+            self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
+        }
         
         var checkIsSuccess = true
         guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text,
@@ -45,15 +55,21 @@ extension RegisterViewController{
             switch message {
             case "ErrorAllInfoIsNotFound":
                 checkIsSuccess = false
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                DispatchQueue.main.async {
+                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                }
                 self.showAlertErrro(title: "please fill your infromation to reister", message: "for register must fill all information")
             case "ErrorPassword":
                 checkIsSuccess = false
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                DispatchQueue.main.async {
+                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                }
                 self.showAlertErrro(title: "There is a problem with the password", message: "please enter password again")
             case "ErrorEmail":
                 checkIsSuccess = false
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                DispatchQueue.main.async {
+                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                }
                 self.showAlertErrro(title: "your email is incorrect", message: "please enter correct email")
             default:
                 checkIsSuccess = true
@@ -65,8 +81,10 @@ extension RegisterViewController{
 
 extension RegisterViewController{
     func register(){
-        self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
-        
+        DispatchQueue.main.async {
+            self.showActivityIndicator(indicator: self.indicator, startIndicator: true)
+        }
+       
         guard let firstName = firstNameTextField.text, let lastName = lastNameTextField.text, let email = emailTextField.text,
               let password = passwordTextField.text else {return}
         
@@ -79,15 +97,22 @@ extension RegisterViewController{
                     
                     guard error == nil else {
                         //register is not success
-                        self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                        DispatchQueue.main.async {
+                            self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                        }
                         return
                     }
                     //register is success
-                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                    DispatchQueue.main.async {
+                        self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                    }
+                    Helper.shared.setUserStatus(userIsLogged: true)
                     print("register is success")
                 }
             }else{
-                self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                DispatchQueue.main.async {
+                    self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                }
                 self.showAlertErrro(title: "your email is already exist", message: "can you login!!")
             }
         }
