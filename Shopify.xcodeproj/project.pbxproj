@@ -53,6 +53,7 @@
 		CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2E8D0127DFABF80046C06D /* BrandsCollectionViewCell.swift */; };
 		CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2E8D0227DFABF80046C06D /* BrandsCollectionViewCell.xib */; };
 		CD3E36AE27E15C7D007DFC5E /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E36AD27E15C7D007DFC5E /* Customer.swift */; };
+		CD4506AE27E5116B001F864F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4506AD27E5116B001F864F /* Helper.swift */; };
 		CD5A061B27E0E09B000CA494 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A061727E0E09A000CA494 /* Image.swift */; };
 		CD5A061C27E0E09B000CA494 /* Smart_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A061827E0E09B000CA494 /* Smart_collections.swift */; };
 		CD5A061D27E0E09B000CA494 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A061927E0E09B000CA494 /* BrandsModel.swift */; };
@@ -137,6 +138,7 @@
 		CD2E8D0127DFABF80046C06D /* BrandsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD2E8D0227DFABF80046C06D /* BrandsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD3E36AD27E15C7D007DFC5E /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Customer.swift; path = POJOs/NewCustomerModel/Customer.swift; sourceTree = SOURCE_ROOT; };
+		CD4506AD27E5116B001F864F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		CD5A061727E0E09A000CA494 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = POJOs/BrandsModel/Image.swift; sourceTree = SOURCE_ROOT; };
 		CD5A061827E0E09B000CA494 /* Smart_collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Smart_collections.swift; path = POJOs/BrandsModel/Smart_collections.swift; sourceTree = SOURCE_ROOT; };
 		CD5A061927E0E09B000CA494 /* BrandsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BrandsModel.swift; path = POJOs/BrandsModel/BrandsModel.swift; sourceTree = SOURCE_ROOT; };
@@ -223,6 +225,7 @@
 				5C5B8A4927DF9CAD0051462D /* Delegates */,
 				5C5B8A5627DF9E700051462D /* Utilities */,
 				5C5B8A5727DF9EBC0051462D /* LocalData */,
+				CD4506AC27E5115C001F864F /* Helper */,
 				CD84C05627E236350033D898 /* Extension */,
 				5C5B8A4F27DF9D090051462D /* Constants */,
 				5C5B8A4C27DF9CDD0051462D /* Model */,
@@ -503,6 +506,14 @@
 			path = NewCustomerModel;
 			sourceTree = "<group>";
 		};
+		CD4506AC27E5115C001F864F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CD4506AD27E5116B001F864F /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		CD84C05627E236350033D898 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +734,7 @@
 				5C837E3127E290ED009970B5 /* CreateAddressVC.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
 				5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */,
+				CD4506AE27E5116B001F864F /* Helper.swift in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
 				CD2E8CF327DFABBF0046C06D /* HomeViewController.swift in Sources */,
 				CD5A062627E114A5000CA494 /* RegisterViewController.swift in Sources */,

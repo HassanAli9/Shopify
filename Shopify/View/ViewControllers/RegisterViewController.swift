@@ -28,6 +28,13 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func moveToLoginPageDidPressed(_ sender: Any) {
+        goToLoginPage()
+    }
+    
+    func goToLoginPage(){
+        let loginVc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        
+        self.navigationController?.pushViewController(loginVc, animated: true)
     }
 }
 
@@ -98,6 +105,7 @@ extension RegisterViewController{
                     DispatchQueue.main.async {
                         self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                     }
+                    Helper.shared.setUserStatus(userIsLogged: true)
                     print("register is success")
                 }
             }else{

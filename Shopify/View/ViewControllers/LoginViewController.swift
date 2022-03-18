@@ -25,6 +25,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func moveToSignUpPageDidPressed(_ sender: UIButton) {
+        goToRegisterPage()
+    }
+    
+    func goToRegisterPage(){
+        let loginVc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        
+        self.navigationController?.pushViewController(loginVc, animated: true)
     }
 }
 
@@ -46,7 +53,9 @@ extension LoginViewController{
             }
             if customerLogged != nil {
                 print("success to login")
+                Helper.shared.setUserStatus(userIsLogged: true)
             }else{
+                Helper.shared.setUserStatus(userIsLogged: false)
                 self.showAlertErrro(title: "failed to login", message: "please check your email or password")
                 print("failed to login")
             }

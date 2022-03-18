@@ -32,8 +32,7 @@ extension UIViewController{
                 indicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
             ])
         }
-       
-        
+
         if startIndicator{
             indicator.startAnimating()
         }else{
