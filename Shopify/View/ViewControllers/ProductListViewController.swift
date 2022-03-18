@@ -134,11 +134,19 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("did select cell")
-
-         let product = products[indexPath.row]
-        let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
-        productDetailsVC.product = product
-        self.navigationController?.pushViewController(productDetailsVC, animated: true)
+        
+        if filteredProducts.count != 0{
+         let product = filteredProducts[indexPath.row]
+        let filteredproductDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        filteredproductDetailsVC.product = product
+        self.navigationController?.pushViewController(filteredproductDetailsVC, animated: true)
+        }else{
+            let product = products[indexPath.row]
+           let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+           productDetailsVC.product = product
+           self.navigationController?.pushViewController(productDetailsVC, animated: true)
+        }
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
