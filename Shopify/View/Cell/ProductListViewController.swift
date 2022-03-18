@@ -11,21 +11,48 @@ import Kingfisher
 class ProductListViewController: UIViewController{
    
     
-
     var products = [Product]()
     var productsViewModel = ProductViewModel()
     var filteredProducts : [Product]!
+    var filterIsPressed = true
     var isFiltered = false
+    @IBOutlet weak var minimumPrice: UILabel!
+    @IBOutlet weak var maximumPrice: UILabel!
+    @IBOutlet weak var priceSlider: UISlider!
     @IBOutlet weak var productSearchbar: UISearchBar!
     @IBOutlet weak var productListCollectionView: UICollectionView!
     
+    @IBAction func sortByPrice(_ sender: UISlider) {
+        print(sender.value)
+        isFiltered = true
+        let filteredByPrice = self.products.filter { product in
+            maximumPrice.text = String(Int(sender.value)) + "$"
+            return Float(product.variants?[0].price ?? "") ?? 0 <= sender.value
+    }
+       
+            self.filteredProducts = filteredByPrice
+            self.updateUi()
+        
+    }
+    
+    @IBAction func toWishlistBtn(_ sender: Any) {
+    
+    }
+    
+    @IBAction func filterBtnByPrice(_ sender: Any) {
+        
+        filterBtnIsPressed()
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        maximumPrice.isHidden = true
+        minimumPrice.isHidden = true
+        priceSlider.isHidden = true
         setupProductCollection()
         setProducts()
         filteredProducts = products
@@ -37,6 +64,7 @@ class ProductListViewController: UIViewController{
         productSearchbar.delegate = self
         productListCollectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: ProductListCell.identifier)
     }
+    
     private func setProducts(){
         productsViewModel.bindSuccessToView = {
         self.products = self.productsViewModel.products
@@ -53,9 +81,23 @@ class ProductListViewController: UIViewController{
         self.productListCollectionView.reloadData()
         }
     }
+    
+    private func filterBtnIsPressed(){
+        if filterIsPressed{
+            filterIsPressed = false
+            minimumPrice.isHidden = false
+            maximumPrice.isHidden = false
+            priceSlider.isHidden = false
+        }else{
+            minimumPrice.isHidden = true
+            maximumPrice.isHidden = true
+            filterIsPressed = true
+            priceSlider.isHidden = true
+        }
+    }
 
 }
-
+// MARK :- CollectionView
 extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +111,6 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.identifier, for: indexPath) as! ProductListCell
         if filteredProducts.count != 0{
-            
             productCell.productNameLabel.text = filteredProducts[indexPath.row].title
             productCell.productImageView.kf.setImage(with: URL(string: filteredProducts[indexPath.row].image?.src ?? ""))
             productCell.productImageView.kf.indicatorType = .activity
@@ -93,12 +134,13 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("did select cell")
-        
+
          let product = products[indexPath.row]
         let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
         productDetailsVC.product = product
         self.navigationController?.pushViewController(productDetailsVC, animated: true)
     }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             isFiltered = true
         }

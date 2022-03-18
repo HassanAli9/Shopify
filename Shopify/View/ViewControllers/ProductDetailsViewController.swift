@@ -14,9 +14,18 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var imageControl: UIPageControl!
+    @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
-    
     @IBAction func addToCartBtn(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0,
+                       usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1,
+                       options: [], animations: {
+                        self.addToCart.transform =
+                           CGAffineTransform(scaleX: 2.0, y: 2.0)
+                        self.addToCart.transform =
+                           CGAffineTransform(scaleX: 1.0, y: 1.0)
+                    }, completion: nil)
     }
     
     override func viewDidLoad() {
