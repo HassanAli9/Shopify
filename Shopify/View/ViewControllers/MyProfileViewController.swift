@@ -100,8 +100,8 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             switch indexPath.row {
             case 0:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
+                let myorder = self.storyboard?.instantiateViewController(withIdentifier: "MyOrdersTableViewController") as! MyOrdersTableViewController
+                self.present(myorder, animated: true, completion: nil)
             default:
                 let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.present(aboutUs, animated: true, completion: nil)

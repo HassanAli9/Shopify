@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myorderCell" rowHeight="134" id="KGk-i7-Jjw" customClass="MyOrderTableViewCell" customModule="Shopify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YQX-E9-s93">
+                        <rect key="frame" x="0.0" y="16" width="414" height="144"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zAL-2W-XAn">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order num 1 created at 8/8/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gES-iR-8sF">
+                        <rect key="frame" x="18.5" y="4" width="243" height="21"/>
+                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOn-RQ-C9o">
+                        <rect key="frame" x="295" y="-7" width="114" height="25"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <attributedString key="attributedTitle">
+                                <fragment content="See Details">
+                                    <attributes>
+                                        <font key="NSFont" size="11" name="Optima-Regular"/>
+                                    </attributes>
+                                </fragment>
+                                <fragment content="&gt;&gt;">
+                                    <attributes>
+                                        <font key="NSFont" size="14" name="Optima-Regular"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonConfiguration>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="YQX-E9-s93" secondAttribute="bottom" id="4UK-9U-d2A"/>
+                    <constraint firstItem="YQX-E9-s93" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="5eh-mj-bNF"/>
+                    <constraint firstAttribute="trailing" secondItem="YQX-E9-s93" secondAttribute="trailing" id="9ih-0d-acs"/>
+                    <constraint firstItem="HOn-RQ-C9o" firstAttribute="leading" secondItem="gES-iR-8sF" secondAttribute="trailing" constant="33.5" id="C0J-jg-EQ7"/>
+                    <constraint firstItem="YQX-E9-s93" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CIt-AU-2dQ"/>
+                    <constraint firstItem="gES-iR-8sF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18.5" id="VTO-pL-SuH"/>
+                    <constraint firstItem="HOn-RQ-C9o" firstAttribute="leading" secondItem="gES-iR-8sF" secondAttribute="trailing" constant="33.5" id="YGV-hR-PtD"/>
+                    <constraint firstAttribute="trailing" secondItem="HOn-RQ-C9o" secondAttribute="trailing" constant="5" id="aaj-iq-rPR"/>
+                    <constraint firstItem="HOn-RQ-C9o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-7" id="kK9-cV-xiu"/>
+                    <constraint firstItem="gES-iR-8sF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="xJf-bs-Euq"/>
+                    <constraint firstAttribute="bottom" secondItem="HOn-RQ-C9o" secondAttribute="bottom" constant="142" id="zqT-dp-S4S"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="orderCollectionView" destination="YQX-E9-s93" id="rIx-8Z-8Uj"/>
+            </connections>
+            <point key="canvasLocation" x="144.92753623188406" y="143.97321428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
