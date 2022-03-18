@@ -10,5 +10,5 @@ pod 'Floaty', '~> 4.2.0'
 pod 'TextFieldEffects'
 pod 'NVActivityIndicatorView'
 pod 'MBRadioButton'
-pod 'iOSDropDown'
+pod 'Cosmos', '~> 23.0'
 end
