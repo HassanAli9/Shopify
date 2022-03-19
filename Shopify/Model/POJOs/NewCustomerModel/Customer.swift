@@ -26,6 +26,14 @@ struct Address: Codable {
     var address1, city, province, phone: String?
     var zip, last_name, first_name, country: String?
     var id: Int!
+    
+    
+    init(address:String , city:String, phone:String, country:String) {
+        self.address1 = address
+        self.city     = city
+        self.phone    = phone
+        self.country  = country
+    }
 }
 
 struct LoginResponse: Codable {

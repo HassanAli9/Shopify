@@ -35,6 +35,8 @@
 		5C5B8A3B27DF9C960051462D /* ShopifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A3A27DF9C960051462D /* ShopifyUITests.swift */; };
 		5C5B8A3D27DF9C960051462D /* ShopifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A3C27DF9C960051462D /* ShopifyUITestsLaunchTests.swift */; };
 		5C5B8A5227DF9D250051462D /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B8A5127DF9D250051462D /* URLs.swift */; };
+		5C68BCCC27E65F7200E49A0A /* CreateAddressVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68BCCB27E65F7200E49A0A /* CreateAddressVM.swift */; };
+		5C68BCCE27E66CA300E49A0A /* Networking+Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C68BCCD27E66CA300E49A0A /* Networking+Address.swift */; };
 		5C837E2627E278F8009970B5 /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C837E2527E278F8009970B5 /* AddressVC.swift */; };
 		5C837E2A27E27973009970B5 /* AddressTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C837E2827E27973009970B5 /* AddressTVCell.swift */; };
 		5C837E2B27E27973009970B5 /* AddressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C837E2927E27973009970B5 /* AddressTVCell.xib */; };
@@ -143,6 +145,8 @@
 		5C5B8A3A27DF9C960051462D /* ShopifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyUITests.swift; sourceTree = "<group>"; };
 		5C5B8A3C27DF9C960051462D /* ShopifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5C5B8A5127DF9D250051462D /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		5C68BCCB27E65F7200E49A0A /* CreateAddressVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAddressVM.swift; sourceTree = "<group>"; };
+		5C68BCCD27E66CA300E49A0A /* Networking+Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Address.swift"; sourceTree = "<group>"; };
 		5C837E2527E278F8009970B5 /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
 		5C837E2827E27973009970B5 /* AddressTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTVCell.swift; sourceTree = "<group>"; };
 		5C837E2927E27973009970B5 /* AddressTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTVCell.xib; sourceTree = "<group>"; };
@@ -365,6 +369,7 @@
 				CD84C05927E239060033D898 /* RegisterViewModel.swift */,
 				CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */,
 				39ECF18827E515550058A415 /* ProductViewModel.swift */,
+				5C68BCCB27E65F7200E49A0A /* CreateAddressVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2E8CEE27DFAB210046C06D /* Networking.swift */,
+				5C68BCCD27E66CA300E49A0A /* Networking+Address.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -859,6 +865,8 @@
 				853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */,
 				39ECF18927E515550058A415 /* ProductViewModel.swift in Sources */,
 				853D5A5C27DFC46E00D287A4 /* ProductImage.swift in Sources */,
+				5C68BCCC27E65F7200E49A0A /* CreateAddressVM.swift in Sources */,
+				5C68BCCE27E66CA300E49A0A /* Networking+Address.swift in Sources */,
 				85B87A9627E517F1004A2620 /* MyOrderItemCollectionViewCell.swift in Sources */,
 				CD5A061E27E0E09B000CA494 /* Rules.swift in Sources */,
 				CD2E8D0727DFABF80046C06D /* HomeTableViewCell.swift in Sources */,
@@ -1090,7 +1098,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1120,7 +1128,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

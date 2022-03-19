@@ -40,4 +40,10 @@ struct URLs{
         return URL(string: baseURL + "products.json")
     }
     
+     func addressURL(customerId: String) -> URL? {
+        return URL(string:  baseURL + "customers/\(customerId)/addresses.json" )
+
+
+     }
+    
 }
