@@ -128,6 +128,7 @@ class CategoriesVC: UIViewController {
     
     @IBAction func toCart(_ sender: Any) {
         let cartCV = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        cartCV.hidesBottomBarWhenPushed =  true
         self.navigationController?.pushViewController(cartCV, animated: true)
     }
     
