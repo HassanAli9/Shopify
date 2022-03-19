@@ -90,6 +90,9 @@
 		CD84C05827E236710033D898 /* Encodable + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05727E236710033D898 /* Encodable + extension.swift */; };
 		CD84C05A27E239060033D898 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05927E239060033D898 /* RegisterViewModel.swift */; };
 		CD84C05C27E24C190033D898 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05B27E24C190033D898 /* ViewController + Extension.swift */; };
+		CDCE7C0927E67B2300DB24AC /* WishListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C0727E67B2300DB24AC /* WishListModel+CoreDataClass.swift */; };
+		CDCE7C0A27E67B2300DB24AC /* WishListModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C0827E67B2300DB24AC /* WishListModel+CoreDataProperties.swift */; };
+		CDCE7C0D27E67D7B00DB24AC /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C0C27E67D7B00DB24AC /* CoreDataServices.swift */; };
 		CDE8FED027E26CD10038DDB7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +203,9 @@
 		CD84C05727E236710033D898 /* Encodable + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable + extension.swift"; sourceTree = "<group>"; };
 		CD84C05927E239060033D898 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CD84C05B27E24C190033D898 /* ViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
+		CDCE7C0727E67B2300DB24AC /* WishListModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WishListModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CDCE7C0827E67B2300DB24AC /* WishListModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WishListModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CDCE7C0C27E67D7B00DB24AC /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,6 +380,7 @@
 			children = (
 				5C5B8A4E27DF9CF90051462D /* POJOs */,
 				5C5B8A4D27DF9CE60051462D /* NetworkLayer */,
+				CDCE7C0B27E67D6600DB24AC /* CoreDataServices */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 		5C5B8A4E27DF9CF90051462D /* POJOs */ = {
 			isa = PBXGroup;
 			children = (
+				CD3CE90B27E67A2500379EA9 /* WishListModel */,
 				85CD8EC127E3A71E00009FFC /* orders */,
 				85DE38AC27E0E6AB00601A7E /* CustomCollections */,
 				CD3E369827E123F7007DFC5E /* NewCustomerModel */,
@@ -629,6 +637,15 @@
 			path = BrandsModel;
 			sourceTree = "<group>";
 		};
+		CD3CE90B27E67A2500379EA9 /* WishListModel */ = {
+			isa = PBXGroup;
+			children = (
+				CDCE7C0727E67B2300DB24AC /* WishListModel+CoreDataClass.swift */,
+				CDCE7C0827E67B2300DB24AC /* WishListModel+CoreDataProperties.swift */,
+			);
+			path = WishListModel;
+			sourceTree = "<group>";
+		};
 		CD3E369827E123F7007DFC5E /* NewCustomerModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +669,14 @@
 				CD84C05B27E24C190033D898 /* ViewController + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CDCE7C0B27E67D6600DB24AC /* CoreDataServices */ = {
+			isa = PBXGroup;
+			children = (
+				CDCE7C0C27E67D7B00DB24AC /* CoreDataServices.swift */,
+			);
+			path = CoreDataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -857,6 +882,7 @@
 				5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */,
 				5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */,
 				853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */,
+				CDCE7C0D27E67D7B00DB24AC /* CoreDataServices.swift in Sources */,
 				39ECF18927E515550058A415 /* ProductViewModel.swift in Sources */,
 				853D5A5C27DFC46E00D287A4 /* ProductImage.swift in Sources */,
 				85B87A9627E517F1004A2620 /* MyOrderItemCollectionViewCell.swift in Sources */,
@@ -884,6 +910,7 @@
 				5C837E2627E278F8009970B5 /* AddressVC.swift in Sources */,
 				5C837E3127E290ED009970B5 /* CreateAddressVC.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
+				CDCE7C0927E67B2300DB24AC /* WishListModel+CoreDataClass.swift in Sources */,
 				39ECF18E27E515860058A415 /* ProductDetailsViewController.swift in Sources */,
 				5C03606C27E569C4008067C6 /* WishlistVC+TVC.swift in Sources */,
 				5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */,
@@ -895,6 +922,7 @@
 				5C837E2A27E27973009970B5 /* AddressTVCell.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
 				85DE38B427E17E6C00601A7E /* MyProfileViewController.swift in Sources */,
+				CDCE7C0A27E67B2300DB24AC /* WishListModel+CoreDataProperties.swift in Sources */,
 				853D5A5B27DFC46E00D287A4 /* Products.swift in Sources */,
 				853D5A5D27DFC46E00D287A4 /* Product.swift in Sources */,
 				CD5A061D27E0E09B000CA494 /* BrandsModel.swift in Sources */,
