@@ -17,10 +17,11 @@ extension AddressVC : UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressTVCell.identifier, for: indexPath) as! AddressTVCell
         
-        
-        
+        cell.radioBtn.isOn = false
+
         cell.actionBlock = {
-          cell.radioBtn.isOn = false
+            tableView.reloadData()
+          cell.radioBtn.isOn = true
         }
         
         return cell
