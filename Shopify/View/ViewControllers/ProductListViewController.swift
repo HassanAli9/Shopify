@@ -28,7 +28,7 @@ class ProductListViewController: UIViewController{
         print(sender.value)
         isFiltered = true
         let filteredByPrice = self.products.filter { product in
-            maximumPrice.text = String(Int(sender.value)) + "$"
+            maximumPrice.text = "$"+String(Int(sender.value))
             return Float(product.variants?[0].price ?? "") ?? 0 <= sender.value
     }
        
@@ -55,6 +55,7 @@ class ProductListViewController: UIViewController{
         maximumPrice.isHidden = true
         minimumPrice.isHidden = true
         priceSlider.isHidden = true
+        notFoundImage.isHidden = true
         setupProductCollection()
         setProducts()
         filteredProducts = products
@@ -95,10 +96,11 @@ class ProductListViewController: UIViewController{
             maximumPrice.isHidden = true
             filterIsPressed = true
             priceSlider.isHidden = true
-            self.notFoundImage.isHidden = true
+            
         }
     }
 }
+
 // MARK :- CollectionView
 extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
@@ -112,6 +114,7 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.identifier, for: indexPath) as! ProductListCell
+        
         if filteredProducts.count != 0{
             self.notFoundImage.isHidden = true
             self.productListCollectionView.isHidden = false
@@ -119,14 +122,14 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
             productCell.productImageView.kf.setImage(with: URL(string: filteredProducts[indexPath.row].image?.src ?? ""))
             productCell.productImageView.kf.indicatorType = .activity
             if  let variant = filteredProducts[indexPath.row].variants, let price = variant[0].price {
-                productCell.productPriceLabel.text = price + "$"
+                productCell.productPriceLabel.text = "$"+price
             }
         }else{
         productCell.productNameLabel.text = products[indexPath.row].title
         productCell.productImageView.kf.setImage(with: URL(string: products[indexPath.row].image?.src ?? ""))
             productCell.productImageView.kf.indicatorType = .activity
         if  let variant = products[indexPath.row].variants, let price = variant[0].price {
-            productCell.productPriceLabel.text = price + " $"
+            productCell.productPriceLabel.text = "$"+price
         }
         }
         return productCell
@@ -171,6 +174,12 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
                 guard let title = product.title else{return}
                 if title.hasPrefix(searchText) || title.hasPrefix(searchText.uppercased()){
                     filteredProducts.append(product)
+                    self.notFoundImage.isHidden = true
+                    self.productListCollectionView.isHidden = false
+                }else{
+                    self.notFoundImage.isHidden = false
+                    self.productListCollectionView.isHidden = true
+                    self.updateUi()
                 }
             }
         }
