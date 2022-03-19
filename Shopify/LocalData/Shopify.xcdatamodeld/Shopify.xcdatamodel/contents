@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G415" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="WishListModel" representedClassName="WishListModel" syncable="YES">
-        <attribute name="customerID" optional="YES" attributeType="String"/>
+        <attribute name="customerID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="productID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="productImage" optional="YES" attributeType="String"/>
         <attribute name="productName" optional="YES" attributeType="String"/>
         <attribute name="productPrice" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="WishListModel" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="WishListModel" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>
