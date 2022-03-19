@@ -118,6 +118,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 self.present(aboutUs, animated: true, completion: nil)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     

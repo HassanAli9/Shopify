@@ -80,4 +80,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         header.textLabel?.textAlignment = NSTextAlignment.center
         header.textLabel?.textColor = UIColor.label
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        homeTableView.deselectRow(at: indexPath, animated: false)
+    }
 }
