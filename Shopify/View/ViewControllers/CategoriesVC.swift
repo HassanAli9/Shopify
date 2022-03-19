@@ -32,10 +32,13 @@ class CategoriesVC: UIViewController {
         
         // Float Action button animation style
         makeFloatyStyleButton()
-        spinner.hidesWhenStopped=true
-        spinner.startAnimating()
+        DispatchQueue.main.async {
+            self.spinner.hidesWhenStopped=true
+            self.spinner.startAnimating()
+        }
+        
         categorizedTheProducts(cID: collectionID)
-        spinner.stopAnimating()
+       
         
     }
     
@@ -65,6 +68,9 @@ class CategoriesVC: UIViewController {
             if let productsList = products {
                 self.ArrayOfProduct=productsList.products!
                 self.categoriesCollectionView.reloadData()
+                DispatchQueue.main.async {
+                    self.spinner.stopAnimating()
+                }
             }else{
                self.onFailed(error: error!)
                print("error")
@@ -94,7 +100,7 @@ class CategoriesVC: UIViewController {
         floaty.buttonImage = UIImage(named: "sort")
         floaty.itemButtonColor = .label
         floaty.itemTitleColor = .label
-        floaty.addItem("T-Shirts", icon: UIImage(named: "shirt")) { item in
+        floaty.addItem("T-Shirts", icon: UIImage(named: "shirt")) { _ in
             let filered = self.ArrayOfProduct.filter { item in
                 return item.product_type=="T-SHIRTS"
             }
@@ -102,7 +108,7 @@ class CategoriesVC: UIViewController {
             self.isFiltered=true
             self.categoriesCollectionView.reloadData()
         }
-        floaty.addItem("Shoes", icon: UIImage(named: "shoes")){ item in
+        floaty.addItem("Shoes", icon: UIImage(named: "shoes")){ _ in
             let filered = self.ArrayOfProduct.filter { item in
                 return item.product_type=="SHOES"
             }
@@ -110,7 +116,7 @@ class CategoriesVC: UIViewController {
             self.isFiltered=true
             self.categoriesCollectionView.reloadData()
         }
-        floaty.addItem("Accessories", icon: UIImage(named: "acc")){ item in
+        floaty.addItem("Accessories", icon: UIImage(named: "acc")){ _ in
             let filered = self.ArrayOfProduct.filter { item in
                 return item.product_type=="ACCESSORIES"
             }
