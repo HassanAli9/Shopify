@@ -204,11 +204,12 @@
         <!--Navigation Controller-->
         <scene sceneID="7db-kG-kbd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Qd-Db-DW2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="profileNC" automaticallyAdjustsScrollViewInsets="NO" id="8Qd-Db-DW2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wrm-w9-4Af">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -334,11 +335,12 @@
         <!--Navigation Controller-->
         <scene sceneID="1FJ-q3-dgm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omn-8J-xiP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="guestNC" automaticallyAdjustsScrollViewInsets="NO" id="omn-8J-xiP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tni-fU-lGl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -352,7 +354,7 @@
         <!--My Orders Table View Controller-->
         <scene sceneID="uNy-7Y-mJO">
             <objects>
-                <tableViewController storyboardIdentifier="MyOrdersTableViewController" id="hvb-sK-eQF" customClass="MyOrdersTableViewController" customModule="myorders" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyOrdersTableViewController" id="hvb-sK-eQF" customClass="MyOrdersTableViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="VcQ-vT-R3x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

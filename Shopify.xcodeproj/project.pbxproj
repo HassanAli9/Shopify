@@ -15,6 +15,11 @@
 		39ECF19F27E51B500058A415 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECF19D27E51B500058A415 /* ProductListCell.swift */; };
 		39ECF1A227E51B780058A415 /* ProductDetailsImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39ECF1A027E51B780058A415 /* ProductDetailsImageCollectionCell.xib */; };
 		39ECF1A327E51B780058A415 /* ProductDetailsImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39ECF1A127E51B780058A415 /* ProductDetailsImageCollectionCell.swift */; };
+		5C03606727E56946008067C6 /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C03606627E56946008067C6 /* Wishlist.storyboard */; };
+		5C03606A27E569A4008067C6 /* WishlistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03606927E569A4008067C6 /* WishlistVC.swift */; };
+		5C03606C27E569C4008067C6 /* WishlistVC+TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03606B27E569C4008067C6 /* WishlistVC+TVC.swift */; };
+		5C03607027E56A83008067C6 /* WishlistTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03606E27E56A83008067C6 /* WishlistTVCell.swift */; };
+		5C03607127E56A83008067C6 /* WishlistTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C03606F27E56A83008067C6 /* WishlistTVCell.xib */; };
 		5C09DF2E27DFAEA600034B74 /* OrdersTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09DF2C27DFAEA600034B74 /* OrdersTVC.swift */; };
 		5C09DF2F27DFAEA600034B74 /* OrdersTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C09DF2D27DFAEA600034B74 /* OrdersTVC.xib */; };
 		5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C09DF3127DFAEBC00034B74 /* OrdersVC.swift */; };
@@ -54,6 +59,7 @@
 		85B87A9427E517EA004A2620 /* MyOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85B87A9327E517E9004A2620 /* MyOrderTableViewCell.xib */; };
 		85B87A9627E517F1004A2620 /* MyOrderItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9527E517F1004A2620 /* MyOrderItemCollectionViewCell.swift */; };
 		85B87A9827E517F7004A2620 /* MyOrderItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85B87A9727E517F7004A2620 /* MyOrderItemCollectionViewCell.xib */; };
+		85B87A9A27E529AA004A2620 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9927E529AA004A2620 /* MainTabBarViewController.swift */; };
 		85CD8EC327E3A86100009FFC /* order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CD8EC227E3A86100009FFC /* order.swift */; };
 		85DE38AB27E0D59000601A7E /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */; };
 		85DE38B027E0E74700601A7E /* Custom_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DE38AF27E0E74700601A7E /* Custom_collections.swift */; };
@@ -113,6 +119,11 @@
 		39ECF19D27E51B500058A415 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		39ECF1A027E51B780058A415 /* ProductDetailsImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsImageCollectionCell.xib; sourceTree = "<group>"; };
 		39ECF1A127E51B780058A415 /* ProductDetailsImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsImageCollectionCell.swift; sourceTree = "<group>"; };
+		5C03606627E56946008067C6 /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
+		5C03606927E569A4008067C6 /* WishlistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistVC.swift; sourceTree = "<group>"; };
+		5C03606B27E569C4008067C6 /* WishlistVC+TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WishlistVC+TVC.swift"; sourceTree = "<group>"; };
+		5C03606E27E56A83008067C6 /* WishlistTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistTVCell.swift; sourceTree = "<group>"; };
+		5C03606F27E56A83008067C6 /* WishlistTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WishlistTVCell.xib; sourceTree = "<group>"; };
 		5C09DF2C27DFAEA600034B74 /* OrdersTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersTVC.swift; sourceTree = "<group>"; };
 		5C09DF2D27DFAEA600034B74 /* OrdersTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersTVC.xib; sourceTree = "<group>"; };
 		5C09DF3127DFAEBC00034B74 /* OrdersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
@@ -158,6 +169,7 @@
 		85B87A9327E517E9004A2620 /* MyOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderTableViewCell.xib; sourceTree = "<group>"; };
 		85B87A9527E517F1004A2620 /* MyOrderItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		85B87A9727E517F7004A2620 /* MyOrderItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		85B87A9927E529AA004A2620 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		85CD8EC227E3A86100009FFC /* order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = order.swift; path = Shopify/Model/POJOs/orders/order.swift; sourceTree = SOURCE_ROOT; };
 		85DE38AA27E0D59000601A7E /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		85DE38AF27E0E74700601A7E /* Custom_collections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Custom_collections.swift; path = Shopify/Model/POJOs/CustomCollections/Custom_collections.swift; sourceTree = SOURCE_ROOT; };
@@ -233,6 +245,24 @@
 				39ECF19C27E51B500058A415 /* ProductListCell.xib */,
 			);
 			path = ProductListCell;
+			sourceTree = "<group>";
+		};
+		5C03606827E5697B008067C6 /* wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				5C03606927E569A4008067C6 /* WishlistVC.swift */,
+				5C03606B27E569C4008067C6 /* WishlistVC+TVC.swift */,
+			);
+			path = wishlist;
+			sourceTree = "<group>";
+		};
+		5C03606D27E56A4E008067C6 /* wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				5C03606E27E56A83008067C6 /* WishlistTVCell.swift */,
+				5C03606F27E56A83008067C6 /* WishlistTVCell.xib */,
+			);
+			path = wishlist;
 			sourceTree = "<group>";
 		};
 		5C09DF2B27DFAEA600034B74 /* orders */ = {
@@ -397,8 +427,10 @@
 				CD5A062527E114A5000CA494 /* RegisterViewController.swift */,
 				39ECF18C27E515860058A415 /* ProductDetailsViewController.swift */,
 				39ECF18D27E515860058A415 /* ProductListViewController.swift */,
+				85B87A9927E529AA004A2620 /* MainTabBarViewController.swift */,
 				5C837E2427E278E0009970B5 /* Address */,
 				5C09DF3027DFAEBC00034B74 /* orders */,
+				5C03606827E5697B008067C6 /* wishlist */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +438,7 @@
 		5C5B8A5427DF9D760051462D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5C03606D27E56A4E008067C6 /* wishlist */,
 				85B87A9027E517CC004A2620 /* MyOrders */,
 				39ECF19B27E5192F0058A415 /* ProductListCell */,
 				39ECF19A27E519010058A415 /* ProductDetailsImageCollectionCell */,
@@ -429,6 +462,7 @@
 				CD5A062327E11491000CA494 /* Register.storyboard */,
 				5C09DF3527DFAECE00034B74 /* orders.storyboard */,
 				39ECF18A27E5156C0058A415 /* ProductList.storyboard */,
+				5C03606627E56946008067C6 /* Wishlist.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -738,9 +772,11 @@
 				853D5A4A27DFAF0B00D287A4 /* Categories.storyboard in Resources */,
 				5C837E2B27E27973009970B5 /* AddressTVCell.xib in Resources */,
 				5CF799D627E278460022A799 /* Address.storyboard in Resources */,
+				5C03607127E56A83008067C6 /* WishlistTVCell.xib in Resources */,
 				39ECF1A227E51B780058A415 /* ProductDetailsImageCollectionCell.xib in Resources */,
 				5C09DF2F27DFAEA600034B74 /* OrdersTVC.xib in Resources */,
 				85B87A9827E517F7004A2620 /* MyOrderItemCollectionViewCell.xib in Resources */,
+				5C03606727E56946008067C6 /* Wishlist.storyboard in Resources */,
 				5C5B8A1E27DF9C940051462D /* Main.storyboard in Resources */,
 				CD2E8D0A27DFABF80046C06D /* BrandsCollectionViewCell.xib in Resources */,
 				CD2E8CF527DFABDD0046C06D /* Home.storyboard in Resources */,
@@ -827,9 +863,12 @@
 				CD5A061E27E0E09B000CA494 /* Rules.swift in Sources */,
 				CD2E8D0727DFABF80046C06D /* HomeTableViewCell.swift in Sources */,
 				CD3E36AE27E15C7D007DFC5E /* Customer.swift in Sources */,
+				85B87A9A27E529AA004A2620 /* MainTabBarViewController.swift in Sources */,
 				39ECF18F27E515860058A415 /* ProductListViewController.swift in Sources */,
+				5C03606A27E569A4008067C6 /* WishlistVC.swift in Sources */,
 				85DE38AB27E0D59000601A7E /* CategoriesViewModel.swift in Sources */,
 				CD84C05827E236710033D898 /* Encodable + extension.swift in Sources */,
+				5C03607027E56A83008067C6 /* WishlistTVCell.swift in Sources */,
 				CDE8FED027E26CD10038DDB7 /* LoginViewModel.swift in Sources */,
 				39ECF1A327E51B780058A415 /* ProductDetailsImageCollectionCell.swift in Sources */,
 				39ECF19F27E51B500058A415 /* ProductListCell.swift in Sources */,
@@ -846,6 +885,7 @@
 				5C837E3127E290ED009970B5 /* CreateAddressVC.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
 				39ECF18E27E515860058A415 /* ProductDetailsViewController.swift in Sources */,
+				5C03606C27E569C4008067C6 /* WishlistVC+TVC.swift in Sources */,
 				5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */,
 				CD4506AE27E5116B001F864F /* Helper.swift in Sources */,
 				5C5B8A1927DF9C940051462D /* SceneDelegate.swift in Sources */,
@@ -1050,10 +1090,10 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductList;
+				INFOPLIST_KEY_UIMainStoryboardFile = Wishlist;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1080,10 +1120,10 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = ProductList;
+				INFOPLIST_KEY_UIMainStoryboardFile = Wishlist;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -23,7 +23,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzg-b0-MTf">
                                 <rect key="frame" x="0.0" y="0.0" width="223" height="115.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ads3" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-9L-bfv">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ads3" translatesAutoresizingMaskIntoConstraints="NO" id="5ya-9L-bfv">
                                         <rect key="frame" x="1" y="1" width="221" height="113.5"/>
                                     </imageView>
                                 </subviews>
@@ -72,7 +72,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="ads3" width="580" height="580"/>
+        <image name="ads3" width="1280" height="720"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

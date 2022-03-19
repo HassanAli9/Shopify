@@ -18,6 +18,21 @@ extension UIViewController{
     }
 }
 
+extension UIViewController {
+    func showAlertSheet(title:String, message:String,complition:@escaping (Bool)->Void){
+        let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let logOut = UIAlertAction(title: "Log out", style: .destructive) { _ in
+            complition(true)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { _ in
+            complition(false)
+        }
+        actionSheet.addAction(logOut)
+        actionSheet.addAction(cancel)
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+}
+
 extension UIViewController{
     func showActivityIndicator(indicator: NVActivityIndicatorView? ,startIndicator: Bool){
         guard let indicator = indicator else {return}
