@@ -14,12 +14,18 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: MadokaTextField!
     @IBOutlet weak var passwordTextField: MadokaTextField!
+    @IBOutlet weak var sinupLabel: UILabel!
+    
     let loginViewModel = LoginViewModel()
-    let indicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .black, padding: 0)
+    let indicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .label, padding: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         self.hideKeyboardWhenTappedAround()
+        setGestureOnSignUpLabel()
+        setupViewWhenShowKeyboard()
     }
     @IBAction func loginDidPressed(_ sender: UIButton) {
         login()
@@ -29,7 +35,13 @@ class LoginViewController: UIViewController {
         goToRegisterPage()
     }
     
-    func goToRegisterPage(){
+    func setGestureOnSignUpLabel(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToRegisterPage))
+        sinupLabel.isUserInteractionEnabled = true
+        sinupLabel.addGestureRecognizer(tapGesture)
+    }
+    
+   @objc func goToRegisterPage(){
         let loginVc = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         
         self.navigationController?.pushViewController(loginVc, animated: true)
@@ -61,5 +73,26 @@ extension LoginViewController{
                 print("failed to login")
             }
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension LoginViewController{
+    func setupViewWhenShowKeyboard(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisApear), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    @objc func keyboardApear(){
+        view.frame.origin.y = 0
+        view.frame.origin.y = view.frame.origin.y - 85
+    }
+    @objc func keyboardDisApear(){
+        view.frame.origin.y = 0
     }
 }
