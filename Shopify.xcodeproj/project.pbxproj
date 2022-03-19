@@ -93,6 +93,8 @@
 		CDCE7C0D27E67D7B00DB24AC /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C0C27E67D7B00DB24AC /* CoreDataServices.swift */; };
 		CDCE7C0F27E6807500DB24AC /* WishListModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C0E27E6807500DB24AC /* WishListModel+CoreDataProperties.swift */; };
 		CDCE7C1127E6807800DB24AC /* WishListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1027E6807800DB24AC /* WishListModel+CoreDataClass.swift */; };
+		CDCE7C1527E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1327E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift */; };
+		CDCE7C1627E6859700DB24AC /* OrderItemModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1427E6859700DB24AC /* OrderItemModel+CoreDataClass.swift */; };
 		CDE8FED027E26CD10038DDB7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +208,8 @@
 		CDCE7C0C27E67D7B00DB24AC /* CoreDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
 		CDCE7C0E27E6807500DB24AC /* WishListModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WishListModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CDCE7C1027E6807800DB24AC /* WishListModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WishListModel+CoreDataClass.swift"; path = "/Volumes/Data 300G/ITI/iOS Projects/ShopifyApp/Shopify/Shopify/Model/POJOs/WishListModel/WishListModel+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		CDCE7C1327E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderItemModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CDCE7C1427E6859700DB24AC /* OrderItemModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderItemModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,6 +400,7 @@
 		5C5B8A4E27DF9CF90051462D /* POJOs */ = {
 			isa = PBXGroup;
 			children = (
+				CDCE7C1227E684F400DB24AC /* OrderItemModel */,
 				CD3CE90B27E67A2500379EA9 /* WishListModel */,
 				85CD8EC127E3A71E00009FFC /* orders */,
 				85DE38AC27E0E6AB00601A7E /* CustomCollections */,
@@ -679,6 +684,15 @@
 			path = CoreDataServices;
 			sourceTree = "<group>";
 		};
+		CDCE7C1227E684F400DB24AC /* OrderItemModel */ = {
+			isa = PBXGroup;
+			children = (
+				CDCE7C1427E6859700DB24AC /* OrderItemModel+CoreDataClass.swift */,
+				CDCE7C1327E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift */,
+			);
+			path = OrderItemModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -912,6 +926,7 @@
 				5C837E3127E290ED009970B5 /* CreateAddressVC.swift in Sources */,
 				CD2E8D0927DFABF80046C06D /* BrandsCollectionViewCell.swift in Sources */,
 				39ECF18E27E515860058A415 /* ProductDetailsViewController.swift in Sources */,
+				CDCE7C1527E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift in Sources */,
 				5C03606C27E569C4008067C6 /* WishlistVC+TVC.swift in Sources */,
 				5C09DF3427DFAEBC00034B74 /* OrdersVC+TVC.swift in Sources */,
 				CD4506AE27E5116B001F864F /* Helper.swift in Sources */,
@@ -920,6 +935,7 @@
 				CD5A062627E114A5000CA494 /* RegisterViewController.swift in Sources */,
 				5C837E2D27E27DEE009970B5 /* AddressVC+TVC.swift in Sources */,
 				5C837E2A27E27973009970B5 /* AddressTVCell.swift in Sources */,
+				CDCE7C1627E6859700DB24AC /* OrderItemModel+CoreDataClass.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
 				85DE38B427E17E6C00601A7E /* MyProfileViewController.swift in Sources */,
 				CDCE7C0F27E6807500DB24AC /* WishListModel+CoreDataProperties.swift in Sources */,
