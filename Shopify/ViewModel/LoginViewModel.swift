@@ -19,7 +19,9 @@ class LoginViewModel{
             }
             
             if filetr.count != 0{
-                print(filetr.count)
+                Helper.shared.setUserStatus(userIsLogged: true)
+                guard let customerID = filetr[0].id else {return}
+                Helper.shared.setUserID(customerID: customerID)
                 completion(filetr[0])
             }else{
                 completion(nil)

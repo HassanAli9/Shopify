@@ -17,4 +17,12 @@ class Helper{
     func getUserStatus()-> Bool{
         return UserDefaults.standard.bool(forKey: "User_Status")
     }
+    
+    func setUserID(customerID: Int?){
+        UserDefaults.standard.set(customerID, forKey: "User_ID")
+    }
+    
+    func getUserID()-> Int?{
+        return UserDefaults.standard.integer(forKey: "User_ID")
+    }
 }

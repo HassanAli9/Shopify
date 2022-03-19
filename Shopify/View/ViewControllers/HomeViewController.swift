@@ -22,6 +22,10 @@ class HomeViewController: UIViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
     }
+    
+    @IBAction func didPressedOnSearchButton(_ sender: UIBarButtonItem) {
+        goToAllProduct(isCommingFromBrand: false, brandName: nil)
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -47,7 +51,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             let adsCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath)
             return adsCell
         default:
-            let brandCell = tableView.dequeueReusableCell(withIdentifier: BrandsTableViewCell.identifier, for: indexPath)
+            let brandCell = tableView.dequeueReusableCell(withIdentifier: BrandsTableViewCell.identifier, for: indexPath) as! BrandsTableViewCell
+            brandCell.brandDelegate = self
             return brandCell
         }
     }
@@ -82,5 +87,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         homeTableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension HomeViewController: brandNameProtocol{
+    func transBrandName(brandName: String) {
+        goToAllProduct(isCommingFromBrand: true, brandName: brandName)
+    }
+}
+
+extension HomeViewController{
+    func goToAllProduct(isCommingFromBrand: Bool, brandName: String?){
+        let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
+        productVc.isCommingFromBrand = isCommingFromBrand
+        productVc.brandName = brandName
+        self.navigationController?.pushViewController(productVc, animated: true)
     }
 }

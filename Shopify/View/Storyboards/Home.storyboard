@@ -43,6 +43,9 @@
                     <navigationItem key="navigationItem" title="Home" id="Dui-3D-ica">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="JRr-jn-wBP">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didPressedOnSearchButton:" destination="Y6W-OH-hqX" id="3BP-2L-oZF"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart" catalog="system" id="ILO-cH-lMm">
