@@ -69,7 +69,6 @@ extension LoginViewController{
             }
             if customerLogged != nil {
                 print("success to login")
-                Helper.shared.setUserStatus(userIsLogged: true)
                 UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
             }else{
                 Helper.shared.setUserStatus(userIsLogged: false)
