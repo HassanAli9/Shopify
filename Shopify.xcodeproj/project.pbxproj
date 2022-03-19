@@ -95,6 +95,8 @@
 		CDCE7C1127E6807800DB24AC /* WishListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1027E6807800DB24AC /* WishListModel+CoreDataClass.swift */; };
 		CDCE7C1527E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1327E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift */; };
 		CDCE7C1627E6859700DB24AC /* OrderItemModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1427E6859700DB24AC /* OrderItemModel+CoreDataClass.swift */; };
+		CDCE7C1827E68BCE00DB24AC /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1727E68BCE00DB24AC /* ProductDetailsViewModel.swift */; };
+		CDCE7C1A27E6941100DB24AC /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE7C1927E6941100DB24AC /* WishListViewModel.swift */; };
 		CDE8FED027E26CD10038DDB7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +212,8 @@
 		CDCE7C1027E6807800DB24AC /* WishListModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WishListModel+CoreDataClass.swift"; path = "/Volumes/Data 300G/ITI/iOS Projects/ShopifyApp/Shopify/Shopify/Model/POJOs/WishListModel/WishListModel+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		CDCE7C1327E6859700DB24AC /* OrderItemModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderItemModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CDCE7C1427E6859700DB24AC /* OrderItemModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderItemModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CDCE7C1727E68BCE00DB24AC /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		CDCE7C1927E6941100DB24AC /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -375,6 +379,8 @@
 				CD84C05927E239060033D898 /* RegisterViewModel.swift */,
 				CDE8FECF27E26CD10038DDB7 /* LoginViewModel.swift */,
 				39ECF18827E515550058A415 /* ProductViewModel.swift */,
+				CDCE7C1727E68BCE00DB24AC /* ProductDetailsViewModel.swift */,
+				CDCE7C1927E6941100DB24AC /* WishListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -901,6 +907,7 @@
 				853D5A5C27DFC46E00D287A4 /* ProductImage.swift in Sources */,
 				85B87A9627E517F1004A2620 /* MyOrderItemCollectionViewCell.swift in Sources */,
 				CD5A061E27E0E09B000CA494 /* Rules.swift in Sources */,
+				CDCE7C1A27E6941100DB24AC /* WishListViewModel.swift in Sources */,
 				CD2E8D0727DFABF80046C06D /* HomeTableViewCell.swift in Sources */,
 				CD3E36AE27E15C7D007DFC5E /* Customer.swift in Sources */,
 				85B87A9A27E529AA004A2620 /* MainTabBarViewController.swift in Sources */,
@@ -916,6 +923,7 @@
 				CD2E8CF127DFAB8A0046C06D /* HomeViewModel.swift in Sources */,
 				CD5A061C27E0E09B000CA494 /* Smart_collections.swift in Sources */,
 				CD2E8CEF27DFAB210046C06D /* Networking.swift in Sources */,
+				CDCE7C1827E68BCE00DB24AC /* ProductDetailsViewModel.swift in Sources */,
 				853D5A5027DFAF5700D287A4 /* ProductInCategoryCVC.swift in Sources */,
 				85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */,
 				5C5B8A2127DF9C940051462D /* Shopify.xcdatamodeld in Sources */,
@@ -1134,7 +1142,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1164,7 +1172,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

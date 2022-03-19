@@ -176,6 +176,9 @@
                                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="addToWishListBtn:" destination="vJo-sH-omx" eventType="touchUpInside" id="SzI-su-v63"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -492,6 +495,7 @@
                     </view>
                     <connections>
                         <outlet property="addToCart" destination="gMq-C3-PFL" id="Yvo-4M-Zol"/>
+                        <outlet property="favoriteBtn" destination="L9m-v1-IJ6" id="OZ8-Gc-zAh"/>
                         <outlet property="imageControl" destination="s6o-sa-ABM" id="2od-8t-ERV"/>
                         <outlet property="productDescription" destination="7Qj-LD-8bZ" id="MXt-UQ-CdH"/>
                         <outlet property="productDetailsCollectionView" destination="thX-kM-A6S" id="3ds-FE-9Zl"/>
