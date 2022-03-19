@@ -24,6 +24,12 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfound" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-Kf-F5S">
+                                <rect key="frame" x="16" y="192" width="382" height="670"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="670" id="W75-2c-qNm"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-rV-LL9">
                                 <rect key="frame" x="16" y="192" width="382" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -85,15 +91,18 @@
                             <constraint firstItem="RBF-NO-h9w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="GBy-Om-H2u"/>
                             <constraint firstItem="GPf-lb-WdY" firstAttribute="top" secondItem="RBF-NO-h9w" secondAttribute="top" id="LOd-iw-2NM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="eQp-rV-LL9" secondAttribute="bottom" id="PXR-sg-r0i"/>
+                            <constraint firstItem="QdZ-Kf-F5S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="U4e-8Q-isV"/>
                             <constraint firstItem="RBF-NO-h9w" firstAttribute="leading" secondItem="GPf-lb-WdY" secondAttribute="trailing" constant="10" id="VTz-4L-E49"/>
                             <constraint firstItem="eQp-rV-LL9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Vpl-LB-bj0"/>
                             <constraint firstItem="GPf-lb-WdY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="X9B-1G-5Vv"/>
                             <constraint firstItem="eQp-rV-LL9" firstAttribute="top" secondItem="GPf-lb-WdY" secondAttribute="bottom" constant="37" id="b6F-Tm-8Rg"/>
                             <constraint firstItem="k4o-PH-LhZ" firstAttribute="top" secondItem="GPf-lb-WdY" secondAttribute="bottom" constant="6" id="chH-n0-3W1"/>
                             <constraint firstItem="k4o-PH-LhZ" firstAttribute="leading" secondItem="eQp-rV-LL9" secondAttribute="leading" constant="17" id="dXe-tw-iio"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QdZ-Kf-F5S" secondAttribute="trailing" constant="16" id="rmI-z9-uQg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="RBF-NO-h9w" secondAttribute="trailing" constant="8" id="sCZ-eV-uqh"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eQp-rV-LL9" secondAttribute="trailing" constant="16" id="vnc-tV-PqG"/>
                             <constraint firstItem="GPf-lb-WdY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="xHy-8g-7EU"/>
+                            <constraint firstItem="QdZ-Kf-F5S" firstAttribute="top" secondItem="eQp-rV-LL9" secondAttribute="top" id="ycR-nV-Rcn"/>
                             <constraint firstItem="k4o-PH-LhZ" firstAttribute="trailing" secondItem="eQp-rV-LL9" secondAttribute="trailing" constant="-63" id="ys0-fM-LvO"/>
                         </constraints>
                     </view>
@@ -113,6 +122,7 @@
                     <connections>
                         <outlet property="maximumPrice" destination="Paw-no-Y5m" id="0Cg-pG-K83"/>
                         <outlet property="minimumPrice" destination="7uL-am-QkR" id="IFB-CT-FZD"/>
+                        <outlet property="notFoundImage" destination="QdZ-Kf-F5S" id="p0V-sD-6Yf"/>
                         <outlet property="priceSlider" destination="k4o-PH-LhZ" id="gIG-EJ-Idd"/>
                         <outlet property="productListCollectionView" destination="eQp-rV-LL9" id="4cl-yF-o2p"/>
                         <outlet property="productSearchbar" destination="GPf-lb-WdY" id="3on-xO-eXM"/>
@@ -534,6 +544,7 @@
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="filter" width="36" height="36"/>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="notfound" width="360" height="360"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
