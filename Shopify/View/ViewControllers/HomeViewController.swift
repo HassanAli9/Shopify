@@ -78,6 +78,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Optima", size: 24)
         header.textLabel?.textAlignment = NSTextAlignment.center
-        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.textColor = UIColor.label
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        homeTableView.deselectRow(at: indexPath, animated: false)
     }
 }
