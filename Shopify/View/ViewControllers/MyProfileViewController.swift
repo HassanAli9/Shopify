@@ -24,9 +24,13 @@ class MyProfileViewController: UIViewController {
     
 
     @IBAction func logOutAction(_ sender: Any) {
+        showAlertSheet(title: "Do you want to log out?", message: "if you pressed log out, we will miss you 💔") { succes in
+            if succes {
+                Helper.shared.setUserStatus(userIsLogged: false)
+                UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
+            }
+        }
     }
-    
-
 }
 
 
@@ -116,6 +120,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 self.present(aboutUs, animated: true, completion: nil)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     

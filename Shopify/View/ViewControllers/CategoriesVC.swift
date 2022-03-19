@@ -188,7 +188,15 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected")
+        let productDetailsScreen = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        if (isFiltered) {
+            productDetailsScreen.product = FilterdArr[indexPath.row]
+
+        }else{
+            productDetailsScreen.product = ArrayOfProduct[indexPath.row]
+
+        }
+            self.navigationController?.pushViewController(productDetailsScreen, animated: true)
     }
     
 }
