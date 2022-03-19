@@ -10,7 +10,8 @@ import Kingfisher
 
 class ProductListViewController: UIViewController{
    
-    
+    var isCommingFromBrand: Bool = false
+    var brandName: String?
     var products = [Product]()
     var productsViewModel = ProductViewModel()
     var filteredProducts : [Product]!
