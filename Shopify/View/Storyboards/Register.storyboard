@@ -11,7 +11,6 @@
         <!--Register View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="RegisterViewController" id="Y6W-OH-hqX" customClass="RegisterViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -30,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill the details and create account!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veg-eR-JdD">
-                                <rect key="frame" x="41.5" y="226.5" width="331" height="21"/>
+                                <rect key="frame" x="51.5" y="226.5" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -167,7 +166,6 @@
                             <constraint firstItem="w2e-Wh-iYr" firstAttribute="leading" secondItem="Rpb-k1-E1B" secondAttribute="leading" id="GW7-kB-Tdk"/>
                             <constraint firstItem="WLQ-aQ-v4Y" firstAttribute="centerX" secondItem="aBg-kL-4IY" secondAttribute="centerX" id="H4w-81-uSF"/>
                             <constraint firstItem="XVo-QT-ef7" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.2" id="HNJ-9k-80F"/>
-                            <constraint firstItem="veg-eR-JdD" firstAttribute="width" secondItem="WLQ-aQ-v4Y" secondAttribute="width" id="Je8-oO-trU"/>
                             <constraint firstItem="ltW-62-uEh" firstAttribute="trailing" secondItem="Rpb-k1-E1B" secondAttribute="trailing" id="JrO-1A-aVT"/>
                             <constraint firstItem="eLg-7b-Nm2" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.06" id="Pn5-l3-jeC"/>
                             <constraint firstItem="Rpb-k1-E1B" firstAttribute="firstBaseline" secondItem="veg-eR-JdD" secondAttribute="baseline" multiplier="1.15" constant="24" symbolType="layoutAnchor" id="T7h-P8-vN0"/>
@@ -190,6 +188,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FF5-uY-e5j"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="w2e-Wh-iYr" id="T0v-6c-3Ia"/>
                         <outlet property="emailTextField" destination="ltW-62-uEh" id="Xcz-Rd-BiU"/>
@@ -199,6 +198,7 @@
                         <outlet property="passwordTextField" destination="azm-Ev-TQz" id="sqp-78-vwB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1523.1884057971015" y="89.732142857142847"/>
         </scene>

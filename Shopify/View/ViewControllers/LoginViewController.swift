@@ -26,6 +26,9 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         setGestureOnSignUpLabel()
         setupViewWhenShowKeyboard()
+        
+        guard let id = Helper.shared.getUserID() else {return}
+        print(" id\(id)")
     }
     @IBAction func loginDidPressed(_ sender: UIButton) {
         login()
@@ -66,7 +69,6 @@ extension LoginViewController{
             }
             if customerLogged != nil {
                 print("success to login")
-                Helper.shared.setUserStatus(userIsLogged: true)
             }else{
                 Helper.shared.setUserStatus(userIsLogged: false)
                 self.showAlertErrro(title: "failed to login", message: "please check your email or password")
@@ -90,7 +92,7 @@ extension LoginViewController{
     }
     @objc func keyboardApear(){
         view.frame.origin.y = 0
-        view.frame.origin.y = view.frame.origin.y - 85
+        view.frame.origin.y = view.frame.origin.y - 170
     }
     @objc func keyboardDisApear(){
         view.frame.origin.y = 0

@@ -120,8 +120,6 @@ extension RegisterViewController{
                     DispatchQueue.main.async {
                         self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                     }
-                    Helper.shared.setUserStatus(userIsLogged: true)
-                    print("register is success")
                 }
             }else{
                 DispatchQueue.main.async {

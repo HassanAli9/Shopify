@@ -32,6 +32,12 @@ class RegisterViewModel{
     func createNewCustomer(newCustomer: NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->()){
         networkServices.register(newCustomer: newCustomer) { data, response, error in
             if error == nil {
+                guard let data = data else {return}
+                let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
+                let customer = json["customer"] as? Dictionary<String,Any>
+                let customerID = customer?["id"] as? Int ?? 0
+                Helper.shared.setUserID(customerID: customerID)
+                Helper.shared.setUserStatus(userIsLogged: true)
                 completion(data, response, nil)
             }else{
                 completion(nil, nil, error)
