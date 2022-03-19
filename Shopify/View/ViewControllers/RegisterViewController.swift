@@ -116,10 +116,15 @@ extension RegisterViewController{
                         }
                         return
                     }
+                    Helper.shared.setUserStatus(userIsLogged: true)
                     //register is success
                     DispatchQueue.main.async {
                         self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
+                        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
                     }
+                    
+                    print("register is success")
+                    
                 }
             }else{
                 DispatchQueue.main.async {

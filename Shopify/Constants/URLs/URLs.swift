@@ -21,12 +21,19 @@ struct URLs{
         return URL(string: baseURL + "products.json")
     }
     
+    func getAllCustomCollections()-> URL?{
+        return URL(string: baseURL + "custom_collections.json")
+    }
+    
     func filterProductsByMainCategory(collectionId : Int)-> URL?{
         return URL(string: baseURL + "products.json?collection_id=\(collectionId)")
     }
     
     func customersURl()-> URL?{
         return URL(string: baseURL + "customers.json")
+    }
+    func ordersURL()->URL?{
+        return URL(string: baseURL + "orders.json")
     }
     
     func allProducts()-> URL?{

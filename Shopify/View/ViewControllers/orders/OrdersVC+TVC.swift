@@ -11,7 +11,7 @@ import UIKit
 extension OrdersVC : UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
    
@@ -30,7 +30,7 @@ extension OrdersVC : UITableViewDataSource
 extension OrdersVC : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 170
     }
 }
 

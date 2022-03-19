@@ -20,11 +20,15 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="duH-qp-oNG">
                                 <rect key="frame" x="16" y="113" width="358" height="32"/>
                                 <segments>
-                                    <segment title="All"/>
-                                    <segment title="Men"/>
-                                    <segment title="Woman"/>
-                                    <segment title="Kids"/>
+                                    <segment title="MEN"/>
+                                    <segment title="WOMAN"/>
+                                    <segment title="KIDS"/>
+                                    <segment title="SALE"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.0" green="0.67843137254901964" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segDidChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Noq-4o-Voy"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tzr-Tr-hSb">
                                 <rect key="frame" x="16" y="152" width="358" height="692"/>
@@ -35,6 +39,11 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="pxu-Vi-qa7">
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="692"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" systemColor="labelColor"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductInCatCell" id="Rte-T5-Czk">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -64,18 +73,29 @@
                     <navigationItem key="navigationItem" title="Categories" id="hYb-2e-keL">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="6oi-6v-0tM">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="toSearch:" destination="Y6W-OH-hqX" id="GgW-5g-moy"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart" catalog="system" id="wfX-jT-fhV">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="toWishlist:" destination="Y6W-OH-hqX" id="OkS-dT-dTz"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="cart" catalog="system" id="3bM-aG-d28">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="toCart:" destination="Y6W-OH-hqX" id="WSB-dE-8BA"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="tzr-Tr-hSb" id="Nwl-H0-jMZ"/>
+                        <outlet property="segmentedControl" destination="duH-qp-oNG" id="Zi0-Ly-CEx"/>
+                        <outlet property="spinner" destination="pxu-Vi-qa7" id="OVx-Om-Nlq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,11 +105,12 @@
         <!--Navigation Controller-->
         <scene sceneID="5rG-Vs-iii">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Vy-jK-Iaj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="categoryNC" automaticallyAdjustsScrollViewInsets="NO" id="3Vy-jK-Iaj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CEm-iy-34s">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
