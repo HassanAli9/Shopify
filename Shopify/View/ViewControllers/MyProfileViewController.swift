@@ -24,6 +24,8 @@ class MyProfileViewController: UIViewController {
     
 
     @IBAction func logOutAction(_ sender: Any) {
+        Helper.shared.setUserStatus(userIsLogged: false)
+        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
     }
     
 
