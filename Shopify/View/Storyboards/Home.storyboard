@@ -50,6 +50,9 @@
                         <rightBarButtonItems>
                             <barButtonItem image="heart" catalog="system" id="ILO-cH-lMm">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="didPressedOnWishListBtn:" destination="Y6W-OH-hqX" id="dGV-KL-okB"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="cart" catalog="system" id="dcd-pC-fYY">
                                 <color key="tintColor" systemColor="labelColor"/>

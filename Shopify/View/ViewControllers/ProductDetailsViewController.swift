@@ -31,11 +31,15 @@ class ProductDetailsViewController: UIViewController {
                     }, completion: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkProductInWishList()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupImageCollection()
-       setupImageControl()
+        setupImageCollection()
+        setupImageControl()
         updateUi()
     }
     
@@ -59,7 +63,13 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func addToWishListBtn(_ sender: UIButton) {
-        selectedFavoritBtn(sender: sender)
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.selectedFavoritBtn(sender: sender)
+            }else{
+                self.goToLoginPage()
+            }
+        }
     }
 }
 
@@ -99,7 +109,14 @@ extension ProductDetailsViewController{
             //button non selected
             print("non selected")
             self.favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            nonSelectedProduct()
         }
+    }
+}
+extension ProductDetailsViewController{
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }
 
@@ -114,5 +131,24 @@ extension ProductDetailsViewController{
         productWishList.productPrice = variants[0].price
         
         productDetailsViewModel.saveProductToWishList()
+    }
+}
+
+extension ProductDetailsViewController{
+    func nonSelectedProduct(){
+        guard let productId = product?.id else {return}
+        productDetailsViewModel.deletedSelectedProduct(productID: productId)
+    }
+}
+
+extension ProductDetailsViewController{
+    func checkProductInWishList(){
+        guard let productId = product?.id else {return}
+        productDetailsViewModel.checkIfProductFoundInWishList(productID: productId) { productIsFoundInWishList in
+            if productIsFoundInWishList{
+                self.favoriteBtn.isSelected = true
+                self.favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+        }
     }
 }

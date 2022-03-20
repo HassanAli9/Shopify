@@ -26,6 +26,15 @@ class HomeViewController: UIViewController {
     @IBAction func didPressedOnSearchButton(_ sender: UIBarButtonItem) {
         goToAllProduct(isCommingFromBrand: false, brandName: nil)
     }
+    @IBAction func didPressedOnWishListBtn(_ sender: UIBarButtonItem) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -102,5 +111,17 @@ extension HomeViewController{
         productVc.isCommingFromBrand = isCommingFromBrand
         productVc.brandName = brandName
         self.navigationController?.pushViewController(productVc, animated: true)
+    }
+}
+
+extension HomeViewController{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

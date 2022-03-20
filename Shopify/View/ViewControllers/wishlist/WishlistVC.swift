@@ -22,10 +22,8 @@ class WishlistVC: UIViewController {
 
 extension WishlistVC{
     func setWishListProducts(){
-        wishListViewModel.getProductFromWishList { wishlistProducts, error in
-            guard let wishlistProducts = wishlistProducts else {
-                return
-            }
+        wishListViewModel.getSelectedProducts { wishlistProducts, error in
+            guard let wishlistProducts = wishlistProducts else { return }
             self.arrOfWishListProducts = wishlistProducts
             self.tableView.reloadData()
         }

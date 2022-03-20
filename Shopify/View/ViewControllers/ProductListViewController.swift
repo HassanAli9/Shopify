@@ -37,7 +37,13 @@ class ProductListViewController: UIViewController{
     }
     
     @IBAction func toWishlistBtn(_ sender: Any) {
-        goToWishListPage()
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
     }
     
     @IBAction func filterBtnByPrice(_ sender: Any) {
@@ -173,5 +179,10 @@ extension ProductListViewController{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
         self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }
