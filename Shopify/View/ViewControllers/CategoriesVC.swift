@@ -11,11 +11,8 @@ import Floaty
 class CategoriesVC: UIViewController {
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
-    
     
     let floaty = Floaty()
     var ArrayOfProduct : [Product] = []
@@ -23,7 +20,7 @@ class CategoriesVC: UIViewController {
     var collectionID : Int = 272069034031
     var isFiltered = false
     var FilterdArr:[Product]=[]
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         initTheCollectionView()
@@ -133,13 +130,31 @@ class CategoriesVC: UIViewController {
     
     
     @IBAction func toWishlist(_ sender: Any) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
     }
     
     @objc func addToFavourite(sender:UIButton){
-        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        sender.tintColor = .red
+        let buttonTag = sender.tag
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            //button selected
+            print("selected")
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            addToWishList(row: buttonTag)
+        }
+        else{
+            //button non selected
+            print("non selected")
+            sender.setImage(UIImage(systemName: "heart"), for: .normal)
+            nonSelectedProduct(row: buttonTag)
+        }
     }
-    
 }
 
 
@@ -180,8 +195,35 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
             }
             cell.productNameCat.text = ArrayOfProduct[indexPath.row].title
             cell.productPriceCat.text =  "$\(ArrayOfProduct[indexPath.row].variants?[0].price ?? "0")"
+            if let productId = ArrayOfProduct[indexPath.row].id {
+                categoryViewModel.checkIfProductFoundInWishList(productID: productId) { productIsFoundInWishList in
+                    if productIsFoundInWishList{
+                        cell.favButton.isSelected = true
+                        cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                    }
+                }
+            }
+            
             cell.favButton.tag = indexPath.row
             cell.favButton.addTarget(self, action: #selector(addToFavourite(sender:)), for: .touchUpInside)
+            
+            /*cell.favButton.addAction(UIAction(handler: { _ in
+                
+                cell.favButton.isSelected = !cell.favButton.isSelected
+                if cell.favButton.isSelected{
+                    //button selected
+                    print("selected")
+                    cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                    self.addToWishList(row: indexPath.row)
+                }
+                else{
+                    //button non selected
+                    print("non selected")
+                    cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                    
+                }
+
+            }), for: .touchUpInside)*/
         }
         
         return cell
@@ -199,4 +241,39 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
             self.navigationController?.pushViewController(productDetailsScreen, animated: true)
     }
     
+}
+
+extension CategoriesVC{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+}
+
+extension CategoriesVC{
+    func addToWishList(row: Int){
+        let productWishList = WishListModel(context: context)
+        let product = ArrayOfProduct[row]
+        guard let customerID = Helper.shared.getUserID(), let id = ArrayOfProduct[row].id, let variants = product.variants else {return}
+        productWishList.customerID = Int64(customerID)
+        productWishList.productID = Int64(id)
+        productWishList.productName = product.title
+        productWishList.productImage = product.image?.src
+        productWishList.productPrice = variants[0].price
+        
+        categoryViewModel.saveProductToWishList()
+    }
+}
+
+extension CategoriesVC{
+    func nonSelectedProduct(row: Int){
+        let product = ArrayOfProduct[row]
+        guard let productId = product.id else {return}
+        categoryViewModel.deletedSelectedProduct(productID: productId)
+    }
 }
