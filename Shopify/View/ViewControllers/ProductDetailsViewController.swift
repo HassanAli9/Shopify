@@ -10,6 +10,7 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
     
     let productDetailsViewModel = ProductDetailsViewModel()
+    let orderViewModel = OrderViewModel()
 
     var product : Product?
     @IBOutlet weak var productDescription: UITextView!
@@ -20,7 +21,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBAction func addToCartBtn(_ sender: Any) {
-        
+        orderViewModel.addItemsToCart(product: product!)
         UIView.animate(withDuration: 0.5, delay: 0,
                        usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1,
                        options: [], animations: {

@@ -11,7 +11,7 @@ import UIKit
 extension OrdersVC : UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return cartArray.count
     }
     
    
@@ -19,8 +19,24 @@ extension OrdersVC : UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: OrdersTVC.identifier, for: indexPath) as! OrdersTVC
-        
+        cell.addButton.tag = indexPath.row
+        cell.imgView.kf.setImage(with: URL(string: cartArray[indexPath.row].itemImage!))
+        cell.titleLabel.text = cartArray[indexPath.row].itemName
+        cell.priceLabel.text = cartArray[indexPath.row].itemPrice
+        cell.quantityLabel.text = String(cartArray[indexPath.row].itemQuantity)
+        cell.addButton.addAction(UIAction(handler: { _ in
+            print(indexPath.row)
+            print("---------------------------")
+            self.cartArray[indexPath.row].itemQuantity+=1
+            print(indexPath.row)
+            self.tableView.reloadData()
+        }), for: .touchUpInside)
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at:indexPath, animated: true)
     }
     
     
