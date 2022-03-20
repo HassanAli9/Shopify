@@ -8,6 +8,8 @@
 import UIKit
 
 class ProductDetailsViewController: UIViewController {
+    
+    let productDetailsViewModel = ProductDetailsViewModel()
 
     var product : Product?
     @IBOutlet weak var productDescription: UITextView!
@@ -16,6 +18,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var imageControl: UIPageControl!
     @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteBtn: UIButton!
     @IBAction func addToCartBtn(_ sender: Any) {
         
         UIView.animate(withDuration: 0.5, delay: 0,
@@ -54,6 +57,10 @@ class ProductDetailsViewController: UIViewController {
         productTitleLabel.text = product.title
         productPriceLabel.text = price + " USD"
     }
+    
+    @IBAction func addToWishListBtn(_ sender: UIButton) {
+        selectedFavoritBtn(sender: sender)
+    }
 }
 
 extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
@@ -77,5 +84,35 @@ extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width*0.95, height: view.frame.width*0.65)
     }
-    
+}
+
+extension ProductDetailsViewController{
+    func selectedFavoritBtn(sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            //button selected
+            print("selected")
+            self.favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            addToWishList()
+        }
+        else{
+            //button non selected
+            print("non selected")
+            self.favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
+}
+
+extension ProductDetailsViewController{
+    func addToWishList(){
+        let productWishList = WishListModel(context: context)
+        guard let product = product, let id = product.id, let variants = product.variants, let customerID = Helper.shared.getUserID() else {return}
+        productWishList.customerID = Int64(customerID)
+        productWishList.productID = Int64(id)
+        productWishList.productName = product.title
+        productWishList.productImage = product.image?.src
+        productWishList.productPrice = variants[0].price
+        
+        productDetailsViewModel.saveProductToWishList()
+    }
 }

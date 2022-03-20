@@ -37,7 +37,7 @@ class ProductListViewController: UIViewController{
     }
     
     @IBAction func toWishlistBtn(_ sender: Any) {
-    
+        goToWishListPage()
     }
     
     @IBAction func filterBtnByPrice(_ sender: Any) {
@@ -167,4 +167,11 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
         self.updateUi()
     }
     
+}
+
+extension ProductListViewController{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
 }
