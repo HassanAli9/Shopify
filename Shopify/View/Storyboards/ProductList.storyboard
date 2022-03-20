@@ -218,7 +218,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLV-Kg-MxA">
                                                                 <rect key="frame" x="8" y="8" width="366" height="71"/>
                                                                 <subviews>
-                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
+                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
                                                                         <rect key="frame" x="168" y="17" width="180" height="24"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -284,7 +284,7 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMq-C3-PFL">
                                                                 <rect key="frame" x="35" y="4" width="313" height="50"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="tintColor" systemColor="labelColor"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain">
@@ -524,11 +524,6 @@
             <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="7fL-FA-hjV">
-            <size key="intrinsicContentSize" width="180" height="32"/>
-        </designable>
-    </designables>
     <resources>
         <image name="33" width="1800" height="2300"/>
         <image name="cart" catalog="system" width="128" height="102"/>
