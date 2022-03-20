@@ -28,11 +28,15 @@ class ProductDetailsViewController: UIViewController {
                     }, completion: nil)
     }
     
+
+    @IBAction func toggleWishlist(_ sender: Any) {
+        let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC")
+        navigationController?.pushViewController(wishlistVC, animated: false)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
        setupImageCollection()
-       setupImageControl()
         updateUi()
     }
     
@@ -42,11 +46,7 @@ class ProductDetailsViewController: UIViewController {
         productDetailsCollectionView.register(ProductDetailsImageCollectionCell.nib(), forCellWithReuseIdentifier: ProductDetailsImageCollectionCell.identifier)
     }
     
-    private func setupImageControl(){
-        guard let product = product,let images = product.images else{return}
-        imageControl.currentPage = 0
-        imageControl.numberOfPages = images.count
-    }
+   
 
     private func updateUi(){
         guard let product = product ,let variant = product.variants, let price = variant[0].price else{return}
@@ -58,12 +58,11 @@ class ProductDetailsViewController: UIViewController {
 
 extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        imageControl.currentPage = indexPath.row
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         guard let product = product,let images = product.images else{return 0}
+        imageControl.numberOfPages = images.count
         return images.count
     }
     
@@ -75,7 +74,10 @@ extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width*0.95, height: view.frame.width*0.65)
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        imageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
 }

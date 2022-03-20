@@ -17,6 +17,8 @@ class ProductListViewController: UIViewController{
     var filteredProducts : [Product]!
     var filterIsPressed = true
     var isFiltered = false
+    var isSortedPressed = true
+    
     @IBOutlet weak var minimumPrice: UILabel!
     @IBOutlet weak var maximumPrice: UILabel!
     @IBOutlet weak var priceSlider: UISlider!
@@ -25,28 +27,48 @@ class ProductListViewController: UIViewController{
     
     @IBOutlet weak var notFoundImage: UIImageView!
     
-    @IBAction func sortByPrice(_ sender: UISlider) {
+    @IBAction func filterSlider(_ sender: UISlider) {
         print(sender.value)
         isFiltered = true
         let filteredByPrice = self.products.filter { product in
             maximumPrice.text = "$"+String(Int(sender.value))
             return Float(product.variants?[0].price ?? "") ?? 0 <= sender.value
-    }
-       
+        }
             self.filteredProducts = filteredByPrice
-            self.updateUi()
-        
+        self.updateUi()
     }
     
     @IBAction func toWishlistBtn(_ sender: Any) {
     
     }
     
+    @IBAction func toCartBtn(_ sender: Any) {
+        let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC")
+        navigationController?.pushViewController(cartVC, animated: false)
+    }
+    
     @IBAction func filterBtnByPrice(_ sender: Any) {
-        
         filterBtnIsPressed()
+    }
+    
+    
+    @IBAction func sortByPriceButton(_ sender: Any) {
+        if isSortedPressed{
+            isSortedPressed = false
+            filteredProducts = filteredProducts.sorted(by: {
+                Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
+            })
+            self.updateUi()
+        }else{
+            isSortedPressed = true
+            filteredProducts = filteredProducts.sorted(by: {
+                Double($0.variants![0].price!)! > Double($1.variants![0].price!)!
+            })
+            self.updateUi()
+        }
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -59,7 +81,6 @@ class ProductListViewController: UIViewController{
         notFoundImage.isHidden = true
         setupProductCollection()
         setProducts()
-        filteredProducts = products
     }
     
    private func setupProductCollection(){
@@ -72,9 +93,9 @@ class ProductListViewController: UIViewController{
     private func setProducts(){
         productsViewModel.bindSuccessToView = {
         self.products = self.productsViewModel.products
+        self.filteredProducts = self.productsViewModel.products
         self.updateUi()
         }
-        
         productsViewModel.bindFailedToView = {
             print("error in setting data to View")
         }
@@ -97,49 +118,44 @@ class ProductListViewController: UIViewController{
             maximumPrice.isHidden = true
             filterIsPressed = true
             priceSlider.isHidden = true
-            
         }
     }
 }
 
-// MARK :- CollectionView
-extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate, UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
+// MARK: CollectionView DataSorce
+extension ProductListViewController: UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !isFiltered {
-            return products.count
+        if !isFiltered{
+                return products.count
         }else{
-            return filteredProducts.count
+                isCommingFromBrand = true
+                return filteredProducts.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductListCell.identifier, for: indexPath) as! ProductListCell
-        
-        if filteredProducts.count != 0{
+            
             self.notFoundImage.isHidden = true
             self.productListCollectionView.isHidden = false
             productCell.productNameLabel.text = filteredProducts[indexPath.row].title
-            productCell.productImageView.kf.setImage(with: URL(string: filteredProducts[indexPath.row].image?.src ?? ""))
+            productCell.productImageView.kf.setImage(with:URL(string:filteredProducts[indexPath.row].image?.src ?? ""))
             productCell.productImageView.kf.indicatorType = .activity
             if  let variant = filteredProducts[indexPath.row].variants, let price = variant[0].price {
                 productCell.productPriceLabel.text = "$"+price
             }
-        }else{
-        productCell.productNameLabel.text = products[indexPath.row].title
-        productCell.productImageView.kf.setImage(with: URL(string: products[indexPath.row].image?.src ?? ""))
-            productCell.productImageView.kf.indicatorType = .activity
-        if  let variant = products[indexPath.row].variants, let price = variant[0].price {
-            productCell.productPriceLabel.text = "$"+price
-        }
-        }
+
         return productCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.6)
     }
+}
 
+extension ProductListViewController:UICollectionViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("did select cell")
         
@@ -154,8 +170,10 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
            productDetailsVC.product = product
            self.navigationController?.pushViewController(productDetailsVC, animated: true)
         }
-        
     }
+    
+}
+extension ProductListViewController:UISearchBarDelegate{
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             isFiltered = true
@@ -186,5 +204,4 @@ extension ProductListViewController:UISearchBarDelegate,UICollectionViewDelegate
         }
         self.updateUi()
     }
-    
 }
