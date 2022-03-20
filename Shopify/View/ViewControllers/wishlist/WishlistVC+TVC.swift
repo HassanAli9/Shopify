@@ -50,6 +50,7 @@ extension WishlistVC : UITableViewDelegate{
                             tableView.deleteRows(at: [indexPath], with: .automatic)
                             self.arrOfWishListProducts.remove(at: indexPath.row)
                             tableView.endUpdates()
+                            self.checkIsWishListIsEmpty()
                         }else{
                             print("deleted failed")
                         }

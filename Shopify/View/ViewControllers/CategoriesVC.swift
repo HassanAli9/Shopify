@@ -120,6 +120,7 @@ class CategoriesVC: UIViewController {
     
     
     @IBAction func toSearch(_ sender: Any) {
+        self.goToAllProduct(isCommingFromBrand: false, brandName: nil)
     }
     
     
@@ -136,23 +137,6 @@ class CategoriesVC: UIViewController {
             }else{
                 self.goToLoginPage()
             }
-        }
-    }
-    
-    @objc func addToFavourite(sender:UIButton){
-        let buttonTag = sender.tag
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            //button selected
-            print("selected")
-            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            addToWishList(row: buttonTag)
-        }
-        else{
-            //button non selected
-            print("non selected")
-            sender.setImage(UIImage(systemName: "heart"), for: .normal)
-            nonSelectedProduct(row: buttonTag)
         }
     }
 }
@@ -204,28 +188,9 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
                 }
             }
             
-            cell.favButton.tag = indexPath.row
-            cell.favButton.addTarget(self, action: #selector(addToFavourite(sender:)), for: .touchUpInside)
-            
-            /*cell.favButton.addAction(UIAction(handler: { _ in
-                
-                cell.favButton.isSelected = !cell.favButton.isSelected
-                if cell.favButton.isSelected{
-                    //button selected
-                    print("selected")
-                    cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                    self.addToWishList(row: indexPath.row)
-                }
-                else{
-                    //button non selected
-                    print("non selected")
-                    cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                    
-                }
-
-            }), for: .touchUpInside)*/
+            cell.row = indexPath.row
+            cell.delegate = self
         }
-        
         return cell
     }
     
@@ -275,5 +240,45 @@ extension CategoriesVC{
         let product = ArrayOfProduct[row]
         guard let productId = product.id else {return}
         categoryViewModel.deletedSelectedProduct(productID: productId)
+    }
+}
+
+extension CategoriesVC: ProductInCategoryProtocol{
+    func addProductToWishList(row: Int, sender: UIButton) {
+        
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.addProductToFavorite(row: row, sender: sender)
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
+}
+
+extension CategoriesVC{
+    func addProductToFavorite(row: Int, sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            //button selected
+            print("selected")
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            addToWishList(row: row)
+        }
+        else{
+            //button non selected
+            print("non selected")
+            sender.setImage(UIImage(systemName: "heart"), for: .normal)
+            nonSelectedProduct(row: row)
+        }
+    }
+}
+
+extension CategoriesVC{
+    func goToAllProduct(isCommingFromBrand: Bool, brandName: String?){
+        let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
+        productVc.isCommingFromBrand = isCommingFromBrand
+        productVc.brandName = brandName
+        self.navigationController?.pushViewController(productVc, animated: true)
     }
 }
