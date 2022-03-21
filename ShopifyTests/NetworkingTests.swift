@@ -33,4 +33,49 @@ class NetworkingTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testGetAllBrands(){
+        let myExpectation = expectation(description: "wating for brands api response")
+        networking.getAllBrands { brands, error in
+            if error != nil {
+                XCTFail()
+            }else{
+                XCTAssertNotNil(brands)
+                //XCTAssertEqual(brands?.smart_collections?.count, 3, "errordc")
+                myExpectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 6, handler: nil)
+    }
+    
+    func testGetAllProductsInCategory(){
+        let myExpectation = expectation(description: "wating for products in category api response")
+        networking.getAllProductsInCategory(complition: { products, error in
+            if error != nil{
+                XCTFail()
+            }else{
+                XCTAssertNotNil(products)
+                //XCTAssertEqual(products?.products?.count, 100, "errordc")
+                myExpectation.fulfill()
+            }
+        }, collectionID: 272069034031)
+        waitForExpectations(timeout: 6, handler: nil)
+    }
+    
+    func testRegister(){
+        let myExpectation = expectation(description: "wating for register api response")
+        
+        let customer = Customer(first_name: "Ahmed", last_name: "Nasr", email: "kkk@gmail.com", phone: "09876543", tags: "123456", id: nil, verified_email: true, addresses: nil)
+        let newCustomer = NewCustomer(customer: customer)
+        
+        networking.register(newCustomer: newCustomer) { data, response, error in
+            if error != nil{
+                XCTFail()
+            }else{
+                XCTAssertNotNil(data)
+                myExpectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 6, handler: nil)
+    }
 }
