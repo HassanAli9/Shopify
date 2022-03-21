@@ -21,7 +21,12 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBAction func addToCartBtn(_ sender: Any) {
+        
+        orderViewModel.bindingAlreadyInCartToView = {
+            self.showToast(message: "Already in Cart", font: .boldSystemFont(ofSize: 15))
+        }
         orderViewModel.addItemsToCart(product: product!)
+        
         UIView.animate(withDuration: 0.5, delay: 0,
                        usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1,
                        options: [], animations: {
@@ -57,6 +62,24 @@ class ProductDetailsViewController: UIViewController {
         productDescription.text = product.body_html
         productTitleLabel.text = product.title
         productPriceLabel.text = price + " USD"
+    }
+    
+    func showToast(message : String, font: UIFont) {
+
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2-100, y: self.view.frame.size.height-200, width: 200, height: 40))
+        toastLabel.backgroundColor = .label
+        toastLabel.textColor = .systemBackground
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.layer.cornerRadius = 8;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 5.0, delay: 0.5, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
     
     @IBAction func addToWishListBtn(_ sender: UIButton) {

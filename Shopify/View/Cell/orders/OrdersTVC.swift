@@ -26,6 +26,9 @@ class OrdersTVC : UITableViewCell {
     
     static let identifier = "ordersTVC"
     
+    var addItemQuantity : (()->())?
+    var subItemQuantity : (()->())?
+    
     static func nib() ->UINib{
         UINib(nibName: "OrdersTVC", bundle: nil)
     }
@@ -40,5 +43,17 @@ class OrdersTVC : UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+    
+    
+    @IBAction func addQuantity(_ sender: Any) {
+        print("add")
+        addItemQuantity?()
+    }
+    
+    @IBAction func subQuantity(_ sender: Any) {
+        subItemQuantity?()
+    }
+    
+    
     
 }
