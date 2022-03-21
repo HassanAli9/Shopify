@@ -11,6 +11,7 @@ import XCTest
 class NetworkingTests: XCTestCase {
 
     let networking = Networking()
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -59,23 +60,6 @@ class NetworkingTests: XCTestCase {
                 myExpectation.fulfill()
             }
         }, collectionID: 272069034031)
-        waitForExpectations(timeout: 6, handler: nil)
-    }
-    
-    func testRegister(){
-        let myExpectation = expectation(description: "wating for register api response")
-        
-        let customer = Customer(first_name: "Ahmed", last_name: "Nasr", email: "kkk@gmail.com", phone: "09876543", tags: "123456", id: nil, verified_email: true, addresses: nil)
-        let newCustomer = NewCustomer(customer: customer)
-        
-        networking.register(newCustomer: newCustomer) { data, response, error in
-            if error != nil{
-                XCTFail()
-            }else{
-                XCTAssertNotNil(data)
-                myExpectation.fulfill()
-            }
-        }
         waitForExpectations(timeout: 6, handler: nil)
     }
 }
