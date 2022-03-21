@@ -68,6 +68,7 @@ class ProductListViewController: UIViewController{
         notFoundImage.isHidden = true
         setupProductCollection()
         filteredProducts = originalProducts
+        
  
     }
     
@@ -174,6 +175,7 @@ extension ProductListViewController:UISearchBarDelegate{
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
             isFiltered = true
+        self.updateUi()
         }
 
         func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
