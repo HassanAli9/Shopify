@@ -25,4 +25,12 @@ class Helper{
     func getUserID()-> Int?{
         return UserDefaults.standard.integer(forKey: "User_ID")
     }
+    
+    func checkUserIsLogged(completion: @escaping (Bool) -> Void){
+        if getUserStatus() {
+            completion(true)
+        }else{
+            completion(false)
+        }
+    }
 }

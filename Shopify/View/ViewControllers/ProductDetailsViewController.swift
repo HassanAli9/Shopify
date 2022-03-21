@@ -8,6 +8,8 @@
 import UIKit
 
 class ProductDetailsViewController: UIViewController {
+    
+    let productDetailsViewModel = ProductDetailsViewModel()
 
     let productDetailsViewModel = ProductDetailsViewModel()
     
@@ -58,16 +60,16 @@ class ProductDetailsViewController: UIViewController {
         productTitleLabel.text = product.title
         productPriceLabel.text = price + " USD"
     }
+    
     @IBAction func addToWishListBtn(_ sender: UIButton) {
-           Helper.shared.checkUserIsLogged { userLogged in
-               if userLogged{
-                   self.selectedFavoritBtn(sender: sender)
-               }else{
-                   self.goToLoginPage()
-               }
-           }
-       }
-
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.selectedFavoritBtn(sender: sender)
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
 }
 
 extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{

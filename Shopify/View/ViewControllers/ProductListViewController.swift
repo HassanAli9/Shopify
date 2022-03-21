@@ -38,7 +38,13 @@ class ProductListViewController: UIViewController{
     }
     
     @IBAction func toWishlistBtn(_ sender: Any) {
-    
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
     }
     
     @IBAction func toCartBtn(_ sender: Any) {
@@ -215,5 +221,17 @@ extension ProductListViewController:UISearchBarDelegate{
             }
         }
         self.updateUi()
+    }
+}
+
+extension ProductListViewController{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }
