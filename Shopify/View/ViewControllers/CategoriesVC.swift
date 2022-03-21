@@ -179,6 +179,7 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
             }
             cell.productNameCat.text = ArrayOfProduct[indexPath.row].title
             cell.productPriceCat.text =  "$\(ArrayOfProduct[indexPath.row].variants?[0].price ?? "0")"
+            
             if let productId = ArrayOfProduct[indexPath.row].id {
                 categoryViewModel.checkIfProductFoundInWishList(productID: productId) { productIsFoundInWishList in
                     if productIsFoundInWishList{
@@ -187,9 +188,15 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
                     }
                 }
             }
-            
-            cell.row = indexPath.row
-            cell.delegate = self
+            cell.addToWishList = {
+                Helper.shared.checkUserIsLogged { userIsLogged in
+                    if !userIsLogged{
+                        self.goToLoginPage()
+                    }else{
+                        self.checkIsProductSelected(row: indexPath.row, sender: cell.favButton)
+                    }
+                }
+            }
         }
         return cell
     }
@@ -206,18 +213,6 @@ extension CategoriesVC :  UICollectionViewDelegate, UICollectionViewDataSource, 
             self.navigationController?.pushViewController(productDetailsScreen, animated: true)
     }
     
-}
-
-extension CategoriesVC{
-    func goToWishListPage(){
-        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
-        self.navigationController?.pushViewController(wishListVC, animated: true)
-    }
-    
-    func goToLoginPage(){
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(loginVC, animated: true)
-    }
 }
 
 extension CategoriesVC{
@@ -243,38 +238,34 @@ extension CategoriesVC{
     }
 }
 
-extension CategoriesVC: ProductInCategoryProtocol{
-    func addProductToWishList(row: Int, sender: UIButton) {
-        
-        Helper.shared.checkUserIsLogged { userLogged in
-            if userLogged{
-                self.addProductToFavorite(row: row, sender: sender)
-            }else{
-                self.goToLoginPage()
-            }
-        }
-    }
-}
-
 extension CategoriesVC{
-    func addProductToFavorite(row: Int, sender: UIButton){
-        sender.isSelected = !sender.isSelected
-        if sender.isSelected{
-            //button selected
-            print("selected")
+    func checkIsProductSelected(row: Int, sender: UIButton){
+        if !sender.isSelected {
+             //button selected
+            sender.isSelected = true
             sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            addToWishList(row: row)
-        }
-        else{
-            //button non selected
-            print("non selected")
-            sender.setImage(UIImage(systemName: "heart"), for: .normal)
-            nonSelectedProduct(row: row)
-        }
+            self.addToWishList(row: row)
+         }
+         else{
+             //button non selected
+             sender.isSelected = false
+             sender.setImage(UIImage(systemName: "heart"), for: .normal)
+             self.nonSelectedProduct(row: row)
+         }
     }
 }
 
 extension CategoriesVC{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+    
     func goToAllProduct(isCommingFromBrand: Bool, brandName: String?){
         let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
         productVc.isCommingFromBrand = isCommingFromBrand
