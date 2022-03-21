@@ -161,7 +161,6 @@ extension ProductListViewController: UICollectionViewDataSource ,UICollectionVie
             if  let variant = filteredProducts[indexPath.row].variants, let price = variant[0].price {
                 productCell.productPriceLabel.text = "$"+price
             }
-
         return productCell
     }
     
@@ -173,19 +172,10 @@ extension ProductListViewController: UICollectionViewDataSource ,UICollectionVie
 extension ProductListViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did select cell")
-        
-        if filteredProducts.count != 0{
          let product = filteredProducts[indexPath.row]
         let filteredproductDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
         filteredproductDetailsVC.product = product
         self.navigationController?.pushViewController(filteredproductDetailsVC, animated: true)
-        }else{
-            let product = originalProducts[indexPath.row]
-           let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
-           productDetailsVC.product = product
-           self.navigationController?.pushViewController(productDetailsVC, animated: true)
-        }
     }
     
 }
