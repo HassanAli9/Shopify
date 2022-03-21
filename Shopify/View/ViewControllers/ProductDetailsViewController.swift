@@ -17,6 +17,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
     @IBOutlet weak var favoriteBtn: UIButton!
+        
     @IBAction func addToCartBtn(_ sender: Any) {
         
         UIView.animate(withDuration: 0.5, delay: 0,
@@ -66,6 +67,11 @@ class ProductDetailsViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func moreProductsBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+    
 }
 
 extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{

@@ -72,19 +72,19 @@ extension RegisterViewController{
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "please fill your infromation to reister", message: "for register must fill all information")
+                self.showAlertError(title: "please fill your infromation to reister", message: "for register must fill all information")
             case "ErrorPassword":
                 checkIsSuccess = false
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "There is a problem with the password", message: "please enter password again")
+                self.showAlertError(title: "There is a problem with the password", message: "please enter password again")
             case "ErrorEmail":
                 checkIsSuccess = false
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "your email is incorrect", message: "please enter correct email")
+                self.showAlertError(title: "your email is incorrect", message: "please enter correct email")
             default:
                 checkIsSuccess = true
             }
@@ -127,7 +127,7 @@ extension RegisterViewController{
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "your email is already exist", message: "can you login!!")
+                self.showAlertError(title: "your email is already exist", message: "can you login!!")
             }
         }
     }

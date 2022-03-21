@@ -19,20 +19,33 @@ class NetworkingTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testGetAllCustomers(){
+        let customerExpectation = expectation(description: "Waiting for API response")
+        networking.getAllCustomers { customers, error in
+            if let error = error {
+                XCTFail()
+                print(error.localizedDescription)
+            }else{
+                XCTAssertNotNil(customers)
+                customerExpectation.fulfill()
+            }
         }
+        waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testGetAllProducts(){
+        let productExpectation = expectation(description: "Waiting for API response")
+        networking.getAllProducts { products, error in
+            if let error = error {
+                XCTFail()
+                print(error.localizedDescription)
+            }else{
+                XCTAssertNotNil(products)
+                productExpectation.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
     func testGetAllBrands(){
