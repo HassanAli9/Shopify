@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class ProductViewModel{
+class ProductViewModel: NSObject{
     
     var network = Networking()
     var bindSuccessToView : (()->()) = {}
@@ -22,7 +22,8 @@ class ProductViewModel{
         }
     }
     var selectedProduct : Product?
-    init(){
+    override init(){
+        super.init()
         self.fetchProductDataFromNetwork()
     }
     
@@ -35,10 +36,9 @@ class ProductViewModel{
             }
         }
     }
-}
-extension ProductViewModel{
-    func userPressed(at indexPath : IndexPath){
-        let product = self.products[indexPath.row]
-        self.selectedProduct = product
+    func getProductsfromAPI(collectioID:Int,complition:@escaping (Products?,Error?)->Void){
+        network.getAllProductsInCategory(complition: complition, collectionID: collectioID)
+        
     }
 }
+

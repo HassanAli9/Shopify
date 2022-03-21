@@ -10,9 +10,8 @@ import Kingfisher
 
 class ProductListViewController: UIViewController{
    
-    var isCommingFromBrand: Bool = false
-    var brandName: String?
-    var products = [Product]()
+    var brandId: Int?
+    var originalProducts = [Product]()
     var productsViewModel = ProductViewModel()
     var filteredProducts : [Product]!
     var filterIsPressed = true
@@ -30,7 +29,7 @@ class ProductListViewController: UIViewController{
     @IBAction func filterSlider(_ sender: UISlider) {
         print(sender.value)
         isFiltered = true
-        let filteredByPrice = self.products.filter { product in
+        let filteredByPrice = self.originalProducts.filter { product in
             maximumPrice.text = "$"+String(Int(sender.value))
             return Float(product.variants?[0].price ?? "") ?? 0 <= sender.value
         }
@@ -51,28 +50,22 @@ class ProductListViewController: UIViewController{
         filterBtnIsPressed()
     }
     
-    
     @IBAction func sortByPriceButton(_ sender: Any) {
         if isSortedPressed{
             isSortedPressed = false
-            filteredProducts = filteredProducts.sorted(by: {
+            filteredProducts = originalProducts.sorted(by: {
                 Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
             })
             self.updateUi()
         }else{
             isSortedPressed = true
-            filteredProducts = filteredProducts.sorted(by: {
+            filteredProducts = originalProducts.sorted(by: {
                 Double($0.variants![0].price!)! > Double($1.variants![0].price!)!
             })
             self.updateUi()
         }
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         maximumPrice.isHidden = true
@@ -80,9 +73,18 @@ class ProductListViewController: UIViewController{
         priceSlider.isHidden = true
         notFoundImage.isHidden = true
         setupProductCollection()
-        setProducts()
+        filteredProducts = originalProducts
+ 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let collectionId = brandId {
+            getBrandsProducs(cID: collectionId)
+        }else{
+            getAllProducts()
+        }
+    }
    private func setupProductCollection(){
         productListCollectionView.delegate = self
         productListCollectionView.dataSource = self
@@ -90,15 +92,28 @@ class ProductListViewController: UIViewController{
         productListCollectionView.register(ProductListCell.nib(), forCellWithReuseIdentifier: ProductListCell.identifier)
     }
     
-    private func setProducts(){
+    private func getAllProducts(){
         productsViewModel.bindSuccessToView = {
-        self.products = self.productsViewModel.products
-        self.filteredProducts = self.productsViewModel.products
+            guard let products = self.productsViewModel.products else{return}
+        self.originalProducts = products
+        self.filteredProducts = products
         self.updateUi()
         }
         productsViewModel.bindFailedToView = {
             print("error in setting data to View")
         }
+    }
+    
+    func getBrandsProducs(cID:Int){
+        productsViewModel.getProductsfromAPI(collectioID: cID, complition: { products, error in
+            if let productsList = products {
+                self.filteredProducts=productsList.products!
+                self.updateUi()
+            }else{
+               print("error")
+            }
+        })
+        
     }
     
     private func updateUi(){
@@ -126,12 +141,7 @@ class ProductListViewController: UIViewController{
 extension ProductListViewController: UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if !isFiltered{
-                return products.count
-        }else{
-                isCommingFromBrand = true
-                return filteredProducts.count
-        }
+        return filteredProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -153,7 +163,7 @@ extension ProductListViewController: UICollectionViewDataSource ,UICollectionVie
         return CGSize(width: self.view.frame.width*0.44, height: self.view.frame.width*0.6)
     }
 }
-
+// MARK: CollectionView delegate
 extension ProductListViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -165,7 +175,7 @@ extension ProductListViewController:UICollectionViewDelegate{
         filteredproductDetailsVC.product = product
         self.navigationController?.pushViewController(filteredproductDetailsVC, animated: true)
         }else{
-            let product = products[indexPath.row]
+            let product = originalProducts[indexPath.row]
            let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
            productDetailsVC.product = product
            self.navigationController?.pushViewController(productDetailsVC, animated: true)
@@ -173,6 +183,8 @@ extension ProductListViewController:UICollectionViewDelegate{
     }
     
 }
+
+//MARK: searchbar delegate
 extension ProductListViewController:UISearchBarDelegate{
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -187,9 +199,9 @@ extension ProductListViewController:UISearchBarDelegate{
         
         filteredProducts = []
         if searchText == ""{
-            filteredProducts = products
+            filteredProducts = originalProducts
         }else{
-            for product in products{
+            for product in originalProducts{
                 guard let title = product.title else{return}
                 if title.hasPrefix(searchText) || title.hasPrefix(searchText.uppercased()){
                     filteredProducts.append(product)

@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func didPressedOnSearchButton(_ sender: UIBarButtonItem) {
-        goToAllProduct(isCommingFromBrand: false, brandName: nil)
+        goToAllProduct(isCommingFromBrand: false, brandId: nil)
     }
 }
 
@@ -90,17 +90,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-extension HomeViewController: brandNameProtocol{
-    func transBrandName(brandName: String) {
-        goToAllProduct(isCommingFromBrand: true, brandName: brandName)
+extension HomeViewController: brandIdProtocol{
+    func transBrandName(brandId: Int) {
+        goToAllProduct(isCommingFromBrand: true, brandId: brandId)
     }
 }
 
 extension HomeViewController{
-    func goToAllProduct(isCommingFromBrand: Bool, brandName: String?){
+    func goToAllProduct(isCommingFromBrand: Bool, brandId: Int?){
         let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
         productVc.isCommingFromBrand = isCommingFromBrand
-        productVc.brandName = brandName
+        productVc.brandId = brandId
         self.navigationController?.pushViewController(productVc, animated: true)
     }
 }

@@ -8,8 +8,8 @@
 import UIKit
 import Kingfisher
 
-protocol brandNameProtocol{
-    func transBrandName (brandName: String) -> Void
+protocol brandIdProtocol{
+    func transBrandName (brandId: Int) -> Void
 }
 
 class BrandsTableViewCell: UITableViewCell {
@@ -21,7 +21,7 @@ class BrandsTableViewCell: UITableViewCell {
     }
     let homeViewModel = HomeViewModel()
     var arrayOfBrands: [Smart_collections] = []
-    var brandDelegate: brandNameProtocol?
+    var brandDelegate: brandIdProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -91,7 +91,7 @@ extension BrandsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let brandName = arrayOfBrands[indexPath.row].title else {return}
-        self.brandDelegate?.transBrandName(brandName: brandName)
+        guard let brandId = arrayOfBrands[indexPath.row].id else {return}
+        self.brandDelegate?.transBrandName(brandId: brandId)
     }
 }
