@@ -120,7 +120,7 @@ class CategoriesVC: UIViewController {
     
     
     @IBAction func toSearch(_ sender: Any) {
-        self.goToAllProduct(isCommingFromBrand: false, brandName: nil)
+        self.goToAllProduct(isCommingFromBrand: false, brandId: nil)
     }
     
     
@@ -266,10 +266,10 @@ extension CategoriesVC{
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
-    func goToAllProduct(isCommingFromBrand: Bool, brandName: String?){
+    func goToAllProduct(isCommingFromBrand: Bool, brandId: Int?){
         let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
         productVc.isCommingFromBrand = isCommingFromBrand
-        productVc.brandName = brandName
+        productVc.brandId = brandId
         self.navigationController?.pushViewController(productVc, animated: true)
     }
 }

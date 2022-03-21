@@ -8,11 +8,7 @@
 import UIKit
 
 class ProductDetailsViewController: UIViewController {
-    
     let productDetailsViewModel = ProductDetailsViewModel()
-
-    let productDetailsViewModel = ProductDetailsViewModel()
-    
     var product : Product?
     @IBOutlet weak var productDescription: UITextView!
     @IBOutlet weak var productTitleLabel: UILabel!
