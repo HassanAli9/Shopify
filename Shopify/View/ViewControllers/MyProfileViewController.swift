@@ -24,9 +24,13 @@ class MyProfileViewController: UIViewController {
     
 
     @IBAction func logOutAction(_ sender: Any) {
+        showAlertSheet(title: "Do you want to log out?", message: "if you pressed log out, we will miss you 💔") { succes in
+            if succes {
+                Helper.shared.setUserStatus(userIsLogged: false)
+                UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
+            }
+        }
     }
-    
-
 }
 
 
@@ -100,8 +104,8 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             switch indexPath.row {
             case 0:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
+                let myorder = self.storyboard?.instantiateViewController(withIdentifier: "MyOrdersTableViewController") as! MyOrdersTableViewController
+                self.present(myorder, animated: true, completion: nil)
             default:
                 let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.present(aboutUs, animated: true, completion: nil)
@@ -116,6 +120,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 self.present(aboutUs, animated: true, completion: nil)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     

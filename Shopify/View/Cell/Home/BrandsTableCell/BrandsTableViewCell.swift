@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol brandIdProtocol{
+    func transBrandName (brandId: Int) -> Void
+}
+
 class BrandsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var brandCollectionView: UICollectionView!
@@ -17,6 +21,7 @@ class BrandsTableViewCell: UITableViewCell {
     }
     let homeViewModel = HomeViewModel()
     var arrayOfBrands: [Smart_collections] = []
+    var brandDelegate: brandIdProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,6 +70,7 @@ extension BrandsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             cell.brandImageView.layer.borderColor = UIColor.gray.cgColor
             cell.brandImageView.layer.borderWidth = 0.5
             cell.brandImageView.layer.cornerRadius = 25
+            cell.viewBrandImage.layer.cornerRadius = 25
         }
         return cell
     }
@@ -83,5 +89,10 @@ extension BrandsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let brandId = arrayOfBrands[indexPath.row].id else {return}
+        self.brandDelegate?.transBrandName(brandId: brandId)
     }
 }

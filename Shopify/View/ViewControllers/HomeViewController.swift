@@ -22,6 +22,19 @@ class HomeViewController: UIViewController {
         homeTableView.delegate = self
         homeTableView.dataSource = self
     }
+    
+    @IBAction func didPressedOnSearchButton(_ sender: UIBarButtonItem) {
+        goToAllProduct(isCommingFromBrand: false, brandId: nil)
+    }
+    @IBAction func didPressedOnWishListBtn(_ sender: UIBarButtonItem) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -47,7 +60,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             let adsCell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath)
             return adsCell
         default:
-            let brandCell = tableView.dequeueReusableCell(withIdentifier: BrandsTableViewCell.identifier, for: indexPath)
+            let brandCell = tableView.dequeueReusableCell(withIdentifier: BrandsTableViewCell.identifier, for: indexPath) as! BrandsTableViewCell
+            brandCell.brandDelegate = self
             return brandCell
         }
     }
@@ -78,6 +92,36 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "Optima", size: 24)
         header.textLabel?.textAlignment = NSTextAlignment.center
-        header.textLabel?.textColor = UIColor.black
+        header.textLabel?.textColor = UIColor.label
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        homeTableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension HomeViewController: brandIdProtocol{
+    func transBrandName(brandId: Int) {
+        goToAllProduct(isCommingFromBrand: true, brandId: brandId)
+    }
+}
+
+extension HomeViewController{
+    func goToAllProduct(isCommingFromBrand: Bool, brandId: Int?){
+        let productVc = UIStoryboard(name: "ProductList", bundle: nil).instantiateViewController(withIdentifier: "ProductListVC") as! ProductListViewController
+        productVc.isCommingFromBrand = isCommingFromBrand
+        productVc.brandId = brandId
+        self.navigationController?.pushViewController(productVc, animated: true)
+    }
+}
+
+extension HomeViewController{
+    func goToWishListPage(){
+        let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

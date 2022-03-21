@@ -15,7 +15,7 @@ class HomeTableViewCell: UITableViewCell {
     static func Nib()-> UINib{
         return UINib(nibName: "HomeTableViewCell", bundle: nil)
     }
-    var arrayOfAds: [String] = ["ads1", "ads2", "ads3"]
+    var arrayOfAds: [String] = ["ads1", "ads2", "ads3", "ads4"]
     var timer: Timer?
     var currentAdsIndex = 0
     

@@ -20,7 +20,14 @@ class OrdersTVC : UITableViewCell {
     
     @IBOutlet weak var quantityLabel: UILabel!
     
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var subButton: UIButton!
+    
     static let identifier = "ordersTVC"
+    
+    var addItemQuantity : (()->())?
+    var subItemQuantity : (()->())?
     
     static func nib() ->UINib{
         UINib(nibName: "OrdersTVC", bundle: nil)
@@ -35,7 +42,18 @@ class OrdersTVC : UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
+    
+    
+    @IBAction func addQuantity(_ sender: Any) {
+        print("add")
+        addItemQuantity?()
+    }
+    
+    @IBAction func subQuantity(_ sender: Any) {
+        subItemQuantity?()
+    }
+    
+    
     
 }
