@@ -40,9 +40,9 @@ class ProductListViewController: UIViewController{
     @IBAction func toWishlistBtn(_ sender: Any) {
         Helper.shared.checkUserIsLogged { userLogged in
             if userLogged{
-//                self.goToWishListPage()
+                self.goToWishListPage()
             }else{
-//                self.goToLoginPage()
+                self.goToLoginPage()
             }
         }
     }
@@ -88,7 +88,7 @@ class ProductListViewController: UIViewController{
         super.viewWillAppear(animated)
         if let collectionId = brandId {
             getBrandsProducs(cID: collectionId)
-//            getAllProducts()
+
         }else{
             getAllProducts()
         }
