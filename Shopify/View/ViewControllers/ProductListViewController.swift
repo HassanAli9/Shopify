@@ -40,9 +40,9 @@ class ProductListViewController: UIViewController{
     @IBAction func toWishlistBtn(_ sender: Any) {
         Helper.shared.checkUserIsLogged { userLogged in
             if userLogged{
-                self.goToWishListPage()
+//                self.goToWishListPage()
             }else{
-                self.goToLoginPage()
+//                self.goToLoginPage()
             }
         }
     }
@@ -62,6 +62,7 @@ class ProductListViewController: UIViewController{
             filteredProducts = originalProducts.sorted(by: {
                 Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
             })
+            
             self.updateUi()
         }else{
             isSortedPressed = true
@@ -87,6 +88,7 @@ class ProductListViewController: UIViewController{
         super.viewWillAppear(animated)
         if let collectionId = brandId {
             getBrandsProducs(cID: collectionId)
+//            getAllProducts()
         }else{
             getAllProducts()
         }
@@ -113,13 +115,13 @@ class ProductListViewController: UIViewController{
     func getBrandsProducs(cID:Int){
         productsViewModel.getProductsfromAPI(collectioID: cID, complition: { products, error in
             if let productsList = products {
+                self.originalProducts = productsList.products!
                 self.filteredProducts=productsList.products!
                 self.updateUi()
             }else{
                print("error")
             }
         })
-        
     }
     
     private func updateUi(){
