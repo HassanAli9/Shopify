@@ -57,20 +57,7 @@ class ProductListViewController: UIViewController{
     }
     
     @IBAction func sortByPriceButton(_ sender: Any) {
-        if isSortedPressed{
-            isSortedPressed = false
-            filteredProducts = originalProducts.sorted(by: {
-                Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
-            })
-            
-            self.updateUi()
-        }else{
-            isSortedPressed = true
-            filteredProducts = originalProducts.sorted(by: {
-                Double($0.variants![0].price!)! > Double($1.variants![0].price!)!
-            })
-            self.updateUi()
-        }
+        sortingProductsByPrice()
     }
     
     override func viewDidLoad() {
@@ -225,5 +212,25 @@ extension ProductListViewController{
     func goToLoginPage(){
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+}
+extension ProductListViewController{
+    
+    func sortingProductsByPrice(){
+        if isSortedPressed{
+            isSortedPressed = false
+            showAlertError(title: "Sortin Products", message: "Sorting Products from LOW TO HIGH price.")
+            filteredProducts = originalProducts.sorted(by: {
+                Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
+            })
+            self.updateUi()
+        }else{
+            isSortedPressed = true
+            showAlertError(title: "Sortin Products", message: "Sorting Products from HIGH TO LOW price.")
+            filteredProducts = originalProducts.sorted(by: {
+                Double($0.variants![0].price!)! > Double($1.variants![0].price!)!
+            })
+            self.updateUi()
+        }
     }
 }
