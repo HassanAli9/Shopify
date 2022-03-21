@@ -9,6 +9,8 @@ import UIKit
 
 class ProductDetailsViewController: UIViewController {
 
+    let productDetailsViewModel = ProductDetailsViewModel()
+    
     var product : Product?
     @IBOutlet weak var productDescription: UITextView!
     @IBOutlet weak var productTitleLabel: UILabel!
@@ -16,6 +18,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var imageControl: UIPageControl!
     @IBOutlet weak var addToCart: UIButton!
     @IBOutlet weak var productDetailsCollectionView: UICollectionView!
+    @IBOutlet weak var favoriteBtn: UIButton!
     @IBAction func addToCartBtn(_ sender: Any) {
         
         UIView.animate(withDuration: 0.5, delay: 0,
@@ -28,15 +31,16 @@ class ProductDetailsViewController: UIViewController {
                     }, completion: nil)
     }
     
-
-    @IBAction func toggleWishlist(_ sender: Any) {
-        let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC")
-        navigationController?.pushViewController(wishlistVC, animated: false)
-    }
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           self.checkProductInWishList()
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
        setupImageCollection()
+        setupImageCollection()
         updateUi()
     }
     
@@ -54,6 +58,16 @@ class ProductDetailsViewController: UIViewController {
         productTitleLabel.text = product.title
         productPriceLabel.text = price + " USD"
     }
+    @IBAction func addToWishListBtn(_ sender: UIButton) {
+           Helper.shared.checkUserIsLogged { userLogged in
+               if userLogged{
+                   self.selectedFavoritBtn(sender: sender)
+               }else{
+                   self.goToLoginPage()
+               }
+           }
+       }
+
 }
 
 extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
@@ -79,5 +93,62 @@ extension ProductDetailsViewController: UICollectionViewDataSource,UICollectionV
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         imageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+    }
+}
+
+extension ProductDetailsViewController{
+    func selectedFavoritBtn(sender: UIButton){
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected{
+            //button selected
+            print("selected")
+            self.favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            addToWishList()
+        }
+        else{
+            //button non selected
+            print("non selected")
+            self.favoriteBtn.setImage(UIImage(systemName: "heart"), for: .normal)
+            nonSelectedProduct()
+        }
+    }
+}
+extension ProductDetailsViewController{
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+}
+
+extension ProductDetailsViewController{
+    func addToWishList(){
+        let productWishList = WishListModel(context: context)
+        guard let product = product, let id = product.id, let variants = product.variants, let customerID = Helper.shared.getUserID() else {return}
+        productWishList.customerID = Int64(customerID)
+        productWishList.productID = Int64(id)
+        productWishList.productName = product.title
+        productWishList.productImage = product.image?.src
+        productWishList.productPrice = variants[0].price
+        
+        productDetailsViewModel.saveProductToWishList()
+    }
+}
+
+extension ProductDetailsViewController{
+    func nonSelectedProduct(){
+        guard let productId = product?.id else {return}
+        productDetailsViewModel.deletedSelectedProduct(productID: productId)
+    }
+}
+
+extension ProductDetailsViewController{
+    func checkProductInWishList(){
+        guard let productId = product?.id else {return}
+        productDetailsViewModel.checkIfProductFoundInWishList(productID: productId) { productIsFoundInWishList in
+            if productIsFoundInWishList{
+                self.favoriteBtn.isSelected = true
+                self.favoriteBtn.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            }
+        }
     }
 }

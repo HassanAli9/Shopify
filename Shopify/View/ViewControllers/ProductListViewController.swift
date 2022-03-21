@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class ProductListViewController: UIViewController{
-   
+    var isCommingFromBrand = false
     var brandId: Int?
     var originalProducts = [Product]()
     var productsViewModel = ProductViewModel()

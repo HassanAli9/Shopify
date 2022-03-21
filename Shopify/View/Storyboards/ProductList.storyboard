@@ -205,7 +205,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                                                                 <connections>
-                                                                    <action selector="toggleWishlist:" destination="vJo-sH-omx" eventType="touchUpInside" id="kLR-Mx-1zS"/>
+                                                                    <action selector="addToWishListBtn:" destination="vJo-sH-omx" eventType="touchUpInside" id="G3y-1f-PXi"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -249,7 +249,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLV-Kg-MxA">
                                                                 <rect key="frame" x="8" y="8" width="366" height="71"/>
                                                                 <subviews>
-                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
+                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
                                                                         <rect key="frame" x="168" y="17" width="180" height="24"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -523,6 +523,7 @@
                     </view>
                     <connections>
                         <outlet property="addToCart" destination="gMq-C3-PFL" id="Yvo-4M-Zol"/>
+                        <outlet property="favoriteBtn" destination="L9m-v1-IJ6" id="ldO-7b-xii"/>
                         <outlet property="imageControl" destination="s6o-sa-ABM" id="2od-8t-ERV"/>
                         <outlet property="productDescription" destination="7Qj-LD-8bZ" id="MXt-UQ-CdH"/>
                         <outlet property="productDetailsCollectionView" destination="thX-kM-A6S" id="3ds-FE-9Zl"/>
@@ -696,11 +697,6 @@
             <point key="canvasLocation" x="1042" y="804"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="7fL-FA-hjV">
-            <size key="intrinsicContentSize" width="180" height="32"/>
-        </designable>
-    </designables>
     <resources>
         <image name="33" width="1800" height="2300"/>
         <image name="cart" catalog="system" width="128" height="102"/>
