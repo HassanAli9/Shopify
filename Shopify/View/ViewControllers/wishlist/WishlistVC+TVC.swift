@@ -39,7 +39,7 @@ extension WishlistVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            self.showConfirmAlert(title: "you wont to delete this product!!!!", message: "product that deleted can not return again!!") { confirmDeleted in
+            self.showConfirmAlert(title: "Do you want to delete this product ??", message: "Product that is deleted can not return again!!") { confirmDeleted in
                 if confirmDeleted{
                     //delete product
                     let product = self.arrOfWishListProducts[indexPath.row]
