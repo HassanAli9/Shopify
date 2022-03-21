@@ -45,7 +45,7 @@ class MainTabBarViewController: UITabBarController {
         
         let unselectedColor = UIColor.systemTeal ;
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .selected)
-        tabBar.selectedImageTintColor = .systemTeal
+        tabBar.tintColor = .systemTeal
     }
     
     

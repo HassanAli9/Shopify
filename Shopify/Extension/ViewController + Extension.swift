@@ -10,10 +10,23 @@ import UIKit
 import NVActivityIndicatorView
 
 extension UIViewController{
-    func showAlertErrro(title: String, message: String){
+    func showAlertError(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController{
+    func showConfirmAlert(title:String, message:String, complition:@escaping (Bool)->Void){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelBtn = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let confirmBtn = UIAlertAction(title: "Confirm", style: .default) { _ in
+            complition(true)
+        }
+        alert.addAction(cancelBtn)
+        alert.addAction(confirmBtn)
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -47,11 +60,6 @@ extension UIViewController{
                 indicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
             ])
         }
-        
-        
-       
-        
-
         if startIndicator{
             indicator.startAnimating()
         }else{

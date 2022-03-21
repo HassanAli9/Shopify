@@ -60,7 +60,7 @@ extension LoginViewController{
             DispatchQueue.main.async {
                 self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
             }
-            self.showAlertErrro(title: "please fill your infromation to login", message: "for login must fill all information")
+            self.showAlertError(title: "please fill your infromation to login", message: "for login must fill all information")
             return
         }
         loginViewModel.checkUserIsLogged(email: email, password: password) { [self] customerLogged in
@@ -72,7 +72,7 @@ extension LoginViewController{
                 UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
             }else{
                 Helper.shared.setUserStatus(userIsLogged: false)
-                self.showAlertErrro(title: "failed to login", message: "please check your email or password")
+                self.showAlertError(title: "failed to login", message: "please check your email or password")
                 print("failed to login")
             }
         }
