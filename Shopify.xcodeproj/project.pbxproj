@@ -88,6 +88,7 @@
 		CD5A062227E0E112000CA494 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A062127E0E112000CA494 /* LoginViewController.swift */; };
 		CD5A062427E11491000CA494 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5A062327E11491000CA494 /* Register.storyboard */; };
 		CD5A062627E114A5000CA494 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A062527E114A5000CA494 /* RegisterViewController.swift */; };
+		CD78662A27E8F9E0009A8B4C /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */; };
 		CD84C05827E236710033D898 /* Encodable + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05727E236710033D898 /* Encodable + extension.swift */; };
 		CD84C05A27E239060033D898 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05927E239060033D898 /* RegisterViewModel.swift */; };
 		CD84C05C27E24C190033D898 /* ViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD84C05B27E24C190033D898 /* ViewController + Extension.swift */; };
@@ -205,6 +206,7 @@
 		CD5A062127E0E112000CA494 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD5A062327E11491000CA494 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		CD5A062527E114A5000CA494 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		CD84C05727E236710033D898 /* Encodable + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable + extension.swift"; sourceTree = "<group>"; };
 		CD84C05927E239060033D898 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		CD84C05B27E24C190033D898 /* ViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 		5C5B8A2F27DF9C960051462D /* ShopifyTests */ = {
 			isa = PBXGroup;
 			children = (
+				CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */,
 				5C5B8A3027DF9C960051462D /* ShopifyTests.swift */,
 			);
 			path = ShopifyTests;
@@ -966,6 +969,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5B8A3127DF9C960051462D /* ShopifyTests.swift in Sources */,
+				CD78662A27E8F9E0009A8B4C /* NetworkingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
