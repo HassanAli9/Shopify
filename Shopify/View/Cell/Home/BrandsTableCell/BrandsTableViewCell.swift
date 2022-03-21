@@ -70,6 +70,7 @@ extension BrandsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             cell.brandImageView.layer.borderColor = UIColor.gray.cgColor
             cell.brandImageView.layer.borderWidth = 0.5
             cell.brandImageView.layer.cornerRadius = 25
+            cell.viewBrandImage.layer.cornerRadius = 25
         }
         return cell
     }
