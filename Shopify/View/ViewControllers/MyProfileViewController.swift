@@ -12,11 +12,12 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate=self
         tableView.dataSource=self
-
+        setUserInfo()
     }
     
     @IBAction func editProfileAction(_ sender: Any) {
@@ -33,6 +34,13 @@ class MyProfileViewController: UIViewController {
     }
 }
 
+extension MyProfileViewController{
+    func setUserInfo(){
+        guard let userName = Helper.shared.getUserName(), let userEmail = Helper.shared.getUserEmail() else {return}
+        self.userName.text = userName
+        self.userEmail.text = userEmail
+    }
+}
 
 extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -122,6 +130,4 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         }
         tableView.deselectRow(at: indexPath, animated: false)
     }
-    
-    
 }
