@@ -56,6 +56,9 @@
                             </barButtonItem>
                             <barButtonItem image="cart" catalog="system" id="dcd-pC-fYY">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="didPressedOnCartBtn:" destination="Y6W-OH-hqX" id="e7s-dg-6bo"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

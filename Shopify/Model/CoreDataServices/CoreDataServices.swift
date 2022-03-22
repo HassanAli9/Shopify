@@ -56,6 +56,25 @@ extension CoreDataServices{
 }
 
 extension CoreDataServices{
+    func getCartProductForSelectedCustomer(customerID: Int, completion: @escaping ([OrderItemModel]?, Error?)-> Void){
+        do{
+            let productCart = try context.fetch(OrderItemModel.fetchRequest())
+            var selectedCart: [OrderItemModel] = []
+            for selectedCustomer in productCart{
+                if selectedCustomer.userID == customerID{
+                    selectedCart.append(selectedCustomer)
+                }
+            }
+            completion(selectedCart, nil)
+       }catch{
+           completion(nil, error)
+            print("Error in getAllCartProduct function: ", error.localizedDescription)
+        }
+    }
+}
+
+
+extension CoreDataServices{
     func deletedSelectedProductFromWishList(product: WishListModel, complition: @escaping (Bool) -> Void){
         context.delete(product)
         do{

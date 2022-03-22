@@ -35,6 +35,15 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    @IBAction func didPressedOnCartBtn(_ sender: UIBarButtonItem) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToCartPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -118,6 +127,11 @@ extension HomeViewController{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
         self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToCartPage(){
+        let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        self.navigationController?.pushViewController(cartVC, animated: true)
     }
     
     func goToLoginPage(){
