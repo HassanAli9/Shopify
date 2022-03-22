@@ -131,9 +131,13 @@ class CategoriesVC: UIViewController {
     
     
     @IBAction func toCart(_ sender: Any) {
-        let cartCV = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
-        cartCV.hidesBottomBarWhenPushed =  true
-        self.navigationController?.pushViewController(cartCV, animated: true)
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToCartPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
     }
     
     
@@ -278,5 +282,10 @@ extension CategoriesVC{
         productVc.isCommingFromBrand = isCommingFromBrand
         productVc.brandId = brandId
         self.navigationController?.pushViewController(productVc, animated: true)
+    }
+    
+    func goToCartPage(){
+        let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        self.navigationController?.pushViewController(cartVC, animated: true)
     }
 }

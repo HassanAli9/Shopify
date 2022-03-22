@@ -14,37 +14,52 @@ extension OrdersVC : UITableViewDataSource
         return cartArray.count
     }
     
-   
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: OrdersTVC.identifier, for: indexPath) as! OrdersTVC
         cell.addButton.tag = indexPath.row
         cell.imgView.kf.setImage(with: URL(string: cartArray[indexPath.row].itemImage!))
         cell.titleLabel.text = cartArray[indexPath.row].itemName
         cell.priceLabel.text = cartArray[indexPath.row].itemPrice
+        
+        
         cell.addItemQuantity = {
-            self.cartArray[indexPath.row].itemQuantity+=1
+            self.orderViewModel.getSelectedItemInCart(productId: self.cartArray[indexPath.row].itemID) { selectedOrder, error in
+                if selectedOrder != nil {
+                    selectedOrder?.itemQuantity+=1
+                }
+                self.orderViewModel.saveProductToCart()
+            }
             self.tableView.reloadData()
+            self.setTotalPrice()
         }
+        
         cell.subItemQuantity = {
             if self.cartArray[indexPath.row].itemQuantity > 1 {
-                self.cartArray[indexPath.row].itemQuantity-=1
-                self.tableView.reloadData()
+                self.orderViewModel.getSelectedItemInCart(productId: self.cartArray[indexPath.row].itemID) { selectedOrder, error in
+                    if selectedOrder != nil {
+                        selectedOrder?.itemQuantity-=1
+                    }
+                    self.orderViewModel.saveProductToCart()
+                }
             }
+            self.tableView.reloadData()
+            self.setTotalPrice()
         }
+        
+        
         cell.quantityLabel.text = String(cartArray[indexPath.row].itemQuantity)
         
         return cell
     }
     
-  
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-         
+            
             showDeleteAlert(indexPath: indexPath)
-           
+            
         } else if editingStyle == .insert {
         }
     }
@@ -61,7 +76,7 @@ extension OrdersVC : UITableViewDataSource
                 emptyCart.isHidden = false
                 self.tableView.isHidden = true
                 self.tableView.reloadData()
-
+                
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
