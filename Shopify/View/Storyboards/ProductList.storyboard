@@ -249,7 +249,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLV-Kg-MxA">
                                                                 <rect key="frame" x="8" y="8" width="366" height="71"/>
                                                                 <subviews>
-                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
+                                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-FA-hjV" customClass="CosmosView" customModule="Cosmos">
                                                                         <rect key="frame" x="168" y="17" width="180" height="24"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -559,6 +559,11 @@
             <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7fL-FA-hjV">
+            <size key="intrinsicContentSize" width="180" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="filter" width="40" height="40"/>
