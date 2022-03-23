@@ -31,6 +31,15 @@ extension UIViewController{
     }
 }
 
+extension UIViewController{
+    func showAlertForInterNetConnection(){
+        let alert = UIAlertController(title: "network is not connected", message: "please, check your internet connection for using app..", preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okBtn)
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
 extension UIViewController {
     func showAlertSheet(title:String, message:String,complition:@escaping (Bool)->Void){
         let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
@@ -78,3 +87,4 @@ extension UIViewController{
         view.endEditing(true)
     }
 }
+

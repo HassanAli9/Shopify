@@ -10,14 +10,12 @@ import UIKit
 class CreateAddressVC: UIViewController {
 
     @IBOutlet weak var addAddressBtn: UIButton!
- 
     @IBOutlet weak var countryTxt: UITextField!
-    
     @IBOutlet weak var cityTxt: UITextField!
-    
     @IBOutlet weak var AddressTxt: UITextField!
-    
     @IBOutlet weak var phoneTxt: UITextField!
+    
+    let networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,15 +62,29 @@ class CreateAddressVC: UIViewController {
         addAddressBtn.layer.borderWidth = 1
         addAddressBtn.layer.borderColor = UIColor.tintColor.cgColor
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didPressedOnAddAddress(_ sender: Any) {
+        guard let customerID = Helper.shared.getUserID() else {return}
+        
+        let add = Address(address1: "Faisal", city: "Giza", province: "", phone: "121212", zip: "12", last_name: "Nasr", first_name: "Ahmed", country: "Egypt", id: nil)
+        
+        networking.createAddress(customerId: customerID, address: add) { data , res, error in
+            if error == nil{
+                print("success to create address")
+                
+                if let data = data{
+                    let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
+                    print("json: \(json)")
+                    let returnedOrder = json["addresses"] as? Dictionary<String,Any>
+                    let returnedCustomer = returnedOrder?["customer_id"] as? Int ?? 0
+                    //let id = returnedCustomer?["id"] as? Int ?? 0
+                    print("customer id: \(returnedCustomer)")
+            
+                }
+                
+            }else{
+                print("falied to create address")
+            }
+        }
     }
-    */
-
 }

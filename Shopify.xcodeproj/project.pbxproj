@@ -55,7 +55,6 @@
 		853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5927DFC46E00D287A4 /* Images.swift */; };
 		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
 		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
-		8559525327E6A8C600F4130C /* WishListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525227E6A8C600F4130C /* WishListModel+CoreDataClass.swift */; };
 		8559525527E6A9BC00F4130C /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525427E6A9BC00F4130C /* OrderViewModel.swift */; };
 		85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */; };
 		85B87A9227E517E3004A2620 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */; };
@@ -177,7 +176,6 @@
 		853D5A5927DFC46E00D287A4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
 		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
-		8559525227E6A8C600F4130C /* WishListModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WishListModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8559525427E6A9BC00F4130C /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
 		85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
