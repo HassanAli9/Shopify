@@ -239,7 +239,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yre-3w-sIW">
-                                <rect key="frame" x="117" y="500.5" width="179" height="39"/>
+                                <rect key="frame" x="80" y="500.5" width="252" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -253,11 +253,6 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="navigateToLogIn:" destination="3hu-lh-hJP" eventType="touchUpInside" id="a7H-wf-jZ7"/>
                                 </connections>
@@ -275,7 +270,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRG-9Q-BAF">
-                                <rect key="frame" x="118" y="583" width="178" height="39"/>
+                                <rect key="frame" x="80" y="583" width="252" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -288,11 +283,6 @@
                                         </fragment>
                                     </attributedString>
                                 </buttonConfiguration>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="navigateToRegister:" destination="3hu-lh-hJP" eventType="touchUpInside" id="ADq-Vb-7LZ"/>
                                 </connections>
@@ -306,15 +296,15 @@
                             <constraint firstItem="giI-KQ-rix" firstAttribute="top" secondItem="3iz-ws-lfc" secondAttribute="top" constant="64" id="9ZN-w6-6Zn"/>
                             <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="huL-ng-8a3" secondAttribute="trailing" constant="118" id="9mc-qz-b8z"/>
                             <constraint firstItem="qRG-9Q-BAF" firstAttribute="top" secondItem="yre-3w-sIW" secondAttribute="bottom" constant="43.5" id="Dt9-zl-BbX"/>
-                            <constraint firstItem="qRG-9Q-BAF" firstAttribute="centerX" secondItem="SZ2-Nu-YL2" secondAttribute="centerX" id="HbL-4S-Yyz"/>
+                            <constraint firstItem="qRG-9Q-BAF" firstAttribute="centerX" secondItem="SZ2-Nu-YL2" secondAttribute="centerX" constant="-1" id="HbL-4S-Yyz"/>
                             <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="9Na-lN-2Mf" secondAttribute="trailing" constant="48" id="Orm-E8-S9r"/>
-                            <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="yre-3w-sIW" secondAttribute="trailing" constant="118" id="SUS-1C-GLi"/>
+                            <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="yre-3w-sIW" secondAttribute="trailing" constant="82" id="SUS-1C-GLi"/>
                             <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="8Lq-Un-zzi" secondAttribute="trailing" constant="82" id="Z9I-JC-27r"/>
                             <constraint firstItem="huL-ng-8a3" firstAttribute="leading" secondItem="3iz-ws-lfc" secondAttribute="leading" constant="117" id="aaR-Ww-tqN"/>
                             <constraint firstItem="9Na-lN-2Mf" firstAttribute="top" secondItem="8Lq-Un-zzi" secondAttribute="bottom" constant="30.5" id="caW-tp-n7V"/>
-                            <constraint firstItem="qRG-9Q-BAF" firstAttribute="leading" secondItem="3iz-ws-lfc" secondAttribute="leading" constant="118" id="eEM-Ya-N2A"/>
+                            <constraint firstItem="qRG-9Q-BAF" firstAttribute="leading" secondItem="3iz-ws-lfc" secondAttribute="leading" constant="80" id="eEM-Ya-N2A"/>
                             <constraint firstItem="yre-3w-sIW" firstAttribute="top" secondItem="9Na-lN-2Mf" secondAttribute="bottom" constant="34" id="mC6-Pp-Ky3"/>
-                            <constraint firstItem="yre-3w-sIW" firstAttribute="leading" secondItem="3iz-ws-lfc" secondAttribute="leading" constant="117" id="mRe-tY-hPd"/>
+                            <constraint firstItem="yre-3w-sIW" firstAttribute="leading" secondItem="3iz-ws-lfc" secondAttribute="leading" constant="80" id="mRe-tY-hPd"/>
                             <constraint firstItem="huL-ng-8a3" firstAttribute="leading" secondItem="giI-KQ-rix" secondAttribute="leading" id="oUu-J5-SMb"/>
                             <constraint firstItem="3iz-ws-lfc" firstAttribute="bottom" secondItem="giI-KQ-rix" secondAttribute="bottom" constant="582" id="tCr-XY-UIo"/>
                             <constraint firstItem="3iz-ws-lfc" firstAttribute="trailing" secondItem="giI-KQ-rix" secondAttribute="trailing" constant="118" id="tjW-TP-jak"/>

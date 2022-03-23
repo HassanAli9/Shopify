@@ -15,24 +15,38 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: AkiraTextField!
     @IBOutlet weak var passwordTextField: AkiraTextField!
     @IBOutlet weak var confirmPasswordTextField: AkiraTextField!
+    @IBOutlet weak var loginLabel: UILabel!
     
     var registerViewModel = RegisterViewModel()
-    var indicator = NVActivityIndicatorView(frame: .zero, type: .ballBeat, color: .blue , padding: 0)
+    var indicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .label , padding: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextField()
         self.hideKeyboardWhenTappedAround()
+        setGestureOnLoginLabel()
+        setupViewWhenShowKeyboard()
     }
     
     @IBAction func signUpDidPressed(_ sender: Any) {
         checkBeforeRegister()
     }
     
-    @IBAction func moveToLoginPageDidPressed(_ sender: Any) {
-        goToLoginPage()
+    func setupTextField(){
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
     }
     
-    func goToLoginPage(){
+    func setGestureOnLoginLabel(){
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToLoginPage))
+        loginLabel.isUserInteractionEnabled = true
+        loginLabel.addGestureRecognizer(tapGesture)
+    }
+    
+   @objc func goToLoginPage(){
         let loginVc = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         self.navigationController?.pushViewController(loginVc, animated: true)
@@ -58,19 +72,19 @@ extension RegisterViewController{
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "please fill your infromation to reister", message: "for register must fill all information")
+                self.showAlertError(title: "please fill your infromation to reister", message: "for register must fill all information")
             case "ErrorPassword":
                 checkIsSuccess = false
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "There is a problem with the password", message: "please enter password again")
+                self.showAlertError(title: "There is a problem with the password", message: "please enter password again")
             case "ErrorEmail":
                 checkIsSuccess = false
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "your email is incorrect", message: "please enter correct email")
+                self.showAlertError(title: "your email is incorrect", message: "please enter correct email")
             default:
                 checkIsSuccess = true
             }
@@ -102,21 +116,18 @@ extension RegisterViewController{
                         }
                         return
                     }
-                    Helper.shared.setUserStatus(userIsLogged: true)
                     //register is success
                     DispatchQueue.main.async {
                         self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                         UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
                     }
-                    
                     print("register is success")
-                    
                 }
             }else{
                 DispatchQueue.main.async {
                     self.showActivityIndicator(indicator: self.indicator, startIndicator: false)
                 }
-                self.showAlertErrro(title: "your email is already exist", message: "can you login!!")
+                self.showAlertError(title: "your email is already exist", message: "can you login!!")
             }
         }
     }
@@ -130,4 +141,23 @@ extension RegisterViewController{
     }
 }
 
+extension RegisterViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        textField.resignFirstResponder()
+        return true
+    }
+}
 
+extension RegisterViewController{
+    func setupViewWhenShowKeyboard(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisApear), name: UIResponder.keyboardDidHideNotification, object: nil)
+    }
+    @objc func keyboardApear(){
+        view.frame.origin.y = 0
+        view.frame.origin.y = view.frame.origin.y - 200
+    }
+    @objc func keyboardDisApear(){
+        view.frame.origin.y = 0
+    }
+}

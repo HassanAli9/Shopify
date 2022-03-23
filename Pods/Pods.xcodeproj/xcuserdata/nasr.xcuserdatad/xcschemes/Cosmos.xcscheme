@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1240"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C76CE6CD60B1CE55A174F03CC59AE17"
-               BuildableName = "iOSDropDown.framework"
-               BlueprintName = "iOSDropDown"
+               BlueprintIdentifier = "00F31BD5217A20974B5E9AAC6256D98E"
+               BuildableName = "Cosmos.framework"
+               BlueprintName = "Cosmos"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

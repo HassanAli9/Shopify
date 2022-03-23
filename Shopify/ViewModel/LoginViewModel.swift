@@ -19,7 +19,11 @@ class LoginViewModel{
             }
             
             if filetr.count != 0{
-                print(filetr.count)
+                Helper.shared.setUserStatus(userIsLogged: true)
+                guard let customerID = filetr[0].id, let userFirstName = filetr[0].first_name, let userLastName = filetr[0].last_name, let userEmail = filetr[0].email  else {return}
+                Helper.shared.setUserID(customerID: customerID)
+                Helper.shared.setUserName(userName: "\(userFirstName) \(userLastName)")
+                Helper.shared.setUserEmail(userEmail: userEmail)
                 completion(filetr[0])
             }else{
                 completion(nil)

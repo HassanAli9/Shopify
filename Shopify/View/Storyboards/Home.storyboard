@@ -43,13 +43,22 @@
                     <navigationItem key="navigationItem" title="Home" id="Dui-3D-ica">
                         <barButtonItem key="leftBarButtonItem" image="magnifyingglass" catalog="system" id="JRr-jn-wBP">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didPressedOnSearchButton:" destination="Y6W-OH-hqX" id="3BP-2L-oZF"/>
+                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="heart" catalog="system" id="ILO-cH-lMm">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="didPressedOnWishListBtn:" destination="Y6W-OH-hqX" id="dGV-KL-okB"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem image="cart" catalog="system" id="dcd-pC-fYY">
                                 <color key="tintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="didPressedOnCartBtn:" destination="Y6W-OH-hqX" id="e7s-dg-6bo"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -69,6 +78,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5dr-L9-TIB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
