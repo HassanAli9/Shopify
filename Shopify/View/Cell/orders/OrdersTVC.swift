@@ -24,6 +24,11 @@ class OrdersTVC : UITableViewCell {
     
     @IBOutlet weak var subButton: UIButton!
     
+    @IBOutlet weak var addToWishlist: UIButton!
+    
+    @IBOutlet weak var deleteProductBtn: UIButton!
+    
+    
     static let identifier = "ordersTVC"
     
     var addItemQuantity : (()->())?

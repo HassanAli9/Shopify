@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uyd-bE-WT6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jBV-zv-b6d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,6 +8,160 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Payment View Controller-->
+        <scene sceneID="vuO-hH-aUO">
+            <objects>
+                <viewController id="A8S-x9-wxo" customClass="PaymentViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTq-lj-Fbe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-ON-eKd">
+                                <rect key="frame" x="20" y="217" width="374" height="254"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giv-ST-qft">
+                                        <rect key="frame" x="8" y="53" width="109.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-FY-l78">
+                                        <rect key="frame" x="8" y="121" width="160" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CG2-8y-5du">
+                                        <rect key="frame" x="324" y="57" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="6Ok-ZD-cFv"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="radiooff"/>
+                                        <state key="selected" image="radioon">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="GooglePayOptionSelected:" destination="A8S-x9-wxo" eventType="touchUpInside" id="ACC-Y1-tPN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgu-xH-idl">
+                                        <rect key="frame" x="324" y="119" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="eJZ-5N-UpH"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="radiooff"/>
+                                        <state key="selected" image="radioon">
+                                            <color key="titleColor" systemColor="linkColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cashOnDeliverySelected:" destination="A8S-x9-wxo" eventType="touchUpInside" id="GUM-8e-B5P"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copoun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFr-CX-46y">
+                                        <rect key="frame" x="8" y="188" width="84" height="27"/>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czt-hC-O1s">
+                                        <rect key="frame" x="131" y="188" width="217" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="217" id="iWx-w6-CJD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="czt-hC-O1s" secondAttribute="trailing" constant="26" id="0gc-OL-PPJ"/>
+                                    <constraint firstItem="fgu-xH-idl" firstAttribute="top" secondItem="CG2-8y-5du" secondAttribute="bottom" constant="38" id="519-gd-LCO"/>
+                                    <constraint firstItem="0zV-FY-l78" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="Csl-r3-bhw"/>
+                                    <constraint firstAttribute="bottom" secondItem="czt-hC-O1s" secondAttribute="bottom" constant="32" id="E4w-8k-d24"/>
+                                    <constraint firstItem="czt-hC-O1s" firstAttribute="leading" secondItem="mFr-CX-46y" secondAttribute="trailing" constant="39" id="E9q-PI-3US"/>
+                                    <constraint firstItem="CG2-8y-5du" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="57" id="IbL-Aj-cFt"/>
+                                    <constraint firstItem="giv-ST-qft" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="53" id="Iem-am-5uv"/>
+                                    <constraint firstAttribute="bottom" secondItem="mFr-CX-46y" secondAttribute="bottom" constant="39" id="PH4-Nl-HH7"/>
+                                    <constraint firstItem="giv-ST-qft" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="cDR-to-rWb"/>
+                                    <constraint firstAttribute="trailing" secondItem="CG2-8y-5du" secondAttribute="trailing" constant="26" id="hiY-G2-Xek"/>
+                                    <constraint firstItem="0zV-FY-l78" firstAttribute="top" secondItem="giv-ST-qft" secondAttribute="bottom" constant="41.5" id="jer-Zx-8aC"/>
+                                    <constraint firstAttribute="trailing" secondItem="fgu-xH-idl" secondAttribute="trailing" constant="26" id="u0c-tf-ZHe"/>
+                                    <constraint firstItem="mFr-CX-46y" firstAttribute="top" secondItem="0zV-FY-l78" secondAttribute="bottom" constant="40.5" id="wRS-nB-8AD"/>
+                                    <constraint firstItem="mFr-CX-46y" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="yqU-eQ-Jag"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="5" height="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a payment method :-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cta-lf-Dhi">
+                                <rect key="frame" x="20" y="132" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-LA-48R">
+                                <rect key="frame" x="45" y="698" width="324" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Continue to Checkout">
+                                            <attributes>
+                                                <color key="NSColor" systemColor="labelColor"/>
+                                                <font key="NSFont" size="20" name="Optima-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="continueToCheckout:" destination="A8S-x9-wxo" eventType="touchUpInside" id="cmc-42-h7g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DIM-sf-EYy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cta-lf-Dhi" firstAttribute="top" secondItem="DIM-sf-EYy" secondAttribute="top" constant="44" id="4h6-gx-GnJ"/>
+                            <constraint firstItem="cta-lf-Dhi" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="G9g-el-bQK"/>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="yAU-ON-eKd" secondAttribute="trailing" constant="20" id="Iot-R9-1tg"/>
+                            <constraint firstItem="yAU-ON-eKd" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="PsE-ar-U9r"/>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="bottom" secondItem="yAU-ON-eKd" secondAttribute="bottom" constant="391" id="Z8K-3t-aPl"/>
+                            <constraint firstItem="yAU-ON-eKd" firstAttribute="top" secondItem="cta-lf-Dhi" secondAttribute="bottom" constant="58.5" id="fI7-hI-Vfm"/>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="cta-lf-Dhi" secondAttribute="trailing" constant="20" id="pNb-1E-lTu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="T9S-aW-RKE"/>
+                    <connections>
+                        <outlet property="cashOnDeliveryOption" destination="fgu-xH-idl" id="Dqt-Vu-PWc"/>
+                        <outlet property="copounTextfield" destination="czt-hC-O1s" id="1jz-X0-jYp"/>
+                        <outlet property="googlePayOption" destination="CG2-8y-5du" id="ifi-AJ-q6T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t17-UZ-vwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1131.8840579710145" y="-21.428571428571427"/>
+        </scene>
         <!--Checkout-->
         <scene sceneID="221-gM-vpy">
             <objects>
@@ -223,7 +377,7 @@
                                                                                             <constraint firstAttribute="width" constant="103" id="LqK-ed-yzv"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
-                                                                                        <color key="textColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="textColor" systemColor="systemGrayColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discount:-" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52C-7B-DEo">
@@ -250,7 +404,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 USD" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7E-tX-e4J">
                                                                                         <rect key="frame" x="254" y="78" width="103" height="23"/>
                                                                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
-                                                                                        <color key="textColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <color key="textColor" systemColor="systemGrayColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
@@ -308,9 +462,10 @@
                                                                                 <state key="normal" title="Button"/>
                                                                                 <buttonConfiguration key="configuration" style="gray">
                                                                                     <attributedString key="attributedTitle">
-                                                                                        <fragment content="Done">
+                                                                                        <fragment content="CHECKOUT">
                                                                                             <attributes>
                                                                                                 <font key="NSFont" size="24" name="Helvetica"/>
+                                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
                                                                                     </attributedString>
@@ -395,15 +550,29 @@
                     <navigationItem key="navigationItem" title="Checkout" id="C08-lB-AJf">
                         <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="DPj-5J-ksQ">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="toCart:" destination="6JP-lQ-XnK" id="KWp-BP-Xz2"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressLabel" destination="Icm-Hi-SNR" id="IjH-4c-yuQ"/>
                         <outlet property="checkoutTableView" destination="OqU-8f-Nto" id="z2M-Zv-ZDY"/>
+                        <outlet property="cityLabel" destination="7gJ-hs-oDW" id="nMf-Mr-D5V"/>
+                        <outlet property="copounLabel" destination="PL8-Zo-rrF" id="oDq-Cq-Fji"/>
+                        <outlet property="countryLabel" destination="eeB-FU-1ar" id="nX0-xP-D7v"/>
+                        <outlet property="deliveryTimeLAbel" destination="ygb-j5-lM4" id="4ao-PM-etp"/>
+                        <outlet property="discountLabel" destination="OBR-VS-it1" id="IF6-yW-Peb"/>
+                        <outlet property="paymentLabel" destination="sKj-Q3-lSe" id="xgl-9R-BeT"/>
+                        <outlet property="phoneNumberLabel" destination="WKD-gb-tsW" id="Vd4-Fs-ODB"/>
+                        <outlet property="shippingLabel" destination="s7E-tX-e4J" id="skf-yQ-Cy0"/>
+                        <outlet property="subTotalLabel" destination="ek0-0y-7wH" id="Ucn-Wl-bTe"/>
+                        <outlet property="totalPriceLabel" destination="yP5-13-ew3" id="LQ0-PU-ISY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzV-Ef-Kyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926.0869565217392" y="-21.428571428571427"/>
+            <point key="canvasLocation" x="2836.2318840579715" y="-21.428571428571427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a4a-AI-QgM">
@@ -421,13 +590,36 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCa-aW-Jx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.9420289855074" y="-21.428571428571427"/>
+            <point key="canvasLocation" x="1926.0869565217392" y="-21.428571428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="paZ-bq-R93">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jBV-zv-b6d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OUa-zK-8x8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A8S-x9-wxo" kind="relationship" relationship="rootViewController" id="SVJ-ED-y9o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oBi-vJ-SQo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.73913043478262" y="-21.428571428571427"/>
         </scene>
     </scenes>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="radiooff" width="24" height="24"/>
+        <image name="radioon" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
