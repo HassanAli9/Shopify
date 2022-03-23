@@ -12,7 +12,7 @@ import NVActivityIndicatorView
 extension UIViewController{
     func showAlertError(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .destructive, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
