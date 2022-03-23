@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: EGP 189" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
-                                <rect key="frame" x="32" y="675.66666666666663" width="117" height="48.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: EGP " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
+                                <rect key="frame" x="31.999999999999993" y="675.66666666666663" width="86.333333333333314" height="48.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,14 +50,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-vI-KCp">
+                                <rect key="frame" x="125.99999999999999" y="689.33333333333337" width="30.333333333333329" height="21.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0hF-CW-DYL"/>
+                            <constraint firstItem="oLd-vI-KCp" firstAttribute="centerY" secondItem="kl1-gO-h5z" secondAttribute="centerY" id="3zf-jR-nDi"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xi5-Nr-o04" secondAttribute="trailing" id="9BJ-eb-CNP"/>
                             <constraint firstItem="kl1-gO-h5z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="BrK-GE-Xu8"/>
                             <constraint firstItem="kt2-CI-E7i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="JDL-EN-Lfq"/>
+                            <constraint firstItem="oLd-vI-KCp" firstAttribute="leading" secondItem="kl1-gO-h5z" secondAttribute="trailing" constant="7.6666666666666856" id="KpZ-73-bJ1"/>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Mb6-7G-vus"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kt2-CI-E7i" secondAttribute="bottom" constant="29" id="NpK-a1-c0J"/>
                             <constraint firstItem="xi5-Nr-o04" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="73" id="ZJr-8t-a9F"/>
@@ -75,7 +83,7 @@
                     <connections>
                         <outlet property="emptyCart" destination="xi5-Nr-o04" id="S9A-gP-Vo7"/>
                         <outlet property="tableView" destination="4S9-lI-iwz" id="EuE-Vj-CSc"/>
-                        <outlet property="totalPriceLabel" destination="kl1-gO-h5z" id="D3I-oi-t2C"/>
+                        <outlet property="totalPriceLabel" destination="oLd-vI-KCp" id="LcI-R7-GKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -36,7 +36,12 @@ class RegisterViewModel{
                 let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
                 let customer = json["customer"] as? Dictionary<String,Any>
                 let customerID = customer?["id"] as? Int ?? 0
+                let customerFirstName = customer?["first_name"] as? String ?? ""
+                let customerLastName = customer?["last_name"] as? String ?? ""
+                let customerEmail = customer?["email"] as? String ?? ""
                 Helper.shared.setUserID(customerID: customerID)
+                Helper.shared.setUserName(userName: "\(customerFirstName) \(customerLastName)")
+                Helper.shared.setUserEmail(userEmail: customerEmail)
                 Helper.shared.setUserStatus(userIsLogged: true)
                 completion(data, response, nil)
             }else{

@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkNetworking()
+    }
+    
     func setupTableView(){
         homeTableView.register(HomeTableViewCell.Nib(), forCellReuseIdentifier: HomeTableViewCell.identifier)
         homeTableView.register(BrandsTableViewCell.Nib(), forCellReuseIdentifier: BrandsTableViewCell.identifier)
@@ -30,6 +35,15 @@ class HomeViewController: UIViewController {
         Helper.shared.checkUserIsLogged { userLogged in
             if userLogged{
                 self.goToWishListPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
+    @IBAction func didPressedOnCartBtn(_ sender: UIBarButtonItem) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToCartPage()
             }else{
                 self.goToLoginPage()
             }
@@ -120,8 +134,25 @@ extension HomeViewController{
         self.navigationController?.pushViewController(wishListVC, animated: true)
     }
     
+    func goToCartPage(){
+        let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
+    
     func goToLoginPage(){
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+}
+
+extension HomeViewController{
+    func checkNetworking(){
+        Helper.shared.checkNetworkConnectionUsingRechability { isConnected in
+            if !isConnected{
+                self.showAlertForInterNetConnection()
+            }else{
+                
+            }
+        }
     }
 }
