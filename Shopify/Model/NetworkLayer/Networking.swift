@@ -179,6 +179,7 @@ extension Networking{
                 
             }
         }
+    }
 
     func createAddress(customerId: Int, address: Address, completion: @escaping(Data?, URLResponse?, Error?)->()){
         let customer = CustomerAddress(addresses: [address])

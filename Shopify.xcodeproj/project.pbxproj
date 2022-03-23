@@ -59,7 +59,7 @@
 		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
 		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
 		8559525527E6A9BC00F4130C /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525427E6A9BC00F4130C /* OrderViewModel.swift */; };
-		859A060027EBD03D0058CC5C /* MyOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859A05FF27EBD03C0058CC5C /* MyOrderTableViewCell.xib */; };
+		859A060427EBD9AB0058CC5C /* MyOrderTableViewCell 2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859A060327EBD9AB0058CC5C /* MyOrderTableViewCell 2.xib */; };
 		85A7B35727EAD28900B3A556 /* MyOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */; };
 		85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */; };
 		85B87A9227E517E3004A2620 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */; };
@@ -184,7 +184,7 @@
 		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
 		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		8559525427E6A9BC00F4130C /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
-		859A05FF27EBD03C0058CC5C /* MyOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyOrderTableViewCell.xib; path = "../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/MyOrderTableViewCell.xib"; sourceTree = "<group>"; };
+		859A060327EBD9AB0058CC5C /* MyOrderTableViewCell 2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MyOrderTableViewCell 2.xib"; sourceTree = "<group>"; };
 		85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewModel.swift; sourceTree = "<group>"; };
 		85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
 		85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
@@ -574,7 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */,
-				859A05FF27EBD03C0058CC5C /* MyOrderTableViewCell.xib */,
+				859A060327EBD9AB0058CC5C /* MyOrderTableViewCell 2.xib */,
 				85B87A9527E517F1004A2620 /* MyOrderItemCollectionViewCell.swift */,
 				85B87A9727E517F7004A2620 /* MyOrderItemCollectionViewCell.xib */,
 			);
@@ -831,12 +831,12 @@
 			files = (
 				CD2E8D0427DFABF80046C06D /* HomeCollectionViewCell.xib in Resources */,
 				85DE38B227E17BE500601A7E /* Profile.storyboard in Resources */,
+				859A060427EBD9AB0058CC5C /* MyOrderTableViewCell 2.xib in Resources */,
 				39ECF19E27E51B500058A415 /* ProductListCell.xib in Resources */,
 				CD2E8D0827DFABF80046C06D /* HomeTableViewCell.xib in Resources */,
 				39ECF18B27E5156C0058A415 /* ProductList.storyboard in Resources */,
 				3942E42627E93FF400461394 /* Checkout.storyboard in Resources */,
 				CD2E8D0627DFABF80046C06D /* BrandsTableViewCell.xib in Resources */,
-				859A060027EBD03D0058CC5C /* MyOrderTableViewCell.xib in Resources */,
 				5C5B8A2627DF9C960051462D /* LaunchScreen.storyboard in Resources */,
 				5C09DF3627DFAECE00034B74 /* orders.storyboard in Resources */,
 				5C5B8A2327DF9C960051462D /* Assets.xcassets in Resources */,
