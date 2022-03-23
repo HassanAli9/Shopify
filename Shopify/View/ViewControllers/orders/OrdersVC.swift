@@ -15,7 +15,11 @@ class OrdersVC: UIViewController{
     
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
+    var orderProduct : [OrderItem] = []
+    var order = Order()
+    let networking = Networking()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
@@ -23,6 +27,13 @@ class OrdersVC: UIViewController{
         //retriveCartItems()
         setTotalPrice()
         checkCartIsEmpty()
+    }
+    
+    @IBAction func proccedToCheckout(_ sender: Any) {
+        orderViewModel.postOrder(cartArray: cartArray)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func checkCartIsEmpty(){

@@ -269,11 +269,13 @@ extension CategoriesVC{
 extension CategoriesVC{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        wishListVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(wishListVC, animated: true)
     }
     
     func goToLoginPage(){
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
@@ -286,6 +288,7 @@ extension CategoriesVC{
     
     func goToCartPage(){
         let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        cartVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(cartVC, animated: true)
     }
 }

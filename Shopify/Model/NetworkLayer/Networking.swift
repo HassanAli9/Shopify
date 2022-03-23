@@ -148,10 +148,9 @@ extension Networking{
         }catch let error {
             print(error.localizedDescription)
         }
-        
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
         session.dataTask(with: request) { (data,response,error) in
             completion(data, response, error)
         }.resume()
