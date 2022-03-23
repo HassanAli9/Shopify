@@ -14,7 +14,8 @@ class MyOrdersTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "MyOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "myorderCell")
+        
+        tableView.register(UINib(nibName: "MyPlacedOrdersTableViewCell", bundle: nil), forCellReuseIdentifier: "myPlacedOrderCell")
         
         myOrdersViewmodel.bindSuccessToView = {
             self.onMyOrdersSucces()
@@ -56,10 +57,10 @@ class MyOrdersTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myorderCell", for: indexPath) as! MyOrderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myPlacedOrderCell", for: indexPath) as! MyPlacedOrdersTableViewCell
         
         cell.createdAt.text = ordersArray[indexPath.row].created_at
-        cell.totalPrice.text = ordersArray[indexPath.row].current_total_price
+        cell.price.text = ordersArray[indexPath.row].current_total_price
         cell.paid.text = ordersArray[indexPath.row].financial_status
         
         return cell
