@@ -179,5 +179,28 @@ extension Networking{
                 
             }
         }
+
+    func createAddress(customerId: Int, address: Address, completion: @escaping(Data?, URLResponse?, Error?)->()){
+        let customer = CustomerAddress(addresses: [address])
+        let putObject = PutAddress(customer: customer)
+        guard let url = URLs.shared.addAddressToCustomer(id: "\(customerId)") else {return}
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        let session = URLSession.shared
+        request.httpShouldHandleCookies = false
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: putObject.asDictionary(), options: .prettyPrinted)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        //HTTP Headers
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        session.dataTask(with: request) { (data, response, error) in
+            completion(data, response, error)
+        }.resume()
     }
 }

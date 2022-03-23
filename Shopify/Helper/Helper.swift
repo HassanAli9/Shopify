@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Reachability
 
 class Helper{
     static let shared = Helper()
+    var reachability: Reachability?
     
     func setUserStatus(userIsLogged: Bool){
         UserDefaults.standard.set(userIsLogged, forKey: "User_Status")
@@ -47,6 +49,31 @@ class Helper{
             completion(true)
         }else{
             completion(false)
+        }
+    }
+}
+
+extension Helper{
+    func checkNetworkConnectionUsingRechability(complition: @escaping (Bool)-> Void){
+        reachability = try! Reachability()
+        guard let reachability = reachability else {return}
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+                complition(true)
+            } else {
+                print("Reachable via Cellular")
+                complition(true)
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            print("Not reachable")
+            complition(false)
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
         }
     }
 }

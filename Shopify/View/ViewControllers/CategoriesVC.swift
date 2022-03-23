@@ -57,19 +57,19 @@ class CategoriesVC: UIViewController {
             collectionID  = 269278904372
             categorizedTheProducts(cID: collectionID)
         }
-        
     }
     
     func categorizedTheProducts(cID:Int){
         categoryViewModel.getProductsfromAPI(collectioID: cID, complition: { products, error in
-            if let productsList = products {
-                self.ArrayOfProduct=productsList.products!
+            if let productsList = products, let products = productsList.products {
+                self.ArrayOfProduct=products
                 self.categoriesCollectionView.reloadData()
                 DispatchQueue.main.async {
                     self.spinner.stopAnimating()
                 }
             }else{
-               self.onFailed(error: error!)
+                guard let error = error else{return}
+               self.onFailed(error: error)
                print("error")
             }
         })

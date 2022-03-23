@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkNetworking()
+    }
+    
     func setupTableView(){
         homeTableView.register(HomeTableViewCell.Nib(), forCellReuseIdentifier: HomeTableViewCell.identifier)
         homeTableView.register(BrandsTableViewCell.Nib(), forCellReuseIdentifier: BrandsTableViewCell.identifier)
@@ -140,5 +145,17 @@ extension HomeViewController{
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         loginVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(loginVC, animated: true)
+    }
+}
+
+extension HomeViewController{
+    func checkNetworking(){
+        Helper.shared.checkNetworkConnectionUsingRechability { isConnected in
+            if !isConnected{
+                self.showAlertForInterNetConnection()
+            }else{
+                
+            }
+        }
     }
 }
