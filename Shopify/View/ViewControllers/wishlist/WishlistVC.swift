@@ -11,6 +11,7 @@ class WishlistVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noFoundImageView: UIImageView!
+    @IBOutlet weak var noItemsLabel: UILabel!
     let wishListViewModel = WishListViewModel()
     var arrOfWishListProducts: [WishListModel] = []
     
@@ -26,9 +27,11 @@ extension WishlistVC{
     func checkIsWishListIsEmpty(){
         if self.arrOfWishListProducts.count == 0 {
             self.tableView.isHidden = true
+            self.noItemsLabel.isHidden = false
             self.noFoundImageView.isHidden = false
         }else{
             self.tableView.isHidden = false
+            self.noItemsLabel.isHidden = true
             self.noFoundImageView.isHidden = true
         }
     }

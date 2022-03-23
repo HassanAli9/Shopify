@@ -156,3 +156,28 @@ extension Networking{
         }.resume()
     }
 }
+
+extension Networking{
+    
+    func getAllOrders(completion: @escaping ([Order]?,Error?)->Void){
+        let userID = Helper.shared.getUserID()
+        guard let url = URLs.shared.getOrdersUser(customerId: userID!) else {return}
+        AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).response {response in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(_):
+                guard let data = response.data else {return}
+                do {
+                    let json = try JSONDecoder().decode(OrdersFromAPI.self, from: data)
+                    completion(json.orders,nil)
+                    print("Success in retrieving Orders data")
+                }
+                catch {
+                    print("error when getting Orders data")
+                }
+                
+            }
+        }
+    }
+}

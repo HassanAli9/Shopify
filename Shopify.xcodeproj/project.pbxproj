@@ -55,8 +55,8 @@
 		853D5A5F27DFC46E00D287A4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853D5A5927DFC46E00D287A4 /* Images.swift */; };
 		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
 		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
-		8559525327E6A8C600F4130C /* WishListModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525227E6A8C600F4130C /* WishListModel+CoreDataClass.swift */; };
 		8559525527E6A9BC00F4130C /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525427E6A9BC00F4130C /* OrderViewModel.swift */; };
+		85A7B35727EAD28900B3A556 /* MyOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */; };
 		85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */; };
 		85B87A9227E517E3004A2620 /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */; };
 		85B87A9427E517EA004A2620 /* MyOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85B87A9327E517E9004A2620 /* MyOrderTableViewCell.xib */; };
@@ -177,8 +177,8 @@
 		853D5A5927DFC46E00D287A4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
 		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
-		8559525227E6A8C600F4130C /* WishListModel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WishListModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8559525427E6A9BC00F4130C /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewModel.swift; sourceTree = "<group>"; };
 		85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
 		85B87A9127E517E3004A2620 /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
 		85B87A9327E517E9004A2620 /* MyOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -395,6 +395,7 @@
 				CDCE7C1727E68BCE00DB24AC /* ProductDetailsViewModel.swift */,
 				CDCE7C1927E6941100DB24AC /* WishListViewModel.swift */,
 				8559525427E6A9BC00F4130C /* OrderViewModel.swift */,
+				85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -972,6 +973,7 @@
 				85DE38B027E0E74700601A7E /* Custom_collections.swift in Sources */,
 				853D5A4C27DFAF1600D287A4 /* CategoriesVC.swift in Sources */,
 				853D5A5E27DFC46E00D287A4 /* Variants.swift in Sources */,
+				85A7B35727EAD28900B3A556 /* MyOrdersViewModel.swift in Sources */,
 				CD84C05C27E24C190033D898 /* ViewController + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
