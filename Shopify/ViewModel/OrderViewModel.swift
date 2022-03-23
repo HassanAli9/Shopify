@@ -13,6 +13,7 @@ class OrderViewModel{
     let coreDataServices = CoreDataServices()
     var bindingAlreadyInCartToView : (()->()) = {}
     var bindingDeleteCartToView : (()->()) = {}
+    var bindingEmptyCartAlert : (()->()) = {}
     var order : OrderItem?
     let customerID = Helper.shared.getUserID()
     var orderProduct : [OrderItem] = []
@@ -25,6 +26,10 @@ class OrderViewModel{
     var showDeleteAlert : (()->()) {
         self.bindingDeleteCartToView
     }
+    var showEmptyCartAlert : (()->()) {
+        self.bindingEmptyCartAlert
+    }
+    
     
     func getItemsInCart(complition: @escaping (([OrderItemModel]?,Error?)->Void)){
         do {
@@ -159,6 +164,10 @@ extension OrderViewModel{
 
 extension OrderViewModel{
     func postOrder(cartArray:[OrderItemModel]){
+        if cartArray.count == 0 {
+            self.showEmptyCartAlert()
+        }
+        else{
         for item in cartArray {
             orderProduct.append(OrderItem(variant_id: Int(item.itemID), quantity: Int(item.itemQuantity), name: item.itemName, price: item.itemPrice,title:item.itemName))
         }
@@ -198,5 +207,6 @@ extension OrderViewModel{
                 }
             }
         }
+    }
     }
 }

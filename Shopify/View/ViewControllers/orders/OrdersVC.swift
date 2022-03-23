@@ -30,6 +30,9 @@ class OrdersVC: UIViewController{
     }
     
     @IBAction func proccedToCheckout(_ sender: Any) {
+        orderViewModel.bindingEmptyCartAlert = {
+            self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
+        }
         orderViewModel.postOrder(cartArray: cartArray)
         DispatchQueue.main.async {
             self.navigationController?.popViewController(animated: true)
