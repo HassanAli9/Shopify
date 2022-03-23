@@ -170,8 +170,7 @@ extension OrderViewModel{
         else{
         for item in cartArray {
             orderProduct.append(OrderItem(variant_id: Int(item.itemID), quantity: Int(item.itemQuantity), name: item.itemName, price: item.itemPrice,title:item.itemName))
-        }
-        
+        }        
         self.calcTotalPrice { total in
             guard let total = total else {
                 return

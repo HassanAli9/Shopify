@@ -8,11 +8,33 @@
 import UIKit
 
 class MyOrdersTableViewController: UITableViewController {
+    
+    var myOrdersViewmodel = MyOrdersViewModel()
+    var ordersArray : [Order] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MyOrderTableViewCell", bundle: nil), forCellReuseIdentifier: "myorderCell")
         
+        myOrdersViewmodel.bindSuccessToView = {
+            self.onMyOrdersSucces()
+        }
+        
+        myOrdersViewmodel.bindFailedToView = {
+            self.onFailure()
+        }
+        
+    }
+    
+    func onMyOrdersSucces(){
+        self.ordersArray = myOrdersViewmodel.orders
+        self.tableView.reloadData()
+    }
+    func onFailure(){
+        let alert = UIAlertController(title: "Error", message: myOrdersViewmodel.showError, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -22,8 +44,9 @@ class MyOrdersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return ordersArray.count
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
@@ -34,10 +57,21 @@ class MyOrdersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myorderCell", for: indexPath) as! MyOrderTableViewCell
-
-
+        
+        cell.createdAt.text = ordersArray[indexPath.row].created_at
+        cell.totalPrice.text = ordersArray[indexPath.row].current_total_price
+        cell.paid.text = ordersArray[indexPath.row].financial_status
+        
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        
+    }
+    
+    
 
  
 

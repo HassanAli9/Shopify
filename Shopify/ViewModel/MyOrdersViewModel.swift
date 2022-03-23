@@ -12,16 +12,17 @@ class MyOrdersViewModel{
     let network = Networking()
     
     var bindSuccessToView: (()->()) = {}
+    var bindeLinesitemToView : (()->()) = {}
+    var bindFailedToView : (()->()) = {}
     
-    var orders: [OrdersFromAPI]! {
+    var orders: [Order]! {
         didSet{
             self.bindSuccessToView()
         }
     }
     
-    var bindFailedToView: (()->()) = {}
     
-    var error: Error!{
+    var showError: String!{
         didSet{
             self.bindFailedToView()
         }
@@ -34,7 +35,10 @@ class MyOrdersViewModel{
     func fetchAllOrders(){
         network.getAllOrders { orderFromAPI, error in
             if let orderFromAPI = orderFromAPI {
-                
+                self.orders = orderFromAPI
+            }
+            else{
+                self.showError = error?.localizedDescription
             }
         }
         }

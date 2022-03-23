@@ -7,31 +7,15 @@
 
 import UIKit
 
-class MyOrderTableViewCell: UITableViewCell,UICollectionViewDataSource , UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class MyOrderTableViewCell: UITableViewCell{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
+    @IBOutlet weak var createdAt: UILabel!
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myorderitemCell", for: indexPath) as! MyOrderItemCollectionViewCell
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width/1.2, height: 170)
-    }
+    @IBOutlet weak var totalPrice: UILabel!
     
-    
-    @IBOutlet weak var orderCollectionView: UICollectionView!
-    
-    
-
+    @IBOutlet weak var paid: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        orderCollectionView.dataSource=self
-        orderCollectionView.delegate=self
-        orderCollectionView.register(UINib(nibName: "MyOrderItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "myorderitemCell")
-       
     }
 
     

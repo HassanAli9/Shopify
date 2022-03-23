@@ -17,7 +17,7 @@ class CategoriesVC: UIViewController {
     let floaty = Floaty()
     var ArrayOfProduct : [Product] = []
     var categoryViewModel = CategoriesViewModel()
-    var collectionID : Int = 272069034031
+    var collectionID : Int = 269278806068
     var isFiltered = false
     var FilterdArr:[Product]=[]
  
@@ -45,16 +45,16 @@ class CategoriesVC: UIViewController {
         isFiltered=false
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            collectionID = 272069034031
+            collectionID = 269278806068
             categorizedTheProducts(cID: collectionID)
         case 1:
-            collectionID  = 272069066799
+            collectionID  = 269278838836
             categorizedTheProducts(cID: collectionID)
         case 2:
-            collectionID=272069099567
+            collectionID = 269278871604
             categorizedTheProducts(cID: collectionID)
         default:
-            collectionID  = 272069132335
+            collectionID  = 269278904372
             categorizedTheProducts(cID: collectionID)
         }
         
