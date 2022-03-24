@@ -29,7 +29,7 @@ class PaymentViewController: UIViewController {
         else if copounTextfield.text == "shopify15"{
             checkoutVC.copoun = "15%"
         }else{
-            checkoutVC.copoun = "No"
+            checkoutVC.copoun = "No Discount"
         }
         if googlePayOption.isSelected{
             checkoutVC.paymentMethod = "Google Pay"

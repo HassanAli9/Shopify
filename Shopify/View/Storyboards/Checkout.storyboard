@@ -386,7 +386,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5%" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBR-VS-it1">
-                                                                                        <rect key="frame" x="254" y="43" width="105" height="23"/>
+                                                                                        <rect key="frame" x="169" y="43" width="190" height="23"/>
                                                                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="19"/>
                                                                                         <color key="textColor" red="0.78039215689999997" green="0.1843330198" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
@@ -409,7 +409,7 @@
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                 <constraints>
-                                                                                    <constraint firstItem="OBR-VS-it1" firstAttribute="leading" secondItem="s7E-tX-e4J" secondAttribute="leading" id="2wG-uO-aHd"/>
+                                                                                    <constraint firstItem="OBR-VS-it1" firstAttribute="leading" secondItem="s7E-tX-e4J" secondAttribute="leading" constant="-85" id="2wG-uO-aHd"/>
                                                                                     <constraint firstItem="2FF-PI-icg" firstAttribute="top" secondItem="zQd-Q2-JLf" secondAttribute="topMargin" id="31A-Vj-PxS"/>
                                                                                     <constraint firstItem="49n-ZH-rOG" firstAttribute="baseline" secondItem="s7E-tX-e4J" secondAttribute="baseline" id="3FB-vW-Kvy"/>
                                                                                     <constraint firstItem="2FF-PI-icg" firstAttribute="leading" secondItem="52C-7B-DEo" secondAttribute="leading" id="3oa-9i-w3y"/>
@@ -419,7 +419,7 @@
                                                                                     <constraint firstItem="52C-7B-DEo" firstAttribute="baseline" secondItem="OBR-VS-it1" secondAttribute="baseline" id="Bp6-zP-WkE"/>
                                                                                     <constraint firstItem="2FF-PI-icg" firstAttribute="baseline" secondItem="ek0-0y-7wH" secondAttribute="baseline" id="JyW-z1-eBd"/>
                                                                                     <constraint firstItem="49n-ZH-rOG" firstAttribute="top" secondItem="52C-7B-DEo" secondAttribute="bottom" constant="12" id="Ntg-cl-spJ"/>
-                                                                                    <constraint firstItem="ek0-0y-7wH" firstAttribute="leading" secondItem="OBR-VS-it1" secondAttribute="leading" id="YeS-bS-wpF"/>
+                                                                                    <constraint firstItem="ek0-0y-7wH" firstAttribute="leading" secondItem="OBR-VS-it1" secondAttribute="leading" constant="85" id="YeS-bS-wpF"/>
                                                                                     <constraint firstItem="2FF-PI-icg" firstAttribute="trailing" secondItem="52C-7B-DEo" secondAttribute="trailing" id="aaW-d0-UhO"/>
                                                                                     <constraint firstAttribute="trailing" secondItem="OBR-VS-it1" secondAttribute="trailing" constant="23" id="kgf-ym-ZEl"/>
                                                                                     <constraint firstItem="52C-7B-DEo" firstAttribute="leading" secondItem="49n-ZH-rOG" secondAttribute="leading" id="pbO-V1-S5K"/>
