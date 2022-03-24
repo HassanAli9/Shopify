@@ -38,6 +38,7 @@ class OrdersVC: UIViewController{
         orderViewModel.bindingEmptyCartAlert = {
             self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
         }
+        
         let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
         navigationController?.pushViewController(checkoutVC, animated: false)
         
