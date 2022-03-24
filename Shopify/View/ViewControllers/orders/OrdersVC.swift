@@ -35,10 +35,14 @@ class OrdersVC: UIViewController{
         checkNetworking()
     }
     @IBAction func proccedToCheckout(_ sender: Any) {
-        orderViewModel.bindingEmptyCartAlert = {
+        
+        if cartArray.count == 0 {
             self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
+
+        }else{
+            checkIsFoundAddress()
         }
-        checkIsFoundAddress()
+        
     }
     
     func checkCartIsEmpty(){
