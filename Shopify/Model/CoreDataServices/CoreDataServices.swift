@@ -8,12 +8,13 @@
 import Foundation
 import CoreData
 import UIKit
+import CoreMedia
 
 class CoreDataServices{
 }
 
 extension CoreDataServices{
-    func saveProductToWishList(completion: @escaping (Bool)-> Void){
+    func saveToCoreData(completion: @escaping (Bool)-> Void){
         do{
             try context.save()
             completion(true)
@@ -36,6 +37,20 @@ extension CoreDataServices{
         }
     }
 }
+
+extension CoreDataServices{
+    func getAddress(completion: @escaping (AddressModel?, Error?)-> Void){
+        do{
+            let addressModel = try context.fetch(AddressModel.fetchRequest())
+            print("fetching data.....")
+            completion(addressModel[0], nil)
+        }catch{
+            completion(nil, error)
+            print("Error in getAddress function: ", error.localizedDescription)
+        }
+    }
+}
+
 
 extension CoreDataServices{
     func getWishListProductForSelectedCustomer(customerID: Int, completion: @escaping ([WishListModel]?, Error?)-> Void){

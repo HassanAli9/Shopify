@@ -113,7 +113,7 @@ extension OrderViewModel{
 
 extension OrderViewModel{
     func saveProductToCart(){
-        coreDataServices.saveProductToWishList { saveSuccess in
+        coreDataServices.saveToCoreData { saveSuccess in
             if saveSuccess{
                 print("success to save product in cart")
             }else{

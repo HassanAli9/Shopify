@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension AddressVC : UITableViewDataSource{
     
@@ -26,14 +27,44 @@ extension AddressVC : UITableViewDataSource{
 extension AddressVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-       
+        
+        self.showConfirmAlert(title: "are you sure!!", message: "this address added in your order!") { isConfirm in
+            if isConfirm{
+                self.addAddressToOrder(row: indexPath.row)
+                self.goToPayment()
+            }
+        }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "selected address to added in order"
+    }
+}
+
+extension AddressVC{
+    func addAddressToOrder(row: Int){
+        let myAddress = arrOfAddress[row]
+        let selectedAddress = AddressModel(context: context)
+        
+        guard let customerId = Helper.shared.getUserID(), let addressID = myAddress.id, let address1 = myAddress.address1, let city = myAddress.city, let country = myAddress.country, let name = myAddress.first_name, let phone = myAddress.phone else {return}
+        
+        selectedAddress.custID = Int64(customerId)
+        selectedAddress.addID = Int64(addressID)
+        selectedAddress.address1 = address1
+        selectedAddress.city = city
+        selectedAddress.country = country
+        selectedAddress.customerName = name
+        selectedAddress.phoneNumber = phone
+        
+        self.addressViewModel.saveSelectedAddress()
+    }
+    
+    func goToPayment(){
+        let paymentVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController")
+        self.navigationController?.pushViewController(paymentVC, animated: true)
     }
 }

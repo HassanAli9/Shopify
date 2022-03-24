@@ -94,6 +94,9 @@
 		CD5A062427E11491000CA494 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5A062327E11491000CA494 /* Register.storyboard */; };
 		CD5A062627E114A5000CA494 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A062527E114A5000CA494 /* RegisterViewController.swift */; };
 		CD6906D427EBE922000B0578 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906D327EBE922000B0578 /* AddressViewModel.swift */; };
+		CD6906E327EBFF14000B0578 /* AddressModel+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906E227EBFF14000B0578 /* AddressModel+CoreDataProperties copy.swift */; };
+		CD6906E527EBFF16000B0578 /* AddressModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906E427EBFF16000B0578 /* AddressModel+CoreDataClass.swift */; };
+		CD6906E727EC05A6000B0578 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906E627EC05A6000B0578 /* CheckoutViewModel.swift */; };
 		CD78662A27E8F9E0009A8B4C /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */; };
 		CD78662C27E909E9009A8B4C /* RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662B27E909E9009A8B4C /* RegisterTests.swift */; };
 		CD78662E27E90B3F009A8B4C /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662D27E90B3F009A8B4C /* CoreDataTests.swift */; };
@@ -220,6 +223,9 @@
 		CD5A062327E11491000CA494 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		CD5A062527E114A5000CA494 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD6906D327EBE922000B0578 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
+		CD6906E227EBFF14000B0578 /* AddressModel+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressModel+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
+		CD6906E427EBFF16000B0578 /* AddressModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AddressModel+CoreDataClass.swift"; path = "/Volumes/Data 300G/ITI/iOS Projects/ShopifyApp/Shopify/Shopify/Model/POJOs/AddressModel/AddressModel+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		CD6906E627EC05A6000B0578 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
 		CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		CD78662B27E909E9009A8B4C /* RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTests.swift; sourceTree = "<group>"; };
 		CD78662D27E90B3F009A8B4C /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
@@ -405,6 +411,7 @@
 				8559525427E6A9BC00F4130C /* OrderViewModel.swift */,
 				CD6906D327EBE922000B0578 /* AddressViewModel.swift */,
 				85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */,
+				CD6906E627EC05A6000B0578 /* CheckoutViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -430,6 +437,7 @@
 		5C5B8A4E27DF9CF90051462D /* POJOs */ = {
 			isa = PBXGroup;
 			children = (
+				CD6906D527EBF7DE000B0578 /* AddressModel */,
 				CDCE7C1227E684F400DB24AC /* OrderItemModel */,
 				CD3CE90B27E67A2500379EA9 /* WishListModel */,
 				85CD8EC127E3A71E00009FFC /* orders */,
@@ -700,6 +708,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		CD6906D527EBF7DE000B0578 /* AddressModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD6906E227EBFF14000B0578 /* AddressModel+CoreDataProperties copy.swift */,
+				CD6906E427EBFF16000B0578 /* AddressModel+CoreDataClass.swift */,
+			);
+			path = AddressModel;
+			sourceTree = "<group>";
+		};
 		CD84C05627E236350033D898 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,6 +944,7 @@
 				8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */,
 				5C09DF2E27DFAEA600034B74 /* OrdersTVC.swift in Sources */,
 				CD6906D427EBE922000B0578 /* AddressViewModel.swift in Sources */,
+				CD6906E527EBFF16000B0578 /* AddressModel+CoreDataClass.swift in Sources */,
 				5C837E2F27E28D09009970B5 /* FloatinLabelInput.swift in Sources */,
 				5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */,
 				5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */,
@@ -939,6 +957,7 @@
 				CD5A061E27E0E09B000CA494 /* Rules.swift in Sources */,
 				CDCE7C1A27E6941100DB24AC /* WishListViewModel.swift in Sources */,
 				CD2E8D0727DFABF80046C06D /* HomeTableViewCell.swift in Sources */,
+				CD6906E327EBFF14000B0578 /* AddressModel+CoreDataProperties copy.swift in Sources */,
 				CD3E36AE27E15C7D007DFC5E /* Customer.swift in Sources */,
 				85B87A9A27E529AA004A2620 /* MainTabBarViewController.swift in Sources */,
 				39ECF18F27E515860058A415 /* ProductListViewController.swift in Sources */,
@@ -951,6 +970,7 @@
 				39ECF19F27E51B500058A415 /* ProductListCell.swift in Sources */,
 				CD5A061C27E0E09B000CA494 /* Smart_collections.swift in Sources */,
 				CD2E8CEF27DFAB210046C06D /* Networking.swift in Sources */,
+				CD6906E727EC05A6000B0578 /* CheckoutViewModel.swift in Sources */,
 				CDCE7C1827E68BCE00DB24AC /* ProductDetailsViewModel.swift in Sources */,
 				853D5A5027DFAF5700D287A4 /* ProductInCategoryCVC.swift in Sources */,
 				85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */,
@@ -1178,7 +1198,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Checkout;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1208,7 +1228,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Checkout;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
