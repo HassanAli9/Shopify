@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7m-2A-vuh">
-                        <rect key="frame" x="9" y="23" width="215" height="113"/>
+                        <rect key="frame" x="9" y="16" width="215" height="120"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0h-mo-NB8">
                                 <rect key="frame" x="8" y="29" width="199" height="11.5"/>
@@ -41,7 +41,7 @@
                             <constraint firstItem="F0h-mo-NB8" firstAttribute="top" secondItem="P7m-2A-vuh" secondAttribute="top" constant="29" id="V7G-tn-gDH"/>
                             <constraint firstAttribute="trailing" secondItem="F0h-mo-NB8" secondAttribute="trailing" constant="8" id="arF-Zm-aEk"/>
                             <constraint firstAttribute="trailing" secondItem="Dpd-gZ-HK3" secondAttribute="trailing" constant="8" id="gye-CI-UkZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Dpd-gZ-HK3" secondAttribute="bottom" constant="28.5" id="hDt-pJ-dKd"/>
+                            <constraint firstAttribute="bottom" secondItem="Dpd-gZ-HK3" secondAttribute="bottom" constant="35.5" id="hDt-pJ-dKd"/>
                             <constraint firstItem="Dpd-gZ-HK3" firstAttribute="top" secondItem="F0h-mo-NB8" secondAttribute="bottom" constant="23" id="ujB-p4-xVi"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -60,7 +60,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="P7m-2A-vuh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="23" id="YYl-Wx-ZwX"/>
+                <constraint firstItem="P7m-2A-vuh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="YYl-Wx-ZwX"/>
                 <constraint firstAttribute="bottom" secondItem="P7m-2A-vuh" secondAttribute="bottom" constant="14" id="li2-8b-UEd"/>
                 <constraint firstItem="P7m-2A-vuh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="r1R-Jm-nAo"/>
                 <constraint firstAttribute="trailing" secondItem="P7m-2A-vuh" secondAttribute="trailing" constant="9" id="r9S-Lq-ooG"/>
@@ -70,7 +70,7 @@
                 <outlet property="orderName" destination="F0h-mo-NB8" id="eej-A5-dGa"/>
                 <outlet property="orderPrice" destination="Dpd-gZ-HK3" id="1Lt-Cn-Axu"/>
             </connections>
-            <point key="canvasLocation" x="-26.086956521739133" y="136.60714285714286"/>
+            <point key="canvasLocation" x="-26.811594202898554" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
