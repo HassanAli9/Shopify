@@ -13,8 +13,12 @@ class OrderViewModel{
     let coreDataServices = CoreDataServices()
     var bindingAlreadyInCartToView : (()->()) = {}
     var bindingDeleteCartToView : (()->()) = {}
+    var bindingEmptyCartAlert : (()->()) = {}
     var order : OrderItem?
     let customerID = Helper.shared.getUserID()
+    var orderProduct : [OrderItem] = []
+    var totalOrder = Order()
+    let networking = Networking()
     
     var showAlreadyExist : (()->()) {
         self.bindingAlreadyInCartToView
@@ -22,6 +26,10 @@ class OrderViewModel{
     var showDeleteAlert : (()->()) {
         self.bindingDeleteCartToView
     }
+    var showEmptyCartAlert : (()->()) {
+        self.bindingEmptyCartAlert
+    }
+    
     
     func getItemsInCart(complition: @escaping (([OrderItemModel]?,Error?)->Void)){
         do {
@@ -132,5 +140,72 @@ extension OrderViewModel{
                 completion(nil)
             }
         }
+    }
+}
+
+extension OrderViewModel{
+    
+    func getCustomer(completion: @escaping (Customer?)-> Void){
+        networking.getAllCustomers { customers, error in
+            guard let customers = customers, error == nil,let customerID = Helper.shared.getUserID() else {return}
+            
+            let filetr = customers.customers.filter { selectedCustomer in
+                return selectedCustomer.id == customerID
+            }
+            if filetr.count != 0{
+                print(filetr.count)
+                completion(filetr[0])
+            }else{
+                completion(nil)
+            }
+        }
+    }
+}
+
+extension OrderViewModel{
+    func postOrder(cartArray:[OrderItemModel]){
+        if cartArray.count == 0 {
+            self.showEmptyCartAlert()
+        }
+        else{
+        for item in cartArray {
+            orderProduct.append(OrderItem(variant_id: Int(item.itemID), quantity: Int(item.itemQuantity), name: item.itemName, price: item.itemPrice,title:item.itemName))
+        }        
+        self.calcTotalPrice { total in
+            guard let total = total else {
+                return
+            }
+            self.totalOrder.current_total_price = String(total)
+        }
+        self.getCustomer { customer in
+            guard let customer = customer else {
+                return
+            }
+            let order = Order(customer: customer, line_items: self.orderProduct, current_total_price: self.totalOrder.current_total_price)
+            let ordertoAPI = OrderToAPI(order: order)
+            self.networking.SubmitOrder(order: ordertoAPI) { data, urlResponse, error in
+                if error == nil {
+                    print("Post order success")
+                    if let data = data{
+                                    let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
+                                    let returnedOrder = json["order"] as? Dictionary<String,Any>
+                                    let returnedCustomer = returnedOrder?["customer"] as? Dictionary<String,Any>
+                                    let id = returnedCustomer?["id"] as? Int ?? 0
+                        print(json)
+                        print("----------")
+                        print(id)
+                        
+                        for i in cartArray {
+                            context.delete(i)
+                        }
+                        try! context.save()
+                        
+                                }
+                }else{
+                    print(error?.localizedDescription)
+                }
+            }
+        }
+    }
     }
 }

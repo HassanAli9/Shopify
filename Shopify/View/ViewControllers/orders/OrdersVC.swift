@@ -16,7 +16,11 @@ class OrdersVC: UIViewController{
     
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
+    var orderProduct : [OrderItem] = []
+    var order = Order()
+    let networking = Networking()
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
@@ -29,6 +33,15 @@ class OrdersVC: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkNetworking()
+    }
+    @IBAction func proccedToCheckout(_ sender: Any) {
+        orderViewModel.bindingEmptyCartAlert = {
+            self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
+        }
+        orderViewModel.postOrder(cartArray: cartArray)
+        DispatchQueue.main.async {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func checkCartIsEmpty(){

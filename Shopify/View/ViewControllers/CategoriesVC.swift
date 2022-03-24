@@ -17,7 +17,7 @@ class CategoriesVC: UIViewController {
     let floaty = Floaty()
     var ArrayOfProduct : [Product] = []
     var categoryViewModel = CategoriesViewModel()
-    var collectionID : Int = 272069034031
+    var collectionID : Int = 269278806068
     var isFiltered = false
     var FilterdArr:[Product]=[]
  
@@ -45,31 +45,31 @@ class CategoriesVC: UIViewController {
         isFiltered=false
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            collectionID = 272069034031
+            collectionID = 269278806068
             categorizedTheProducts(cID: collectionID)
         case 1:
-            collectionID  = 272069066799
+            collectionID  = 269278838836
             categorizedTheProducts(cID: collectionID)
         case 2:
-            collectionID=272069099567
+            collectionID = 269278871604
             categorizedTheProducts(cID: collectionID)
         default:
-            collectionID  = 272069132335
+            collectionID  = 269278904372
             categorizedTheProducts(cID: collectionID)
         }
-        
     }
     
     func categorizedTheProducts(cID:Int){
         categoryViewModel.getProductsfromAPI(collectioID: cID, complition: { products, error in
-            if let productsList = products {
-                self.ArrayOfProduct=productsList.products!
+            if let productsList = products, let products = productsList.products {
+                self.ArrayOfProduct=products
                 self.categoriesCollectionView.reloadData()
                 DispatchQueue.main.async {
                     self.spinner.stopAnimating()
                 }
             }else{
-               self.onFailed(error: error!)
+                guard let error = error else{return}
+               self.onFailed(error: error)
                print("error")
             }
         })
@@ -269,11 +269,13 @@ extension CategoriesVC{
 extension CategoriesVC{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
+        wishListVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(wishListVC, animated: true)
     }
     
     func goToLoginPage(){
         let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(loginVC, animated: true)
     }
     
@@ -286,6 +288,7 @@ extension CategoriesVC{
     
     func goToCartPage(){
         let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        cartVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(cartVC, animated: true)
     }
 }

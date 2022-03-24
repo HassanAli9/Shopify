@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myPlacedOrderCell" id="KGk-i7-Jjw" customClass="MyPlacedOrdersTableViewCell" customModule="Shopify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oj-tc-JWk">
+                        <rect key="frame" x="36" y="16" width="342" height="128"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order num 1 created at 8/8/2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDc-3q-WI2">
+                                <rect key="frame" x="50" y="25" width="243" height="21"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as2-eR-J4p">
+                                <rect key="frame" x="50" y="56.5" width="243" height="26.5"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="as2-eR-J4p" secondAttribute="bottom" constant="45" id="7SC-C2-KLD"/>
+                            <constraint firstAttribute="trailing" secondItem="as2-eR-J4p" secondAttribute="trailing" constant="49" id="9Lp-PY-Qgo"/>
+                            <constraint firstItem="as2-eR-J4p" firstAttribute="leading" secondItem="4Oj-tc-JWk" secondAttribute="leading" constant="50" id="NBr-kK-Izp"/>
+                            <constraint firstAttribute="bottom" secondItem="FDc-3q-WI2" secondAttribute="bottom" constant="82" id="VBF-zq-O2c"/>
+                            <constraint firstItem="FDc-3q-WI2" firstAttribute="leading" secondItem="4Oj-tc-JWk" secondAttribute="leading" constant="50" id="eO9-qt-A8I"/>
+                            <constraint firstItem="FDc-3q-WI2" firstAttribute="top" secondItem="4Oj-tc-JWk" secondAttribute="top" constant="25" id="sA1-eY-PzZ"/>
+                            <constraint firstAttribute="trailing" secondItem="FDc-3q-WI2" secondAttribute="trailing" constant="49" id="sWi-ce-GkF"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.29999999999999999"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-JN-dew">
+                        <rect key="frame" x="82" y="110" width="250" height="32"/>
+                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="21"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4Oj-tc-JWk" secondAttribute="bottom" constant="16" id="52V-Vr-rgS"/>
+                    <constraint firstItem="4Oj-tc-JWk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="6As-ic-83V"/>
+                    <constraint firstAttribute="trailing" secondItem="4Oj-tc-JWk" secondAttribute="trailing" constant="36" id="O9U-cZ-KWt"/>
+                    <constraint firstItem="4Oj-tc-JWk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="QzY-k6-hE2"/>
+                    <constraint firstItem="7pH-JN-dew" firstAttribute="centerX" secondItem="4Oj-tc-JWk" secondAttribute="centerX" id="UWv-DS-Pwi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7pH-JN-dew" secondAttribute="bottom" constant="7" id="ayS-UC-Jkh"/>
+                    <constraint firstItem="7pH-JN-dew" firstAttribute="firstBaseline" secondItem="as2-eR-J4p" secondAttribute="baseline" constant="36.5" id="lHD-JX-Wht"/>
+                    <constraint firstItem="7pH-JN-dew" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="62" id="oCm-wa-2gi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="createdAt" destination="FDc-3q-WI2" id="Zbd-Ko-n4G"/>
+                <outlet property="paid" destination="7pH-JN-dew" id="3NA-44-TAp"/>
+                <outlet property="price" destination="as2-eR-J4p" id="sCc-HM-BUz"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="85.714285714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
