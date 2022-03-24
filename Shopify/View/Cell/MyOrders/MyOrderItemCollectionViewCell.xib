@@ -11,23 +11,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myorderitemCell" id="gTV-IL-0wX" customClass="MyOrderItemCollectionViewCell" customModule="Shopify" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="233" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="233" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7m-2A-vuh">
-                        <rect key="frame" x="9" y="16" width="215" height="120"/>
+                        <rect key="frame" x="7" y="12" width="341" height="126"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0h-mo-NB8">
-                                <rect key="frame" x="8" y="29" width="199" height="11.5"/>
+                                <rect key="frame" x="8" y="30" width="325" height="18"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpd-gZ-HK3">
-                                <rect key="frame" x="8" y="63.5" width="199" height="21"/>
+                                <rect key="frame" x="8" y="67" width="325" height="21"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,14 +35,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="leading" secondItem="P7m-2A-vuh" secondAttribute="leading" constant="8" id="3Ik-rn-vam"/>
-                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="top" secondItem="F0h-mo-NB8" secondAttribute="bottom" constant="23" id="GqO-8M-hg3"/>
-                            <constraint firstItem="F0h-mo-NB8" firstAttribute="leading" secondItem="P7m-2A-vuh" secondAttribute="leading" constant="8" id="IUa-mP-rY9"/>
-                            <constraint firstItem="F0h-mo-NB8" firstAttribute="top" secondItem="P7m-2A-vuh" secondAttribute="top" constant="29" id="V7G-tn-gDH"/>
-                            <constraint firstAttribute="trailing" secondItem="F0h-mo-NB8" secondAttribute="trailing" constant="8" id="arF-Zm-aEk"/>
-                            <constraint firstAttribute="trailing" secondItem="Dpd-gZ-HK3" secondAttribute="trailing" constant="8" id="gye-CI-UkZ"/>
-                            <constraint firstAttribute="bottom" secondItem="Dpd-gZ-HK3" secondAttribute="bottom" constant="35.5" id="hDt-pJ-dKd"/>
-                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="top" secondItem="F0h-mo-NB8" secondAttribute="bottom" constant="23" id="ujB-p4-xVi"/>
+                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="top" secondItem="F0h-mo-NB8" secondAttribute="bottom" constant="19" id="2GP-bx-e1D"/>
+                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="leading" secondItem="P7m-2A-vuh" secondAttribute="leading" constant="8" id="I4l-4R-fl8"/>
+                            <constraint firstItem="Dpd-gZ-HK3" firstAttribute="top" secondItem="F0h-mo-NB8" secondAttribute="bottom" constant="19" id="Inf-CE-diw"/>
+                            <constraint firstAttribute="trailing" secondItem="F0h-mo-NB8" secondAttribute="trailing" constant="8" id="LSB-IC-fbi"/>
+                            <constraint firstAttribute="trailing" secondItem="Dpd-gZ-HK3" secondAttribute="trailing" constant="8" id="Nw7-yB-OwO"/>
+                            <constraint firstItem="F0h-mo-NB8" firstAttribute="leading" secondItem="P7m-2A-vuh" secondAttribute="leading" constant="8" id="Z5h-N9-59v"/>
+                            <constraint firstAttribute="bottom" secondItem="Dpd-gZ-HK3" secondAttribute="bottom" constant="38" id="r6C-6Z-ViV"/>
+                            <constraint firstItem="F0h-mo-NB8" firstAttribute="top" secondItem="P7m-2A-vuh" secondAttribute="top" constant="30" id="yO6-gv-pM0"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
@@ -60,17 +60,18 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="P7m-2A-vuh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="YYl-Wx-ZwX"/>
-                <constraint firstAttribute="bottom" secondItem="P7m-2A-vuh" secondAttribute="bottom" constant="14" id="li2-8b-UEd"/>
-                <constraint firstItem="P7m-2A-vuh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="r1R-Jm-nAo"/>
-                <constraint firstAttribute="trailing" secondItem="P7m-2A-vuh" secondAttribute="trailing" constant="9" id="r9S-Lq-ooG"/>
+                <constraint firstItem="P7m-2A-vuh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="AcW-dE-cQ0"/>
+                <constraint firstAttribute="bottom" secondItem="P7m-2A-vuh" secondAttribute="bottom" constant="12" id="LBX-oL-ROD"/>
+                <constraint firstAttribute="trailing" secondItem="P7m-2A-vuh" secondAttribute="trailing" constant="7" id="aN9-eE-BE5"/>
+                <constraint firstAttribute="bottom" secondItem="P7m-2A-vuh" secondAttribute="bottom" constant="12" id="plO-gr-OAS"/>
+                <constraint firstItem="P7m-2A-vuh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="7" id="xm3-iw-s6i"/>
             </constraints>
-            <size key="customSize" width="282" height="109"/>
+            <size key="customSize" width="404" height="109"/>
             <connections>
                 <outlet property="orderName" destination="F0h-mo-NB8" id="eej-A5-dGa"/>
                 <outlet property="orderPrice" destination="Dpd-gZ-HK3" id="1Lt-Cn-Axu"/>
             </connections>
-            <point key="canvasLocation" x="-26.811594202898554" y="136.60714285714286"/>
+            <point key="canvasLocation" x="61.594202898550726" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
     <resources>

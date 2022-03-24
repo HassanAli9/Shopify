@@ -61,7 +61,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             return 3
         default:
-            return 2
+            return 1
         }
     }
     
@@ -89,19 +89,10 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
             }
             
         default:
-            switch indexPath.row {
-            case 0:
                 cell.imageView?.image=UIImage(systemName: "info.circle")
                 cell.textLabel?.text="About us"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
-            default:
-                cell.imageView?.image=UIImage(systemName: "mail")
-                cell.textLabel?.text="Contact us"
-                cell.imageView?.tintColor = .label
-                cell.accessoryType = .disclosureIndicator
-            }
-            
         }
         
         return cell
@@ -121,14 +112,8 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 self.present(aboutUs, animated: true, completion: nil)
             }
         default:
-            switch indexPath.row {
-            case 0:
                 let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.present(aboutUs, animated: true, completion: nil)
-            default:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
-            }
         }
         tableView.deselectRow(at: indexPath, animated: false)
     }

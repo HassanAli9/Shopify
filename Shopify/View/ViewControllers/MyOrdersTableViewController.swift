@@ -60,7 +60,7 @@ class MyOrdersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myPlacedOrderCell", for: indexPath) as! MyPlacedOrdersTableViewCell
         
         cell.createdAt.text = ordersArray[indexPath.row].created_at
-        cell.price.text = ordersArray[indexPath.row].current_total_price
+        cell.price.text = ordersArray[indexPath.row].current_total_price?.appending(" USD")
         cell.paid.text = ordersArray[indexPath.row].financial_status
         
         return cell

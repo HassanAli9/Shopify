@@ -20,12 +20,10 @@ class MyOrdersDetailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return comingOrder.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,7 +35,7 @@ class MyOrdersDetailsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myorderitemCell", for: indexPath) as! MyOrderItemCollectionViewCell
         
         cell.orderName.text = comingOrder[indexPath.row].title
-        cell.orderPrice.text = comingOrder[indexPath.row].price
+        cell.orderPrice.text = comingOrder[indexPath.row].price?.appending(" USD")
 
         return cell
     }

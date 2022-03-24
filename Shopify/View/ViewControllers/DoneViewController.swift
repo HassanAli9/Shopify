@@ -16,6 +16,6 @@ class DoneViewController: UIViewController {
     }
 
     @IBAction func continueShoppingBtn(_ sender: Any) {
-        
+        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
     }
 }
