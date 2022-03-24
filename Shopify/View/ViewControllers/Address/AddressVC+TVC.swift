@@ -27,7 +27,9 @@ extension AddressVC : UITableViewDataSource{
 extension AddressVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let customrtId = Helper.shared.getUserID(), let id = self.arrOfAddress[indexPath.row].id else {return}
         
+        setAddressDefault(customerId: customrtId, addressId: id, row: indexPath.row)
         self.showConfirmAlert(title: "are you sure!!", message: "this address added in your order!") { isConfirm in
             if isConfirm{
                 self.addAddressToOrder(row: indexPath.row)
@@ -46,11 +48,21 @@ extension AddressVC : UITableViewDelegate{
 }
 
 extension AddressVC{
+    func setAddressDefault(customerId: Int, addressId: Int, row: Int){
+        networking.setDefaultAddress(customerId: customerId, addressId: addressId, address: self.arrOfAddress[row]) { data, res, error in
+            if error == nil {
+                print("set def success")
+               
+            }else{
+                print("set def falied")
+            }
+        }
+    }
     func addAddressToOrder(row: Int){
         let myAddress = arrOfAddress[row]
         let selectedAddress = AddressModel(context: context)
         
-        guard let customerId = Helper.shared.getUserID(), let addressID = myAddress.id, let address1 = myAddress.address1, let city = myAddress.city, let country = myAddress.country, let name = myAddress.first_name, let phone = myAddress.phone else {return}
+        guard let customerId = Helper.shared.getUserID(), let addressID = myAddress.id , let address1 = myAddress.address1, let city = myAddress.city, let country = myAddress.country, let name = myAddress.first_name, let phone = myAddress.phone else {return}
         
         selectedAddress.custID = Int64(customerId)
         selectedAddress.addID = Int64(addressID)
