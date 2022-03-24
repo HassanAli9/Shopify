@@ -38,9 +38,7 @@ class OrdersVC: UIViewController{
         orderViewModel.bindingEmptyCartAlert = {
             self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
         }
-        let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
-        navigationController?.pushViewController(checkoutVC, animated: false)
-        
+        checkIsFoundAddress()
     }
     
     func checkCartIsEmpty(){
@@ -105,5 +103,28 @@ extension OrdersVC{
                 self.tableView.reloadData()
             }
         }
+    }
+}
+
+extension OrdersVC{
+    func checkIsFoundAddress(){
+        if Helper.shared.checkFoundAdress() {
+            goToSelectedAddress()
+        }else{
+            goToCreateAddress()
+        }
+    }
+}
+extension OrdersVC{
+    func goToCreateAddress(){
+        let createAddressVC = UIStoryboard(name: "Address", bundle: nil).instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+        createAddressVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(createAddressVC, animated: true)
+    }
+    
+    func goToSelectedAddress(){
+        let addressVC = UIStoryboard(name: "Address", bundle: nil).instantiateViewController(withIdentifier: "AddressVC") as! AddressVC
+        addressVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(addressVC, animated: true)
     }
 }

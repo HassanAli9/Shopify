@@ -75,17 +75,7 @@ class CreateAddressVC: UIViewController {
         networking.createAddress(customerId: customerID, address: add) { data , res, error in
             if error == nil{
                 print("success to create address")
-                
-                if let data = data{
-                    let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
-                    print("json: \(json)")
-                    let returnedOrder = json["addresses"] as? Dictionary<String,Any>
-                    let returnedCustomer = returnedOrder?["customer_id"] as? Int ?? 0
-                    //let id = returnedCustomer?["id"] as? Int ?? 0
-                    print("customer id: \(returnedCustomer)")
-            
-                }
-                
+                Helper.shared.setFoundAdress(isFoundAddress: true)
             }else{
                 print("falied to create address")
             }
