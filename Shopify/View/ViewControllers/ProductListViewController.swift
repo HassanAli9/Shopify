@@ -49,6 +49,7 @@ class ProductListViewController: UIViewController{
     
     @IBAction func toCartBtn(_ sender: Any) {
         let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC")
+        cartVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(cartVC, animated: false)
     }
     

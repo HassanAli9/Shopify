@@ -16,11 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Knq-xG-Cqj">
-                                <rect key="frame" x="117" y="152" width="179" height="128"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Omar Radwan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITU-UN-4Ge">
-                                <rect key="frame" x="117" y="301" width="179" height="21"/>
+                                <rect key="frame" x="117" y="295.5" width="179" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,41 +28,6 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXi-PL-II9">
-                                <rect key="frame" x="90" y="359" width="101" height="31"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Edit Profile">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Optima-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="editProfileAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QN8-90-TOI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3R-AA-NPA">
-                                <rect key="frame" x="203" y="359" width="129" height="31"/>
-                                <color key="tintColor" systemColor="labelColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Logout">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name="Optima-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="logOutAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="86t-qN-2pV"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QK5-Mc-f0B">
                                 <rect key="frame" x="0.0" y="398" width="414" height="498"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -95,32 +57,47 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3R-AA-NPA">
+                                <rect key="frame" x="163" y="359" width="86" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="rectangle.portrait.and.arrow.right.fill" catalog="system">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Logout">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="Optima-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOutAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="86t-qN-2pV"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="8HD-kh-dXe">
+                                <rect key="frame" x="87" y="140" width="240" height="148"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ITU-UN-4Ge" secondAttribute="trailing" constant="118" id="39s-5h-iSq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Knq-xG-Cqj" secondAttribute="trailing" constant="118" id="8n5-yq-bkg"/>
                             <constraint firstItem="I3R-AA-NPA" firstAttribute="firstBaseline" secondItem="9UQ-N7-FuI" secondAttribute="baseline" constant="32.5" symbolType="layoutAnchor" id="FdD-Ax-eEW"/>
-                            <constraint firstItem="xXi-PL-II9" firstAttribute="firstBaseline" secondItem="9UQ-N7-FuI" secondAttribute="baseline" constant="32.5" symbolType="layoutAnchor" id="Fom-f7-oIg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I3R-AA-NPA" secondAttribute="trailing" constant="82" id="JND-7t-rL5"/>
-                            <constraint firstItem="I3R-AA-NPA" firstAttribute="leading" secondItem="xXi-PL-II9" secondAttribute="trailing" constant="12" id="L8R-GC-21z"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="I3R-AA-NPA" secondAttribute="trailing" constant="165" id="JND-7t-rL5"/>
                             <constraint firstItem="9UQ-N7-FuI" firstAttribute="centerX" secondItem="ITU-UN-4Ge" secondAttribute="centerX" id="NwU-sQ-bjo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ITU-UN-4Ge" secondAttribute="bottom" constant="540" id="PRy-m9-JHb"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Knq-xG-Cqj" secondAttribute="bottom" constant="582" id="Pvu-7Y-gLL"/>
-                            <constraint firstItem="xXi-PL-II9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="90" id="Snd-CM-H06"/>
-                            <constraint firstItem="ITU-UN-4Ge" firstAttribute="trailing" secondItem="Knq-xG-Cqj" secondAttribute="trailing" id="TUi-co-Nnx"/>
+                            <constraint firstItem="ITU-UN-4Ge" firstAttribute="top" secondItem="8HD-kh-dXe" secondAttribute="bottom" constant="7.5" id="SP8-EJ-36b"/>
                             <constraint firstItem="ITU-UN-4Ge" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="117" id="UgV-ww-fyz"/>
-                            <constraint firstItem="ITU-UN-4Ge" firstAttribute="leading" secondItem="Knq-xG-Cqj" secondAttribute="leading" id="W5I-QW-pck"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8HD-kh-dXe" secondAttribute="trailing" constant="87" id="WeR-7W-A6z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QK5-Mc-f0B" secondAttribute="trailing" id="YBH-Cl-P10"/>
-                            <constraint firstItem="Knq-xG-Cqj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="117" id="jaP-9I-zKi"/>
+                            <constraint firstItem="QK5-Mc-f0B" firstAttribute="top" secondItem="I3R-AA-NPA" secondAttribute="bottom" constant="8" symbolic="YES" id="bv7-RT-RgP"/>
+                            <constraint firstItem="8HD-kh-dXe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="52" id="gxV-bo-emC"/>
                             <constraint firstItem="9UQ-N7-FuI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="96" id="jxP-gC-Hol"/>
+                            <constraint firstItem="8HD-kh-dXe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="87" id="laX-Q3-CrW"/>
                             <constraint firstItem="9UQ-N7-FuI" firstAttribute="firstBaseline" secondItem="ITU-UN-4Ge" secondAttribute="baseline" constant="30.5" id="scD-Rr-K5D"/>
-                            <constraint firstItem="QK5-Mc-f0B" firstAttribute="firstBaseline" secondItem="xXi-PL-II9" secondAttribute="baseline" constant="18.5" id="u4B-S7-K72"/>
-                            <constraint firstItem="Knq-xG-Cqj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="64" id="vvC-vz-bbE"/>
                             <constraint firstItem="QK5-Mc-f0B" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="x6B-FA-fBH"/>
                             <constraint firstAttribute="bottom" secondItem="QK5-Mc-f0B" secondAttribute="bottom" id="xei-oM-Igi"/>
-                            <constraint firstItem="ITU-UN-4Ge" firstAttribute="firstBaseline" secondItem="Knq-xG-Cqj" secondAttribute="baseline" constant="41.5" id="zQF-B3-3Zo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="rOp-V6-BAO">
@@ -401,7 +378,6 @@
     <resources>
         <image name="avatar" width="512" height="512"/>
         <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
         <systemColor name="labelColor">

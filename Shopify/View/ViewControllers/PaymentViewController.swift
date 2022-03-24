@@ -48,12 +48,7 @@ class PaymentViewController: UIViewController {
     }
     
     @IBAction func continueToCheckout(_ sender: Any) {
-        
-        if copounTextfield.text == ""{
-            showAlertError(title: "Choose a copoun & a payment method", message: "You are Lucky !!, Choose one of the following Copouns: shopify5,shopify10,shopify15")
-        }else{
             checkCopoun()
-        }
     }
     func setOptionSelection(_isGooglePaySelected :Bool){
         if _isGooglePaySelected{
