@@ -113,7 +113,7 @@ extension OrderViewModel{
 
 extension OrderViewModel{
     func saveProductToCart(){
-        coreDataServices.saveProductToWishList { saveSuccess in
+        coreDataServices.saveToCoreData { saveSuccess in
             if saveSuccess{
                 print("success to save product in cart")
             }else{
@@ -135,6 +135,7 @@ extension OrderViewModel{
                         totalPrice += Double(item.itemQuantity) * price
                     }
                 }
+                Helper.shared.setTotalPrice(totalPrice: totalPrice)
                 completion(totalPrice)
             }else{
                 completion(nil)

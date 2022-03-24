@@ -44,8 +44,15 @@ struct URLs{
         return URL(string: baseURL + "customers/\(id).json")
     }
     
+    func getAddressForCustomer(customerID: String) -> URL? {
+        return URL(string: baseURL + "customers/\(customerID)/addresses.json")
+    }
+    
     func getOrdersUser(customerId:Int)->URL?{
         return URL(string: baseURL + "customers/\(customerId)/orders.json")
     }
     
+    func setDefaultAddress (customerID: Int, addressID: Int) -> URL?{
+        return URL(string: baseURL + "customers/\(customerID)/addresses/\(addressID)/default.json")
+    }
 }

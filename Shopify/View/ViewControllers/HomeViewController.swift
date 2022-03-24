@@ -10,10 +10,12 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeTableView: UITableView!
+    var noInternetimageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        createNoInterNetConnectImage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -149,13 +151,28 @@ extension HomeViewController{
 }
 
 extension HomeViewController{
+    func createNoInterNetConnectImage(){
+        let image = UIImage(named: "network")
+        noInternetimageView = UIImageView(image: image!)
+        noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        noInternetimageView.center = self.view.center
+        view.addSubview(noInternetimageView)
+    }
+}
+
+extension HomeViewController{
     func checkNetworking(){
         Helper.shared.checkNetworkConnectionUsingRechability { isConnected in
             if !isConnected{
+                self.homeTableView.isHidden = true
+                self.noInternetimageView.isHidden = false
                 self.showAlertForInterNetConnection()
             }else{
-                
+                self.homeTableView.isHidden = false
+                self.noInternetimageView.isHidden = true
+                self.homeTableView.reloadData()
             }
         }
     }
 }
+

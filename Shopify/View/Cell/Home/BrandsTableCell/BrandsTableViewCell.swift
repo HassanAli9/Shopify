@@ -62,11 +62,7 @@ extension BrandsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
             cell.brandImageView.kf.indicatorType = .activity
             cell.brandImageView.kf.setImage(with: brandUrl)
             cell.brandLabel.text = self.arrayOfBrands[indexPath.row].title
-            
-            /*cell.viewBrandImage.layer.borderColor = UIColor.gray.cgColor
-            cell.viewBrandImage.layer.borderWidth = 0.5
-            cell.viewBrandImage.layer.cornerRadius = 25*/
-            
+           
             cell.brandImageView.layer.borderColor = UIColor.gray.cgColor
             cell.brandImageView.layer.borderWidth = 0.5
             cell.brandImageView.layer.cornerRadius = 25

@@ -44,6 +44,21 @@ class Helper{
         return UserDefaults.standard.string(forKey: "User_Email")
     }
     
+    func setTotalPrice(totalPrice:Double){
+        UserDefaults.standard.set(totalPrice, forKey: "Total_Price")
+    }
+    
+    func getTotalPrice()->Double?{
+        return UserDefaults.standard.double(forKey: "Total_Price")
+    }
+    
+    func setFoundAdress(isFoundAddress: Bool){
+        UserDefaults.standard.set(isFoundAddress, forKey: "Address_Found")
+    }
+    
+    func checkFoundAdress()-> Bool{
+        return UserDefaults.standard.bool(forKey: "Address_Found")
+    }
     func checkUserIsLogged(completion: @escaping (Bool) -> Void){
         if getUserStatus() {
             completion(true)
