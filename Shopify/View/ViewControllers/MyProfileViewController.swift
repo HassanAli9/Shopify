@@ -82,7 +82,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.accessoryType = .disclosureIndicator
             default:
                 cell.imageView?.image=UIImage(systemName: "homekit")
-                cell.textLabel?.text="My Addresses"
+                cell.textLabel?.text="Add New Address"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
 
@@ -117,8 +117,9 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
             case 1:
                 goToWishListPage()
             default:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
+                goToCreateAddress()
+//                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+//                self.present(aboutUs, animated: true, completion: nil)
             }
         default:
             switch indexPath.row {
@@ -138,5 +139,11 @@ extension MyProfileViewController{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
         self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToCreateAddress(){
+        let createAddressVC = UIStoryboard(name: "Address", bundle: nil).instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+        createAddressVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(createAddressVC, animated: true)
     }
 }
