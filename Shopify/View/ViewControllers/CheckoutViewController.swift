@@ -57,7 +57,7 @@ class CheckoutViewController: UIViewController {
     @IBAction func checkoutBtn(_ sender: Any) {
         orderViewModel.postOrder(cartArray: placedOrders)
         let doneVC = UIStoryboard(name: "Done", bundle: nil).instantiateViewController(withIdentifier: "DoneViewController") as! DoneViewController
-        navigationController?.pushViewController(doneVC, animated: false)
+        present(doneVC, animated: true, completion: nil)
     }
 }
 extension CheckoutViewController: UITableViewDataSource{
@@ -90,19 +90,65 @@ extension CheckoutViewController:UITableViewDelegate{
 
 extension CheckoutViewController{
     func setTotalPriceData(){
-        
-        guard let copoun = copoun else {return}
-        discountLabel.text = copoun
-        copounLabel.text = copoun  + " discount"
-        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
-        subTotalLabel.text = String(totalPrice)
-        result = Double(String(subTotalLabel.text!))! + 10.00
-        totalPriceLabel.text = String(result) + "USD"
-        guard let paymentMethod = paymentMethod else {
-            return
+        if copoun == "5%"
+        {
+            guard let copoun = copoun else {return}
+            discountLabel.text = copoun
+            copounLabel.text = copoun  + " discount"
+            guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+            subTotalLabel.text = String(totalPrice)
+            result = (Double(String(subTotalLabel.text!))! + 10.00) * 0.95
+            totalPriceLabel.text = String(result) + "USD"
+            guard let paymentMethod = paymentMethod else {
+                return
+            }
+            paymentLabel.text = paymentMethod
         }
-        paymentLabel.text = paymentMethod
-    }
+        else if copoun == "10%"
+        {
+            guard let copoun = copoun else {return}
+            discountLabel.text = copoun
+            copounLabel.text = copoun  + " discount"
+            guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+            subTotalLabel.text = String(totalPrice)
+            result = (Double(String(subTotalLabel.text!))! + 10.00) * 0.9
+            totalPriceLabel.text = String(result) + "USD"
+            guard let paymentMethod = paymentMethod else {
+                return
+            }
+            paymentLabel.text = paymentMethod
+        }
+        else if copoun == "15%"
+        {
+            guard let copoun = copoun else {return}
+            discountLabel.text = copoun
+            copounLabel.text = copoun  + " discount"
+            guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+            subTotalLabel.text = String(totalPrice)
+            result = ((Double(String(subTotalLabel.text!))! + 10.00) ) * 0.85
+            totalPriceLabel.text = String(result) + "USD"
+            guard let paymentMethod = paymentMethod else {
+                return
+            }
+            paymentLabel.text = paymentMethod
+        }
+        else
+        {
+            guard let copoun = copoun else {return}
+            discountLabel.text = copoun
+            copounLabel.text = copoun  + " discount"
+            guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+            subTotalLabel.text = String(totalPrice)
+            result = Double(String(subTotalLabel.text!))! + 10.00
+            totalPriceLabel.text = String(result) + "USD"
+            guard let paymentMethod = paymentMethod else {
+                return
+            }
+            paymentLabel.text = paymentMethod
+        }
+        }
+                    
+        
 }
 
 extension CheckoutViewController{

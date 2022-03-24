@@ -20,7 +20,7 @@ extension OrdersVC : UITableViewDataSource
         cell.addButton.tag = indexPath.row
         cell.imgView.kf.setImage(with: URL(string: cartArray[indexPath.row].itemImage!))
         cell.titleLabel.text = cartArray[indexPath.row].itemName
-        cell.priceLabel.text = cartArray[indexPath.row].itemPrice
+        cell.priceLabel.text = cartArray[indexPath.row].itemPrice?.appending(" USD")
         cell.quantityLbl.isHidden = true
         
         cell.addItemQuantity = {

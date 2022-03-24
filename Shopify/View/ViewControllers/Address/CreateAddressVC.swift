@@ -20,8 +20,9 @@ class CreateAddressVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        self.hideKeyboardWhenTappedAround()
        custmoizeTextField()
+        countryTxt.text = "Egypt"
       // custmoizeBtn()
     }
     
@@ -74,7 +75,7 @@ class CreateAddressVC: UIViewController {
                 return
             }
             
-            let add = Address(address1: address, city: city, province: "", phone: phone, zip: "", last_name: "", first_name: name, country: country, id: nil)
+            let add = Address(address1: address, city: city, province: "", phone: phone, zip: "", last_name: "", first_name: name, country: "Egypt", id: nil)
             
             networking.createAddress(customerId: customerID, address: add) { data , res, error in
                 if error == nil{

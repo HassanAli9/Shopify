@@ -23,7 +23,7 @@ extension WishlistVC : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: WishlistTVCell.identifier, for: indexPath) as! WishlistTVCell
         let selectedProduct = arrOfWishListProducts[indexPath.row]
         cell.titleLable.text = selectedProduct.productName
-        cell.priceLable.text = selectedProduct.productPrice
+        cell.priceLable.text = selectedProduct.productPrice?.appending(" USD")
         cell.imgView.kf.indicatorType = .activity
         if let productImageStr = selectedProduct.productImage{
             cell.imgView.kf.setImage(with: URL(string: productImageStr))
@@ -59,4 +59,5 @@ extension WishlistVC : UITableViewDelegate{
             }
         }
     }
+
 }

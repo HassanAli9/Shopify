@@ -15,7 +15,7 @@ class PaymentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        self.hideKeyboardWhenTappedAround()
     }
 
     private func checkCopoun(){
@@ -28,8 +28,13 @@ class PaymentViewController: UIViewController {
             }
         else if copounTextfield.text == "shopify15"{
             checkoutVC.copoun = "15%"
-        }else{
+        }
+        else if copounTextfield.text == ""{
             checkoutVC.copoun = "No Discount"
+        }
+        else if copounTextfield.text != "shopify5" || copounTextfield.text != "shopify10" || copounTextfield.text != "shopify15"{
+            self.showAlertError(title: "Not Valid Copoun", message: "Please Enter A Valid Copoun")
+            
         }
         if googlePayOption.isSelected{
             checkoutVC.paymentMethod = "Google Pay"

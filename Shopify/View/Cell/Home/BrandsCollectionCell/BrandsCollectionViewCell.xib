@@ -36,7 +36,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adidas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6n-Ff-8BC">
-                                <rect key="frame" x="44.5" y="122" width="134" height="20.5"/>
+                                <rect key="frame" x="86.5" y="122" width="50.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,7 +48,6 @@
                             <constraint firstItem="T6n-Ff-8BC" firstAttribute="top" secondItem="5ya-9L-bfv" secondAttribute="bottom" constant="7.5" id="8OX-yb-7dt"/>
                             <constraint firstItem="T6n-Ff-8BC" firstAttribute="centerX" secondItem="gS8-bZ-VOD" secondAttribute="centerX" id="bxM-wI-8kL"/>
                             <constraint firstItem="nzg-b0-MTf" firstAttribute="top" secondItem="gS8-bZ-VOD" secondAttribute="top" id="kQL-FV-dKw"/>
-                            <constraint firstItem="T6n-Ff-8BC" firstAttribute="width" secondItem="gS8-bZ-VOD" secondAttribute="width" multiplier="0.6" id="kzB-L0-FUB"/>
                             <constraint firstAttribute="trailing" secondItem="nzg-b0-MTf" secondAttribute="trailing" id="lo6-Mm-BEb"/>
                             <constraint firstItem="nzg-b0-MTf" firstAttribute="leading" secondItem="gS8-bZ-VOD" secondAttribute="leading" id="yTu-mv-RGG"/>
                         </constraints>
