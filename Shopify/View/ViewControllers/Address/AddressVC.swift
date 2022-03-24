@@ -13,6 +13,7 @@ class AddressVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var arrOfAddress: [Address] = []
     let addressViewModel = AddressViewModel()
+    let networking = Networking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
