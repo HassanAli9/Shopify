@@ -184,3 +184,32 @@ extension Networking{
         }.resume()
     }
 }
+
+extension Networking{
+    func getAllAddresses(completion: @escaping ([Address]?, Error?)-> Void){
+        guard let customerID = Helper.shared.getUserID() else {return}
+        
+        guard let url = URLs.shared.customersURl() else {return}
+        AF.request(url, method: .get,parameters: nil,encoding: JSONEncoding.default,headers: nil).response { res in
+            switch res.result{
+            case.failure(let error):
+                print(error.localizedDescription)
+                completion(nil,error)
+            case .success(_):
+                guard let data = res.data else { return }
+                do{
+                    let json = try JSONDecoder().decode(Customers.self, from: data)
+                    for selectedCustomer in json.customers{
+                        if selectedCustomer.id == customerID {
+                            completion(selectedCustomer.addresses, nil)
+                        }
+                    }
+                    print("success to get address for a customers")
+                }catch let error{
+                    print("error when get address for a customers")
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+}

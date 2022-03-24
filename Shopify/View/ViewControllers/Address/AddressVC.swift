@@ -11,17 +11,23 @@ import SwiftUI
 class AddressVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var paymentBtn: UIButton!
+    var arrOfAddress: [Address] = []
+    let addressViewModel = AddressViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         tableView.register(AddressTVCell.nib(), forCellReuseIdentifier: AddressTVCell.identifier)
-        paymentBtn.backgroundColor = .clear
-        paymentBtn.layer.cornerRadius = 5
-        paymentBtn.layer.borderWidth = 1
-        paymentBtn.layer.borderColor = UIColor.tintColor.cgColor
-
+        setAddress()
+    }
+    
+    func setAddress(){
+        addressViewModel.bindSuccessToView = {
+            self.arrOfAddress = self.addressViewModel.address
+            self.tableView.reloadData()
+        }
+        
+        addressViewModel.bindFailedToView = {
+            print("erro when get address")
+        }
     }
 }

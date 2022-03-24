@@ -12,6 +12,7 @@ class OrdersVC: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var emptyCart: UIImageView!
+    var noInternetimageView = UIImageView()
     
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
@@ -19,10 +20,15 @@ class OrdersVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
+        createNoInterNetConnectImage()
         setCartItems()
-        //retriveCartItems()
         setTotalPrice()
         checkCartIsEmpty()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkNetworking()
     }
     
     func checkCartIsEmpty(){
@@ -54,6 +60,37 @@ class OrdersVC: UIViewController{
         orderViewModel.calcTotalPrice { totalPrice in
             guard let totalPrice = totalPrice else { return }
             self.totalPriceLabel.text = String(totalPrice)
+        }
+    }
+}
+
+extension OrdersVC{
+    func createNoInterNetConnectImage(){
+        let image = UIImage(named: "network")
+        noInternetimageView = UIImageView(image: image!)
+        noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        noInternetimageView.center = self.view.center
+        view.addSubview(noInternetimageView)
+    }
+}
+
+extension OrdersVC{
+    func checkNetworking(){
+        Helper.shared.checkNetworkConnectionUsingRechability { isConnected in
+            if !isConnected{
+                self.tableView.isHidden = true
+                self.emptyCart.isHidden = true
+                self.noInternetimageView.isHidden = false
+                self.showAlertForInterNetConnection()
+            }else{
+                self.emptyCart.isHidden = false
+                self.tableView.isHidden = false
+                self.noInternetimageView.isHidden = true
+                self.setCartItems()
+                self.setTotalPrice()
+                self.checkCartIsEmpty()
+                self.tableView.reloadData()
+            }
         }
     }
 }

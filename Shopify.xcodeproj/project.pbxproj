@@ -89,6 +89,7 @@
 		CD5A062227E0E112000CA494 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A062127E0E112000CA494 /* LoginViewController.swift */; };
 		CD5A062427E11491000CA494 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD5A062327E11491000CA494 /* Register.storyboard */; };
 		CD5A062627E114A5000CA494 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5A062527E114A5000CA494 /* RegisterViewController.swift */; };
+		CD6906D427EBE922000B0578 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6906D327EBE922000B0578 /* AddressViewModel.swift */; };
 		CD78662A27E8F9E0009A8B4C /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */; };
 		CD78662C27E909E9009A8B4C /* RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662B27E909E9009A8B4C /* RegisterTests.swift */; };
 		CD78662E27E90B3F009A8B4C /* CoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78662D27E90B3F009A8B4C /* CoreDataTests.swift */; };
@@ -210,6 +211,7 @@
 		CD5A062127E0E112000CA494 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD5A062327E11491000CA494 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		CD5A062527E114A5000CA494 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CD6906D327EBE922000B0578 /* AddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		CD78662927E8F9E0009A8B4C /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		CD78662B27E909E9009A8B4C /* RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTests.swift; sourceTree = "<group>"; };
 		CD78662D27E90B3F009A8B4C /* CoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTests.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				CDCE7C1727E68BCE00DB24AC /* ProductDetailsViewModel.swift */,
 				CDCE7C1927E6941100DB24AC /* WishListViewModel.swift */,
 				8559525427E6A9BC00F4130C /* OrderViewModel.swift */,
+				CD6906D327EBE922000B0578 /* AddressViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */,
 				8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */,
 				5C09DF2E27DFAEA600034B74 /* OrdersTVC.swift in Sources */,
+				CD6906D427EBE922000B0578 /* AddressViewModel.swift in Sources */,
 				5C837E2F27E28D09009970B5 /* FloatinLabelInput.swift in Sources */,
 				5C09DF3327DFAEBC00034B74 /* OrdersVC.swift in Sources */,
 				5C5B8A1727DF9C940051462D /* AppDelegate.swift in Sources */,
@@ -1158,7 +1162,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1188,7 +1192,7 @@
 				INFOPLIST_FILE = Shopify/Utilities/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Address;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

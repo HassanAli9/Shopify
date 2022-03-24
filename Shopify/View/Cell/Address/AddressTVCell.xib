@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBR-Zj-OvS">
-                        <rect key="frame" x="311.5" y="10" width="41.5" height="31"/>
+                        <rect key="frame" x="310.5" y="10" width="42.5" height="31"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" title="Button">
@@ -34,20 +34,11 @@
                             <imageReference key="image" image="pencil" catalog="system" symbolScale="large"/>
                         </buttonConfiguration>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJn-mX-JwW" customClass="RadioButton" customModule="MBRadioButton">
-                        <rect key="frame" x="321" y="57" width="24" height="14"/>
-                        <buttonConfiguration key="configuration" style="plain"/>
-                        <connections>
-                            <action selector="radioAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Eu6-MB-N9U"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LBl-id-41k" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="HBR-Zj-OvS" secondAttribute="leading" id="CKv-M1-2t4"/>
                     <constraint firstItem="LBl-id-41k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="I4E-0m-I0F"/>
-                    <constraint firstAttribute="trailing" secondItem="vJn-mX-JwW" secondAttribute="trailing" constant="24" id="lNJ-wH-92d"/>
                     <constraint firstAttribute="trailing" secondItem="HBR-Zj-OvS" secondAttribute="trailing" constant="16" id="oci-Z0-ThC"/>
-                    <constraint firstItem="vJn-mX-JwW" firstAttribute="top" secondItem="HBR-Zj-OvS" secondAttribute="bottom" constant="16" id="qEI-bN-cVE"/>
                     <constraint firstItem="HBR-Zj-OvS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="qM4-cv-woy"/>
                     <constraint firstItem="LBl-id-41k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="vbS-4S-xLS"/>
                 </constraints>
@@ -55,16 +46,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="addressLabel" destination="LBl-id-41k" id="07k-nj-b71"/>
-                <outlet property="radioBtn" destination="vJn-mX-JwW" id="gM3-hX-WtO"/>
             </connections>
             <point key="canvasLocation" x="196.37681159420291" y="116.18303571428571"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="vJn-mX-JwW">
-            <size key="intrinsicContentSize" width="24" height="14"/>
-        </designable>
-    </designables>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
     </resources>
