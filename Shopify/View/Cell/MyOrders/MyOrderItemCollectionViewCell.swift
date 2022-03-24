@@ -7,9 +7,8 @@
 
 import UIKit
 
-class MyOrderItemCollectionViewCell: UICollectionViewCell {
+class MyOrderItemCollectionViewCell: UITableViewCell {
 
-    @IBOutlet weak var orderImage: UIImageView!
     
     @IBOutlet weak var orderName: UILabel!
     

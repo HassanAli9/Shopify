@@ -69,7 +69,9 @@ class MyOrdersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        
+        let myordersVC = self.storyboard?.instantiateViewController(withIdentifier: "MyOrdersDetailsTableViewController") as! MyOrdersDetailsTableViewController
+        myordersVC.comingOrder = ordersArray[indexPath.row].line_items!
+        self.present(myordersVC, animated: true)
     }
     
     
