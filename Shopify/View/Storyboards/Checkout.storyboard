@@ -11,13 +11,13 @@
         <!--Payment View Controller-->
         <scene sceneID="vuO-hH-aUO">
             <objects>
-                <viewController id="A8S-x9-wxo" customClass="PaymentViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentViewController" id="A8S-x9-wxo" customClass="PaymentViewController" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NTq-lj-Fbe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-ON-eKd">
-                                <rect key="frame" x="20" y="217" width="374" height="254"/>
+                                <rect key="frame" x="20" y="217" width="374" height="296"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giv-ST-qft">
                                         <rect key="frame" x="8" y="53" width="109.5" height="26.5"/>
@@ -62,13 +62,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copoun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFr-CX-46y">
-                                        <rect key="frame" x="8" y="188" width="84" height="27"/>
+                                        <rect key="frame" x="8" y="219" width="84" height="27"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czt-hC-O1s">
-                                        <rect key="frame" x="131" y="188" width="217" height="34"/>
+                                        <rect key="frame" x="131" y="219" width="217" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="217" id="iWx-w6-CJD"/>
                                         </constraints>
@@ -81,16 +81,15 @@
                                     <constraint firstAttribute="trailing" secondItem="czt-hC-O1s" secondAttribute="trailing" constant="26" id="0gc-OL-PPJ"/>
                                     <constraint firstItem="fgu-xH-idl" firstAttribute="top" secondItem="CG2-8y-5du" secondAttribute="bottom" constant="38" id="519-gd-LCO"/>
                                     <constraint firstItem="0zV-FY-l78" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="Csl-r3-bhw"/>
-                                    <constraint firstAttribute="bottom" secondItem="czt-hC-O1s" secondAttribute="bottom" constant="32" id="E4w-8k-d24"/>
+                                    <constraint firstAttribute="bottom" secondItem="czt-hC-O1s" secondAttribute="bottom" constant="43" id="E4w-8k-d24"/>
                                     <constraint firstItem="czt-hC-O1s" firstAttribute="leading" secondItem="mFr-CX-46y" secondAttribute="trailing" constant="39" id="E9q-PI-3US"/>
                                     <constraint firstItem="CG2-8y-5du" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="57" id="IbL-Aj-cFt"/>
                                     <constraint firstItem="giv-ST-qft" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="53" id="Iem-am-5uv"/>
-                                    <constraint firstAttribute="bottom" secondItem="mFr-CX-46y" secondAttribute="bottom" constant="39" id="PH4-Nl-HH7"/>
+                                    <constraint firstAttribute="bottom" secondItem="mFr-CX-46y" secondAttribute="bottom" constant="50" id="PH4-Nl-HH7"/>
                                     <constraint firstItem="giv-ST-qft" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="cDR-to-rWb"/>
                                     <constraint firstAttribute="trailing" secondItem="CG2-8y-5du" secondAttribute="trailing" constant="26" id="hiY-G2-Xek"/>
                                     <constraint firstItem="0zV-FY-l78" firstAttribute="top" secondItem="giv-ST-qft" secondAttribute="bottom" constant="41.5" id="jer-Zx-8aC"/>
                                     <constraint firstAttribute="trailing" secondItem="fgu-xH-idl" secondAttribute="trailing" constant="26" id="u0c-tf-ZHe"/>
-                                    <constraint firstItem="mFr-CX-46y" firstAttribute="top" secondItem="0zV-FY-l78" secondAttribute="bottom" constant="40.5" id="wRS-nB-8AD"/>
                                     <constraint firstItem="mFr-CX-46y" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="yqU-eQ-Jag"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -123,8 +122,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Continue to Checkout">
                                             <attributes>
-                                                <color key="NSColor" systemColor="labelColor"/>
-                                                <font key="NSFont" size="20" name="Optima-Regular"/>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="Optima-Regular"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
@@ -142,12 +141,12 @@
                         <viewLayoutGuide key="safeArea" id="DIM-sf-EYy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cta-lf-Dhi" firstAttribute="top" secondItem="DIM-sf-EYy" secondAttribute="top" constant="44" id="4h6-gx-GnJ"/>
                             <constraint firstItem="cta-lf-Dhi" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="G9g-el-bQK"/>
                             <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="yAU-ON-eKd" secondAttribute="trailing" constant="20" id="Iot-R9-1tg"/>
                             <constraint firstItem="yAU-ON-eKd" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="PsE-ar-U9r"/>
-                            <constraint firstItem="DIM-sf-EYy" firstAttribute="bottom" secondItem="yAU-ON-eKd" secondAttribute="bottom" constant="391" id="Z8K-3t-aPl"/>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="bottom" secondItem="yAU-ON-eKd" secondAttribute="bottom" constant="349" id="Z8K-3t-aPl"/>
                             <constraint firstItem="yAU-ON-eKd" firstAttribute="top" secondItem="cta-lf-Dhi" secondAttribute="bottom" constant="58.5" id="fI7-hI-Vfm"/>
+                            <constraint firstItem="cta-lf-Dhi" firstAttribute="top" secondItem="DIM-sf-EYy" secondAttribute="top" constant="44" id="ka1-xQ-ipc"/>
                             <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="cta-lf-Dhi" secondAttribute="trailing" constant="20" id="pNb-1E-lTu"/>
                         </constraints>
                     </view>
@@ -215,7 +214,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7amboli bl eshta st. el zayton" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-Hi-SNR">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 el saeid square" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icm-Hi-SNR">
                                                                 <rect key="frame" x="24" y="50" width="334" height="24"/>
                                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                                                 <nil key="textColor"/>
@@ -227,7 +226,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cairo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-hs-oDW">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tanta" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gJ-hs-oDW">
                                                                 <rect key="frame" x="24" y="124" width="133" height="24"/>
                                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                                                 <nil key="textColor"/>
@@ -307,7 +306,7 @@
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKj-Q3-lSe">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on delivery" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKj-Q3-lSe">
                                                                                         <rect key="frame" x="169" y="47" width="189" height="23"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="189" id="Vz1-KC-TDz"/>
@@ -447,7 +446,7 @@
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 USD" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP5-13-ew3">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP5-13-ew3">
                                                                                 <rect key="frame" x="229" y="273" width="133" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="133" id="hca-MO-KNG"/>
@@ -464,13 +463,16 @@
                                                                                     <attributedString key="attributedTitle">
                                                                                         <fragment content="CHECKOUT">
                                                                                             <attributes>
-                                                                                                <font key="NSFont" size="24" name="Helvetica"/>
+                                                                                                <font key="NSFont" size="22" name="Optima-Regular"/>
                                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                             </attributes>
                                                                                         </fragment>
                                                                                     </attributedString>
                                                                                     <color key="baseBackgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </buttonConfiguration>
+                                                                                <connections>
+                                                                                    <action selector="checkoutBtn:" destination="6JP-lQ-XnK" eventType="touchUpInside" id="dXC-8e-WZg"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

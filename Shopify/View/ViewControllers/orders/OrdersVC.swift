@@ -33,10 +33,9 @@ class OrdersVC: UIViewController{
         orderViewModel.bindingEmptyCartAlert = {
             self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
         }
-        orderViewModel.postOrder(cartArray: cartArray)
-        DispatchQueue.main.async {
-            self.navigationController?.popViewController(animated: true)
-        }
+        let checkoutVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
+        navigationController?.pushViewController(checkoutVC, animated: false)
+        
     }
     
     func checkCartIsEmpty(){
@@ -67,6 +66,7 @@ class OrdersVC: UIViewController{
     func setTotalPrice(){
         orderViewModel.calcTotalPrice { totalPrice in
             guard let totalPrice = totalPrice else { return }
+            Helper.shared.setTotalPrice(totalPrice:totalPrice)
             self.totalPriceLabel.text = String(totalPrice)
         }
     }

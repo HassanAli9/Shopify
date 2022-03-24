@@ -21,7 +21,7 @@ extension OrdersVC : UITableViewDataSource
         cell.imgView.kf.setImage(with: URL(string: cartArray[indexPath.row].itemImage!))
         cell.titleLabel.text = cartArray[indexPath.row].itemName
         cell.priceLabel.text = cartArray[indexPath.row].itemPrice
-        
+        cell.quantityLbl.isHidden = true
         
         cell.addItemQuantity = {
             self.orderViewModel.getSelectedItemInCart(productId: self.cartArray[indexPath.row].itemID) { selectedOrder, error in

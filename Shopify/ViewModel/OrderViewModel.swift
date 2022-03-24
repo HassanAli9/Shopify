@@ -135,6 +135,7 @@ extension OrderViewModel{
                         totalPrice += Double(item.itemQuantity) * price
                     }
                 }
+                Helper.shared.setTotalPrice(totalPrice: totalPrice)
                 completion(totalPrice)
             }else{
                 completion(nil)

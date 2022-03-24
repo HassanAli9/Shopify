@@ -49,7 +49,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-lJ-gqx">
-                                <rect key="frame" x="133" y="101" width="45.5" height="31"/>
+                                <rect key="frame" x="122" y="101" width="45.5" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="bvz-yC-1XP"/>
                                 </constraints>
@@ -57,17 +57,29 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-87-hIV">
+                                <rect key="frame" x="166" y="105" width="73" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="ofW-8M-6jN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Kcc-43-poD" firstAttribute="top" secondItem="IxS-eb-hWk" secondAttribute="top" constant="5" id="6eh-nQ-Li2"/>
                             <constraint firstItem="Kcc-43-poD" firstAttribute="leading" secondItem="IxS-eb-hWk" secondAttribute="leading" id="72k-LG-ZSF"/>
                             <constraint firstItem="PhY-lJ-gqx" firstAttribute="top" secondItem="Xcq-aQ-fN3" secondAttribute="bottom" constant="6" id="H5M-kR-LEw"/>
+                            <constraint firstItem="cQc-87-hIV" firstAttribute="top" secondItem="Xcq-aQ-fN3" secondAttribute="bottom" constant="10" id="K1m-Z4-fL0"/>
+                            <constraint firstAttribute="bottom" secondItem="cQc-87-hIV" secondAttribute="bottom" constant="8" id="Oy5-55-LVp"/>
+                            <constraint firstItem="cQc-87-hIV" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="49" id="QAc-yY-80l"/>
                             <constraint firstAttribute="bottom" secondItem="Kcc-43-poD" secondAttribute="bottom" id="TDz-pY-6iR"/>
                             <constraint firstAttribute="trailing" secondItem="H5g-Ne-N4r" secondAttribute="trailing" constant="10" id="TNU-QM-siX"/>
                             <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="2" id="W4C-Wl-f11"/>
                             <constraint firstItem="Cuv-JL-Em5" firstAttribute="top" secondItem="IxS-eb-hWk" secondAttribute="top" constant="25" id="eL5-3N-wb2"/>
-                            <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="PhY-lJ-gqx" secondAttribute="leading" id="eNB-ED-dle"/>
+                            <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="PhY-lJ-gqx" secondAttribute="leading" constant="11" id="eNB-ED-dle"/>
                             <constraint firstAttribute="bottom" secondItem="H5g-Ne-N4r" secondAttribute="bottom" constant="96" id="jOo-Bn-dUU"/>
                             <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Xcq-aQ-fN3" secondAttribute="leading" constant="-14" id="jbe-Fq-BJS"/>
                             <constraint firstAttribute="bottom" secondItem="PhY-lJ-gqx" secondAttribute="bottom" constant="2" id="jis-0T-Wnh"/>
@@ -156,7 +168,8 @@
                 <outlet property="deleteProductBtn" destination="H5g-Ne-N4r" id="Uvb-Tf-HC2"/>
                 <outlet property="imgView" destination="Kcc-43-poD" id="hEd-fB-prq"/>
                 <outlet property="priceLabel" destination="Xcq-aQ-fN3" id="h66-A9-89O"/>
-                <outlet property="quantityLabel" destination="tdW-95-TMk" id="3SQ-qM-Eus"/>
+                <outlet property="quantityLabel" destination="tdW-95-TMk" id="C3X-F2-X6d"/>
+                <outlet property="quantityLbl" destination="cQc-87-hIV" id="rFq-o6-N3V"/>
                 <outlet property="subButton" destination="bSv-xL-toY" id="W5Q-cr-zJW"/>
                 <outlet property="titleLabel" destination="Cuv-JL-Em5" id="ykM-7u-dgd"/>
             </connections>
