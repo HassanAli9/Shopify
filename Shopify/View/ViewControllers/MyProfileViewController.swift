@@ -24,6 +24,16 @@ class MyProfileViewController: UIViewController {
     }
     
 
+    @IBAction func didPressedOnCartBtn(_ sender: UIBarButtonItem) {
+        Helper.shared.checkUserIsLogged { userLogged in
+            if userLogged{
+                self.goToCartPage()
+            }else{
+                self.goToLoginPage()
+            }
+        }
+    }
+    
     @IBAction func logOutAction(_ sender: Any) {
         showAlertSheet(title: "Do you want to log out?", message: "if you pressed log out, we will miss you 💔") { succes in
             if succes {
@@ -130,5 +140,19 @@ extension MyProfileViewController{
         let createAddressVC = UIStoryboard(name: "Address", bundle: nil).instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
         createAddressVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(createAddressVC, animated: true)
+    }
+}
+
+extension MyProfileViewController{
+    func goToCartPage(){
+        let cartVC = UIStoryboard(name: "orders", bundle: nil).instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        cartVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
+    
+    func goToLoginPage(){
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        loginVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

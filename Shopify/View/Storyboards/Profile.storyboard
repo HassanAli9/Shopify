@@ -126,6 +126,9 @@
                     <navigationItem key="navigationItem" title="My Profile" id="rOp-V6-BAO">
                         <barButtonItem key="rightBarButtonItem" image="cart" catalog="system" id="xUg-d6-RmI">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didPressedOnCartBtn:" destination="Y6W-OH-hqX" id="VFL-AU-UXr"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

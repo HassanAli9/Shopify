@@ -36,7 +36,7 @@ class CheckoutViewController: UIViewController {
         checkoutTableView.dataSource = self
         checkoutTableView.delegate = self
         checkoutTableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
-//        self.setAddress()
+        self.setAddress()
         setTotalPriceData()
 
     }

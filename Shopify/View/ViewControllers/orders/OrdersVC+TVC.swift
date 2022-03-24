@@ -76,7 +76,7 @@ extension OrdersVC : UITableViewDataSource
                 emptyCart.isHidden = false
                 self.tableView.isHidden = true
                 self.tableView.reloadData()
-                
+                setTotalPrice()
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))

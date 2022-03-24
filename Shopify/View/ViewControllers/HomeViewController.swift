@@ -99,17 +99,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         case 0:
             title = ""
         default:
-            title = "Brands"
+            title = ""
         }
         return title
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Optima", size: 24)
+        header.textLabel?.font = UIFont(name: "Optima", size: 18)
         header.textLabel?.textAlignment = NSTextAlignment.center
         header.textLabel?.textColor = UIColor.label
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         homeTableView.deselectRow(at: indexPath, animated: false)
     }
