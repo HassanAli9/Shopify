@@ -27,7 +27,7 @@ class CategoriesViewModel : NSObject {
 
 extension CategoriesViewModel{
     func saveProductToWishList(){
-        coreDataServices.saveProductToWishList { saveSuccess in
+        coreDataServices.saveToCoreData { saveSuccess in
             if saveSuccess{
                 print("success to save product in wishlist")
             }else{

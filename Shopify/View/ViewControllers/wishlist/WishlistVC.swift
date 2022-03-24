@@ -14,12 +14,17 @@ class WishlistVC: UIViewController {
     @IBOutlet weak var noItemsLabel: UILabel!
     let wishListViewModel = WishListViewModel()
     var arrOfWishListProducts: [WishListModel] = []
+    var noInternetimageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        setWishListProducts()
-        checkIsWishListIsEmpty()
+        createNoInterNetConnectImage()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkNetworking()
     }
 }
 
@@ -42,6 +47,36 @@ extension WishlistVC{
             guard let wishlistProducts = wishlistProducts else {return}
             self.arrOfWishListProducts = wishlistProducts
             self.tableView.reloadData()
+        }
+    }
+}
+
+extension WishlistVC{
+    func createNoInterNetConnectImage(){
+        let image = UIImage(named: "network")
+        noInternetimageView = UIImageView(image: image!)
+        noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        noInternetimageView.center = self.view.center
+        view.addSubview(noInternetimageView)
+    }
+}
+
+extension WishlistVC{
+    func checkNetworking(){
+        Helper.shared.checkNetworkConnectionUsingRechability { isConnected in
+            if !isConnected{
+                self.tableView.isHidden = true
+                self.noFoundImageView.isHidden = true
+                self.noInternetimageView.isHidden = false
+                self.showAlertForInterNetConnection()
+            }else{
+                self.noFoundImageView.isHidden = false
+                self.tableView.isHidden = false
+                self.noInternetimageView.isHidden = true
+                self.setWishListProducts()
+                self.checkIsWishListIsEmpty()
+                self.tableView.reloadData()
+            }
         }
     }
 }

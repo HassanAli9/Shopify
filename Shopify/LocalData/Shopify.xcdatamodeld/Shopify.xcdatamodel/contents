@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G415" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AddressModel" representedClassName="AddressModel" syncable="YES">
+        <attribute name="addID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="address1" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="custID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="OrderItemModel" representedClassName="OrderItemModel" syncable="YES">
         <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemImage" optional="YES" attributeType="String"/>
@@ -18,5 +27,6 @@
     <elements>
         <element name="OrderItemModel" positionX="-63" positionY="18" width="128" height="119"/>
         <element name="WishListModel" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="AddressModel" positionX="-63" positionY="45" width="128" height="134"/>
     </elements>
 </model>

@@ -6,14 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class CheckoutViewController: UIViewController {
 
-    var copoun : String?
-    var paymentMethod : String?
-    var placedOrders = [OrderItemModel]()
-    var orderViewModel = OrderViewModel()
-    var result = Double()
+    
     @IBOutlet weak var checkoutTableView: UITableView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
@@ -26,7 +23,12 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var shippingLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    
+    var copoun : String?
+    var paymentMethod : String?
+    var placedOrders = [OrderItemModel]()
+    var orderViewModel = OrderViewModel()
+    var result = Double()
+    let checkoutViewModel = CheckoutViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +36,12 @@ class CheckoutViewController: UIViewController {
         checkoutTableView.dataSource = self
         checkoutTableView.delegate = self
         checkoutTableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
+        self.setAddress()
+        guard let copoun = copoun else {
+            return
+        }
         discountLabel.text = copoun
-        copounLabel.text = copoun!  + " discount"
+        copounLabel.text = copoun  + " discount"
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
         print("total price is \(totalPrice)")
         subTotalLabel.text = String(totalPrice)
@@ -82,14 +88,25 @@ extension CheckoutViewController: UITableViewDataSource{
         checkoutCell.quantityLabel.text = String(placedOrders[indexPath.row].itemQuantity)
         return checkoutCell
     }
-    
-    
 }
+
 extension CheckoutViewController:UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height*0.4
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension CheckoutViewController{
+    func setAddress(){
+        checkoutViewModel.getSelectedAddress { selectedAddress, error in
+            guard let selectedAddress = selectedAddress, error == nil else { return }
+            self.addressLabel.text = selectedAddress.address1
+            self.cityLabel.text = selectedAddress.city
+            self.countryLabel.text = selectedAddress.country
+            self.phoneNumberLabel.text = selectedAddress.phoneNumber
+        }
     }
 }
