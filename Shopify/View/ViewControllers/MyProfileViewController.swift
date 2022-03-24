@@ -61,7 +61,7 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
         case 0:
             return 3
         default:
-            return 2
+            return 1
         }
     }
     
@@ -82,26 +82,17 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
                 cell.accessoryType = .disclosureIndicator
             default:
                 cell.imageView?.image=UIImage(systemName: "homekit")
-                cell.textLabel?.text="My Addresses"
+                cell.textLabel?.text="Add New Address"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
 
             }
             
         default:
-            switch indexPath.row {
-            case 0:
                 cell.imageView?.image=UIImage(systemName: "info.circle")
                 cell.textLabel?.text="About us"
                 cell.imageView?.tintColor = .label
                 cell.accessoryType = .disclosureIndicator
-            default:
-                cell.imageView?.image=UIImage(systemName: "mail")
-                cell.textLabel?.text="Contact us"
-                cell.imageView?.tintColor = .label
-                cell.accessoryType = .disclosureIndicator
-            }
-            
         }
         
         return cell
@@ -117,18 +108,13 @@ extension MyProfileViewController:UITableViewDelegate,UITableViewDataSource{
             case 1:
                 goToWishListPage()
             default:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
+                goToCreateAddress()
+//                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
+//                self.present(aboutUs, animated: true, completion: nil)
             }
         default:
-            switch indexPath.row {
-            case 0:
                 let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
                 self.present(aboutUs, animated: true, completion: nil)
-            default:
-                let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUsViewController") as! AboutUsViewController
-                self.present(aboutUs, animated: true, completion: nil)
-            }
         }
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -138,5 +124,11 @@ extension MyProfileViewController{
     func goToWishListPage(){
         let wishListVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistVC") as! WishlistVC
         self.navigationController?.pushViewController(wishListVC, animated: true)
+    }
+    
+    func goToCreateAddress(){
+        let createAddressVC = UIStoryboard(name: "Address", bundle: nil).instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+        createAddressVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(createAddressVC, animated: true)
     }
 }

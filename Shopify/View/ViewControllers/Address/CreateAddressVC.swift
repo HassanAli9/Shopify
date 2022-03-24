@@ -65,17 +65,21 @@ class CreateAddressVC: UIViewController {
     }
     
     @IBAction func didPressedOnAddAddress(_ sender: Any) {
+      
+        guard let customerID = Helper.shared.getUserID(), let name = Helper.shared.getUserName(), let address = AddressTxt.text, !address.isEmpty, let country = countryTxt.text, !country.isEmpty, let city = cityTxt.text, !city.isEmpty, let phone = phoneTxt.text, !phone.isEmpty, phone.count == 11 else {
+            showAlertError(title: "Missing Data", message: "Please fill your info")
+            return
+        }
         
-        checkData()
-        
-        guard let customerID = Helper.shared.getUserID() else {return}
-        
-        let add = Address(address1: "Faisal", city: "Giza", province: "", phone: "121212", zip: "12", last_name: "Nasr", first_name: "Ahmed", country: "Egypt", id: nil)
+        let add = Address(address1: address, city: city, province: "", phone: phone, zip: "", last_name: "", first_name: name, country: country, id: nil)
         
         networking.createAddress(customerId: customerID, address: add) { data , res, error in
             if error == nil{
                 print("success to create address")
                 Helper.shared.setFoundAdress(isFoundAddress: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
             }else{
                 print("falied to create address")
             }
@@ -108,7 +112,7 @@ class CreateAddressVC: UIViewController {
     }
 
     func validate(value: String) -> Bool {
-        let PHONE_REGEX = "^\\d{1}$"
+        let PHONE_REGEX = "^\\d{11}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result = phoneTest.evaluate(with: value)
         print("RESULT \(result)")

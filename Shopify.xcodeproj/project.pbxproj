@@ -61,8 +61,11 @@
 		8544C17A27E242E0000072D5 /* GuestProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17927E242E0000072D5 /* GuestProfileViewController.swift */; };
 		8544C17C27E247D4000072D5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544C17B27E247D4000072D5 /* AboutUsViewController.swift */; };
 		8559525527E6A9BC00F4130C /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8559525427E6A9BC00F4130C /* OrderViewModel.swift */; };
+		857D91C327EC16DD00517C2F /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857D91C227EC16DD00517C2F /* DoneViewController.swift */; };
+		857D91C527EC171300517C2F /* Done.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857D91C427EC171300517C2F /* Done.storyboard */; };
 		859A060927EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A060727EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.swift */; };
 		859A060A27EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 859A060827EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.xib */; };
+		859A060C27EBEC3F0058CC5C /* MyOrdersDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A060B27EBEC3F0058CC5C /* MyOrdersDetailsTableViewController.swift */; };
 		85A7B35727EAD28900B3A556 /* MyOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */; };
 		85B87A8F27E517BD004A2620 /* MyOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */; };
 		85B87A9627E517F1004A2620 /* MyOrderItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B87A9527E517F1004A2620 /* MyOrderItemCollectionViewCell.swift */; };
@@ -190,8 +193,11 @@
 		8544C17927E242E0000072D5 /* GuestProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestProfileViewController.swift; sourceTree = "<group>"; };
 		8544C17B27E247D4000072D5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		8559525427E6A9BC00F4130C /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		857D91C227EC16DD00517C2F /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		857D91C427EC171300517C2F /* Done.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Done.storyboard; sourceTree = "<group>"; };
 		859A060727EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlacedOrdersTableViewCell.swift; sourceTree = "<group>"; };
 		859A060827EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPlacedOrdersTableViewCell.xib; sourceTree = "<group>"; };
+		859A060B27EBEC3F0058CC5C /* MyOrdersDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersDetailsTableViewController.swift; sourceTree = "<group>"; };
 		85A7B35627EAD28900B3A556 /* MyOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewModel.swift; sourceTree = "<group>"; };
 		85B87A8E27E517BD004A2620 /* MyOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersTableViewController.swift; sourceTree = "<group>"; };
 		85B87A9527E517F1004A2620 /* MyOrderItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -481,6 +487,8 @@
 				85B87A9927E529AA004A2620 /* MainTabBarViewController.swift */,
 				3942E42727E9407600461394 /* CheckoutViewController.swift */,
 				39AA0EE127EAA843003D6E01 /* PaymentViewController.swift */,
+				859A060B27EBEC3F0058CC5C /* MyOrdersDetailsTableViewController.swift */,
+				857D91C227EC16DD00517C2F /* DoneViewController.swift */,
 				5C837E2427E278E0009970B5 /* Address */,
 				5C09DF3027DFAEBC00034B74 /* orders */,
 				5C03606827E5697B008067C6 /* wishlist */,
@@ -517,6 +525,7 @@
 				39ECF18A27E5156C0058A415 /* ProductList.storyboard */,
 				5C03606627E56946008067C6 /* Wishlist.storyboard */,
 				3942E42527E93FF400461394 /* Checkout.storyboard */,
+				857D91C427EC171300517C2F /* Done.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -861,6 +870,7 @@
 				5C5B8A2327DF9C960051462D /* Assets.xcassets in Resources */,
 				853D5A4A27DFAF0B00D287A4 /* Categories.storyboard in Resources */,
 				859A060A27EBE5E10058CC5C /* MyPlacedOrdersTableViewCell.xib in Resources */,
+				857D91C527EC171300517C2F /* Done.storyboard in Resources */,
 				5C837E2B27E27973009970B5 /* AddressTVCell.xib in Resources */,
 				5CF799D627E278460022A799 /* Address.storyboard in Resources */,
 				5C03607127E56A83008067C6 /* WishlistTVCell.xib in Resources */,
@@ -993,6 +1003,8 @@
 				5C837E2D27E27DEE009970B5 /* AddressVC+TVC.swift in Sources */,
 				5C837E2A27E27973009970B5 /* AddressTVCell.swift in Sources */,
 				CDCE7C1627E6859700DB24AC /* OrderItemModel+CoreDataClass.swift in Sources */,
+				857D91C327EC16DD00517C2F /* DoneViewController.swift in Sources */,
+				859A060C27EBEC3F0058CC5C /* MyOrdersDetailsTableViewController.swift in Sources */,
 				5C5B8A5227DF9D250051462D /* URLs.swift in Sources */,
 				85DE38B427E17E6C00601A7E /* MyProfileViewController.swift in Sources */,
 				CDCE7C0F27E6807500DB24AC /* WishListModel+CoreDataProperties.swift in Sources */,

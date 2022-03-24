@@ -60,7 +60,7 @@ class MyOrdersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myPlacedOrderCell", for: indexPath) as! MyPlacedOrdersTableViewCell
         
         cell.createdAt.text = ordersArray[indexPath.row].created_at
-        cell.price.text = ordersArray[indexPath.row].current_total_price?.appending("USD")
+        cell.price.text = ordersArray[indexPath.row].current_total_price?.appending(" USD")
         cell.paid.text = ordersArray[indexPath.row].financial_status
         
         return cell
@@ -69,7 +69,9 @@ class MyOrdersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
-        
+        let myordersVC = self.storyboard?.instantiateViewController(withIdentifier: "MyOrdersDetailsTableViewController") as! MyOrdersDetailsTableViewController
+        myordersVC.comingOrder = ordersArray[indexPath.row].line_items!
+        self.present(myordersVC, animated: true)
     }
     
     
