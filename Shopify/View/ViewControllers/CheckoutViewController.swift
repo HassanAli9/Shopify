@@ -36,21 +36,8 @@ class CheckoutViewController: UIViewController {
         checkoutTableView.dataSource = self
         checkoutTableView.delegate = self
         checkoutTableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
-        self.setAddress()
-        guard let copoun = copoun else {
-            return
-        }
-        discountLabel.text = copoun
-        copounLabel.text = copoun  + " discount"
-        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
-        print("total price is \(totalPrice)")
-        subTotalLabel.text = String(totalPrice)
-        result = Double(String(subTotalLabel.text!))! + 10.00
-        totalPriceLabel.text = String(result) + "USD"
-        guard let paymentMethod = paymentMethod else {
-            return
-        }
-        paymentLabel.text = paymentMethod
+//        self.setAddress()
+        setTotalPriceData()
 
     }
     
@@ -69,6 +56,12 @@ class CheckoutViewController: UIViewController {
     
     @IBAction func checkoutBtn(_ sender: Any) {
         orderViewModel.postOrder(cartArray: placedOrders)
+        let alert = UIAlertController(title: "Conragtulations", message: "Wait until our delivery representative contacts you to recieve your order.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 extension CheckoutViewController: UITableViewDataSource{
@@ -96,6 +89,23 @@ extension CheckoutViewController:UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension CheckoutViewController{
+    func setTotalPriceData(){
+        
+        guard let copoun = copoun else {return}
+        discountLabel.text = copoun
+        copounLabel.text = copoun  + " discount"
+        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+        subTotalLabel.text = String(totalPrice)
+        result = Double(String(subTotalLabel.text!))! + 10.00
+        totalPriceLabel.text = String(result) + "USD"
+        guard let paymentMethod = paymentMethod else {
+            return
+        }
+        paymentLabel.text = paymentMethod
     }
 }
 
