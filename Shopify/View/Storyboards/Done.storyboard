@@ -16,20 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-1U-flz">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="done" translatesAutoresizingMaskIntoConstraints="NO" id="kGE-1U-flz">
                                 <rect key="frame" x="20" y="168" width="374" height="335"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We Love you!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzT-c0-bfI">
-                                <rect key="frame" x="133" y="543" width="149.5" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We Love you!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzT-c0-bfI">
+                                <rect key="frame" x="50" y="543" width="314" height="30"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-XJ-JBQ">
-                                <rect key="frame" x="92" y="648" width="232" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfI-XJ-JBQ">
+                                <rect key="frame" x="92" y="648" width="232" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mVL-0F-y9k"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -45,15 +45,29 @@
                                     <action selector="continueShoppingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ach-MX-5Sf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your order will be between your hand as fast as possible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-Bh-6tn">
-                                <rect key="frame" x="20" y="592" width="374" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your order will be between your hand as fast as possible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG7-Bh-6tn">
+                                <rect key="frame" x="8" y="592" width="398" height="18"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DfI-XJ-JBQ" secondAttribute="trailing" constant="90" id="3y5-Ob-Hp6"/>
+                            <constraint firstItem="kGE-1U-flz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="7K1-QG-SL9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kGE-1U-flz" secondAttribute="trailing" constant="20" id="AS6-dN-0id"/>
+                            <constraint firstItem="SzT-c0-bfI" firstAttribute="top" secondItem="kGE-1U-flz" secondAttribute="bottom" constant="40" id="EZf-lF-u9j"/>
+                            <constraint firstItem="hG7-Bh-6tn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="Fs6-la-QUx"/>
+                            <constraint firstItem="hG7-Bh-6tn" firstAttribute="top" secondItem="SzT-c0-bfI" secondAttribute="bottom" constant="19" id="GKp-8A-91M"/>
+                            <constraint firstItem="kGE-1U-flz" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.373884" id="Oak-Ss-irX"/>
+                            <constraint firstItem="SzT-c0-bfI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="Pq2-Ev-ekR"/>
+                            <constraint firstItem="kGE-1U-flz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="124" id="SkC-fB-dF2"/>
+                            <constraint firstItem="DfI-XJ-JBQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="92" id="TyV-3d-koK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="SzT-c0-bfI" secondAttribute="trailing" constant="50" id="ejl-rK-A1X"/>
+                            <constraint firstItem="DfI-XJ-JBQ" firstAttribute="top" secondItem="hG7-Bh-6tn" secondAttribute="bottom" constant="38" id="nP6-4g-0vK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hG7-Bh-6tn" secondAttribute="trailing" constant="8" id="tzL-ss-LMN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

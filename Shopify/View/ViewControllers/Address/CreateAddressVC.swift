@@ -65,25 +65,31 @@ class CreateAddressVC: UIViewController {
     }
     
     @IBAction func didPressedOnAddAddress(_ sender: Any) {
+      checkData()
       
-        guard let customerID = Helper.shared.getUserID(), let name = Helper.shared.getUserName(), let address = AddressTxt.text, !address.isEmpty, let country = countryTxt.text, !country.isEmpty, let city = cityTxt.text, !city.isEmpty, let phone = phoneTxt.text, !phone.isEmpty, phone.count == 11 else {
-            showAlertError(title: "Missing Data", message: "Please fill your info")
-            return
-        }
-        
-        let add = Address(address1: address, city: city, province: "", phone: phone, zip: "", last_name: "", first_name: name, country: country, id: nil)
-        
-        networking.createAddress(customerId: customerID, address: add) { data , res, error in
-            if error == nil{
-                print("success to create address")
-                Helper.shared.setFoundAdress(isFoundAddress: true)
-                DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
+        if AddressTxt.text != "" && cityTxt.text != "" && countryTxt.text != "" && phoneTxt.text != ""
+        {
+            guard let customerID = Helper.shared.getUserID(), let name = Helper.shared.getUserName(), let address = AddressTxt.text, !address.isEmpty, let country = countryTxt.text, !country.isEmpty, let city = cityTxt.text, !city.isEmpty, let phone = phoneTxt.text, !phone.isEmpty, phone.count == 11 else {
+                showAlertError(title: "Missing Data", message: "Please fill your info")
+                return
+            }
+            
+            let add = Address(address1: address, city: city, province: "", phone: phone, zip: "", last_name: "", first_name: name, country: country, id: nil)
+            
+            networking.createAddress(customerId: customerID, address: add) { data , res, error in
+                if error == nil{
+                    print("success to create address")
+                    Helper.shared.setFoundAdress(isFoundAddress: true)
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }else{
+                    print("falied to create address")
                 }
-            }else{
-                print("falied to create address")
             }
         }
+        
+      
     }
     
     func checkData() {

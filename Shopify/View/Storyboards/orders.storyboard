@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: EGP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
-                                <rect key="frame" x="31.999999999999993" y="675.66666666666663" width="81.333333333333314" height="21.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kl1-gO-h5z">
+                                <rect key="frame" x="32" y="675.66666666666663" width="58.333333333333343" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,10 +26,10 @@
                                 <rect key="frame" x="0.0" y="161" width="390" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4S9-lI-iwz">
-                                <rect key="frame" x="0.0" y="88" width="390" height="573.66666666666663"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="540"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="573.66666666666663" id="wzK-ng-efI"/>
+                                    <constraint firstAttribute="height" constant="540" id="wzK-ng-efI"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="rbb-O4-Z2P"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLd-vI-KCp">
-                                <rect key="frame" x="120.99999999999999" y="675.66666666666663" width="30.333333333333329" height="21.666666666666629"/>
+                                <rect key="frame" x="98" y="675.66666666666663" width="30.333333333333343" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0hF-CW-DYL"/>
+                            <constraint firstItem="oLd-vI-KCp" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="47.666666666666629" id="2ua-lB-f9t"/>
                             <constraint firstItem="oLd-vI-KCp" firstAttribute="centerY" secondItem="kl1-gO-h5z" secondAttribute="centerY" id="3zf-jR-nDi"/>
+                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="kl1-gO-h5z" secondAttribute="bottom" constant="28" id="4Iw-we-1nc"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xi5-Nr-o04" secondAttribute="trailing" id="9BJ-eb-CNP"/>
                             <constraint firstItem="kl1-gO-h5z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="BrK-GE-Xu8"/>
                             <constraint firstItem="kt2-CI-E7i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="Bvp-Jq-Uf3"/>
@@ -77,8 +79,9 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kt2-CI-E7i" secondAttribute="trailing" constant="33" id="Pol-G6-3bi"/>
                             <constraint firstItem="xi5-Nr-o04" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="73" id="ZJr-8t-a9F"/>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZpJ-or-VGo"/>
+                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="oLd-vI-KCp" secondAttribute="bottom" constant="28" id="cHH-D0-etH"/>
                             <constraint firstItem="xi5-Nr-o04" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dLf-tt-uBU"/>
-                            <constraint firstItem="kl1-gO-h5z" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="14" id="hnh-QK-mFQ"/>
+                            <constraint firstItem="kl1-gO-h5z" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="47.666666666666629" id="hnh-QK-mFQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4S9-lI-iwz" secondAttribute="trailing" id="xGm-1R-1AO"/>
                         </constraints>
                     </view>

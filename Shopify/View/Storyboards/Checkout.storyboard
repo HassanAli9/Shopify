@@ -21,12 +21,15 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giv-ST-qft">
                                         <rect key="frame" x="8" y="53" width="109.5" height="26.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="109.5" id="9Ys-Gd-Q4k"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-FY-l78">
-                                        <rect key="frame" x="8" y="121" width="160" height="26.5"/>
+                                        <rect key="frame" x="8" y="121" width="213" height="27"/>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -63,6 +66,9 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copoun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFr-CX-46y">
                                         <rect key="frame" x="8" y="219" width="84" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="x8C-jl-cH4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -83,6 +89,7 @@
                                     <constraint firstItem="0zV-FY-l78" firstAttribute="leading" secondItem="yAU-ON-eKd" secondAttribute="leading" constant="8" id="Csl-r3-bhw"/>
                                     <constraint firstAttribute="bottom" secondItem="czt-hC-O1s" secondAttribute="bottom" constant="43" id="E4w-8k-d24"/>
                                     <constraint firstItem="czt-hC-O1s" firstAttribute="leading" secondItem="mFr-CX-46y" secondAttribute="trailing" constant="39" id="E9q-PI-3US"/>
+                                    <constraint firstItem="fgu-xH-idl" firstAttribute="leading" secondItem="0zV-FY-l78" secondAttribute="trailing" constant="103" id="FfO-7v-Bf7"/>
                                     <constraint firstItem="CG2-8y-5du" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="57" id="IbL-Aj-cFt"/>
                                     <constraint firstItem="giv-ST-qft" firstAttribute="top" secondItem="yAU-ON-eKd" secondAttribute="top" constant="53" id="Iem-am-5uv"/>
                                     <constraint firstAttribute="bottom" secondItem="mFr-CX-46y" secondAttribute="bottom" constant="50" id="PH4-Nl-HH7"/>
@@ -113,10 +120,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-LA-48R">
-                                <rect key="frame" x="45" y="698" width="324" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz0-LA-48R">
+                                <rect key="frame" x="45" y="710" width="324" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="FY4-T4-e9d"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -141,9 +150,12 @@
                         <viewLayoutGuide key="safeArea" id="DIM-sf-EYy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="bottom" secondItem="tz0-LA-48R" secondAttribute="bottom" constant="107" id="7jB-Lb-944"/>
                             <constraint firstItem="cta-lf-Dhi" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="G9g-el-bQK"/>
                             <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="yAU-ON-eKd" secondAttribute="trailing" constant="20" id="Iot-R9-1tg"/>
+                            <constraint firstItem="DIM-sf-EYy" firstAttribute="trailing" secondItem="tz0-LA-48R" secondAttribute="trailing" constant="45" id="OfY-ki-P9E"/>
                             <constraint firstItem="yAU-ON-eKd" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="20" id="PsE-ar-U9r"/>
+                            <constraint firstItem="tz0-LA-48R" firstAttribute="leading" secondItem="DIM-sf-EYy" secondAttribute="leading" constant="45" id="S70-ht-h1q"/>
                             <constraint firstItem="DIM-sf-EYy" firstAttribute="bottom" secondItem="yAU-ON-eKd" secondAttribute="bottom" constant="349" id="Z8K-3t-aPl"/>
                             <constraint firstItem="yAU-ON-eKd" firstAttribute="top" secondItem="cta-lf-Dhi" secondAttribute="bottom" constant="58.5" id="fI7-hI-Vfm"/>
                             <constraint firstItem="cta-lf-Dhi" firstAttribute="top" secondItem="DIM-sf-EYy" secondAttribute="top" constant="44" id="ka1-xQ-ipc"/>
@@ -159,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t17-UZ-vwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912" y="-21"/>
+            <point key="canvasLocation" x="911.59420289855075" y="-21.428571428571427"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="221-gM-vpy">
@@ -291,11 +303,8 @@
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Around 7 days" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygb-j5-lM4">
-                                                                                        <rect key="frame" x="160" y="8" width="198" height="23"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" constant="198" id="KAY-nv-1KZ"/>
-                                                                                        </constraints>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Around 7 days" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygb-j5-lM4">
+                                                                                        <rect key="frame" x="169" y="8" width="189" height="23"/>
                                                                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>

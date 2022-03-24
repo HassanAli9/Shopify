@@ -56,12 +56,8 @@ class CheckoutViewController: UIViewController {
     
     @IBAction func checkoutBtn(_ sender: Any) {
         orderViewModel.postOrder(cartArray: placedOrders)
-        let alert = UIAlertController(title: "Conragtulations", message: "Wait until our delivery representative contacts you to recieve your order.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarViewController")
-        }
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        let doneVC = UIStoryboard(name: "Done", bundle: nil).instantiateViewController(withIdentifier: "DoneViewController") as! DoneViewController
+        navigationController?.pushViewController(doneVC, animated: false)
     }
 }
 extension CheckoutViewController: UITableViewDataSource{
