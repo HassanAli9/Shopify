@@ -30,7 +30,7 @@ class PaymentViewController: UIViewController {
             checkoutVC.copoun = "15%"
         }
         else if copounTextfield.text == ""{
-            checkoutVC.copoun = "No Discount"
+            checkoutVC.copoun = "No"
         }
         else if copounTextfield.text != "shopify5" || copounTextfield.text != "shopify10" || copounTextfield.text != "shopify15"{
             self.showAlertError(title: "Not Valid Copoun", message: "Please Enter A Valid Copoun")

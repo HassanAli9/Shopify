@@ -40,6 +40,7 @@
                                 <rect key="frame" x="32" y="725.33333333333337" width="325" height="35.666666666666629"/>
                                 <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="35.670000000000002" id="htH-W4-r1v"/>
                                     <constraint firstAttribute="width" constant="325" id="qDA-AL-DkX"/>
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
@@ -79,7 +80,6 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kt2-CI-E7i" secondAttribute="trailing" constant="33" id="Pol-G6-3bi"/>
                             <constraint firstItem="xi5-Nr-o04" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="73" id="ZJr-8t-a9F"/>
                             <constraint firstItem="4S9-lI-iwz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZpJ-or-VGo"/>
-                            <constraint firstItem="kt2-CI-E7i" firstAttribute="top" secondItem="oLd-vI-KCp" secondAttribute="bottom" constant="28" id="cHH-D0-etH"/>
                             <constraint firstItem="xi5-Nr-o04" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dLf-tt-uBU"/>
                             <constraint firstItem="kl1-gO-h5z" firstAttribute="top" secondItem="4S9-lI-iwz" secondAttribute="bottom" constant="47.666666666666629" id="hnh-QK-mFQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4S9-lI-iwz" secondAttribute="trailing" id="xGm-1R-1AO"/>
