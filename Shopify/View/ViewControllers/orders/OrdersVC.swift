@@ -74,7 +74,7 @@ class OrdersVC: UIViewController{
         orderViewModel.calcTotalPrice { totalPrice in
             guard let totalPrice = totalPrice else { return }
             Helper.shared.setTotalPrice(totalPrice:totalPrice)
-            self.totalPriceLabel.text = String(totalPrice)
+            self.totalPriceLabel.text = String(totalPrice) + " USD"
         }
     }
 }

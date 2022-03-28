@@ -43,7 +43,7 @@ extension AddressVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "selected address to added in order"
+        return "Please,Select an address from the following :"
     }
 }
 
