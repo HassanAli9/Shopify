@@ -24,6 +24,9 @@ class LoginViewModel{
                 Helper.shared.setUserID(customerID: customerID)
                 Helper.shared.setUserName(userName: "\(userFirstName) \(userLastName)")
                 Helper.shared.setUserEmail(userEmail: userEmail)
+                if !filetr[0].addresses!.isEmpty {
+                    Helper.shared.setFoundAdress(isFoundAddress: true)
+                }
                 completion(filetr[0])
             }else{
                 completion(nil)

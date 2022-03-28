@@ -66,8 +66,8 @@ class CreateAddressVC: UIViewController {
     }
     
     @IBAction func didPressedOnAddAddress(_ sender: Any) {
-      checkData()
-      
+        checkData()
+        
         if AddressTxt.text != "" && cityTxt.text != "" && countryTxt.text != "" && phoneTxt.text != ""
         {
             guard let customerID = Helper.shared.getUserID(), let name = Helper.shared.getUserName(), let address = AddressTxt.text, !address.isEmpty, let country = countryTxt.text, !country.isEmpty, let city = cityTxt.text, !city.isEmpty, let phone = phoneTxt.text, !phone.isEmpty, phone.count == 11 else {
@@ -89,8 +89,6 @@ class CreateAddressVC: UIViewController {
                 }
             }
         }
-        
-      
     }
     
     func checkData() {
@@ -125,7 +123,4 @@ class CreateAddressVC: UIViewController {
         print("RESULT \(result)")
         return result
     }
-
-    
-  
 }
