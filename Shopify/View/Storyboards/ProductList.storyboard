@@ -18,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GPf-lb-WdY">
-                                <rect key="frame" x="57" y="104" width="294" height="72"/>
+                                <rect key="frame" x="57" y="104" width="294" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="2rD-0h-084"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfound" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-Kf-F5S">
-                                <rect key="frame" x="12" y="282" width="390" height="476"/>
+                                <rect key="frame" x="12" y="267" width="390" height="476"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="476" id="W75-2c-qNm"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-rV-LL9">
-                                <rect key="frame" x="16" y="222" width="382" height="640"/>
+                                <rect key="frame" x="16" y="207" width="382" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="00q-gA-UlO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -59,12 +59,12 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="k4o-PH-LhZ">
-                                <rect key="frame" x="31" y="191" width="322" height="30"/>
+                                <rect key="frame" x="31" y="176" width="322" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="h36-xa-n7Z"/>
                                 </constraints>
-                                <color key="thumbTintColor" red="0.71492079842298495" green="0.7803921568627451" blue="0.54019837360894818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" systemColor="labelColor"/>
                                 <connections>
                                     <action selector="filterSlider:" destination="Y6W-OH-hqX" eventType="valueChanged" id="N0T-w4-pBa"/>
                                 </connections>
@@ -76,13 +76,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uL-am-QkR">
-                                <rect key="frame" x="7" y="186" width="23" height="18"/>
+                                <rect key="frame" x="7" y="171" width="23" height="18"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbS-TX-VJ7">
-                                <rect key="frame" x="7" y="109" width="37" height="54"/>
+                                <rect key="frame" x="7" y="109" width="37" height="39"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="filter"/>
                                 <connections>
@@ -566,7 +566,7 @@
     </designables>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="filter" width="40" height="40"/>
+        <image name="filter" width="25" height="25"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="notfound" width="656" height="380"/>
         <image name="related1" width="1400" height="1400"/>
