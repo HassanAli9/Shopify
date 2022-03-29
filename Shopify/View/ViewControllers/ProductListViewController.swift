@@ -222,14 +222,14 @@ extension ProductListViewController{
     func sortingProductsByPrice(){
         if isSortedPressed{
             isSortedPressed = false
-            showAlertError(title: "Sortin Products", message: "Sorting Products from LOW TO HIGH price.")
+            showAlertError(title: "Sort Products", message: "Sorting Products from LOW TO HIGH price.")
             filteredProducts = originalProducts.sorted(by: {
                 Double($0.variants![0].price!)! < Double($1.variants![0].price!)!
             })
             self.updateUi()
         }else{
             isSortedPressed = true
-            showAlertError(title: "Sortin Products", message: "Sorting Products from HIGH TO LOW price.")
+            showAlertError(title: "Sort Products", message: "Sorting Products from HIGH TO LOW price.")
             filteredProducts = originalProducts.sorted(by: {
                 Double($0.variants![0].price!)! > Double($1.variants![0].price!)!
             })
